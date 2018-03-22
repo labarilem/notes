@@ -26,6 +26,6 @@ The following diagram explains how to build a Merkle tree starting from a known 
 
 A Merkle tree needs to show *log(N)* items to provide proof of membership for a given data block. The time complexity of this operation is *log(N)* too.
 
-## Use case
+## Use cases
 
 Merkle trees can be used to give informations about a sequence of transactions wihtout needing the data of all the transactions in the sequence, while still preventing attackers to easily tamper that data.
