@@ -31,7 +31,8 @@ So a signature scheme is *unforgeable* if, not matter what algorithm the attacke
 
 ## Use cases
 
-Signature schemes can be used to sign the last hash pointer in a blockchain, thus signing the whole blockhain.
+- Public keys can be used as identities
+- Signature schemes can be used to sign the last hash pointer in a blockchain, thus signing the whole blockhain.
 
 ## Signature scheme used in Bitcoin
 
