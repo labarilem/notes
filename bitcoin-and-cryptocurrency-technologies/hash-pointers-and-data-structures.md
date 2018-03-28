@@ -1,6 +1,6 @@
 # Hash pointer
 
-An *hash pointer* consists of 2 informations:
+A *hash pointer* consists of 2 informations:
 
 - Address where some info is stored
 - Hash of that info
@@ -28,4 +28,4 @@ A Merkle tree needs to show *log(N)* items to provide proof of membership for a 
 
 ## Use cases
 
-Merkle trees can be used to give informations about a sequence of transactions wihtout needing the data of all the transactions in the sequence, while still preventing attackers to easily tamper that data.
+Merkle trees can be used to give informations about a sequence of transactions without needing the data of all the transactions in the sequence, while still preventing attackers to easily tamper that data.

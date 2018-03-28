@@ -1,4 +1,4 @@
-# Hash function definition
+# Hash function
 
 A function that maps a string to a fixed size output.
 
@@ -31,11 +31,11 @@ Puzzle-friendly means that, for the stated problem, no solving strategy is much 
 
 **Crypto puzzles:** puzzles that can be used as proof of work. These puzzles are used in blockchain based coin technologies such as Bitcoin.
 
-# Hash function examples
+## Hash function examples
 
 ## SHA-256
 
 A popular hash function.
-An high level description of SHA-256 is given by the following diagram:
+A high level description of SHA-256 is given by the following diagram:
 
 ![](./images/sha256.png)

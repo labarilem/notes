@@ -18,12 +18,12 @@ Digital signature schemes must guarantee that signed data is always correctly ve
 
 ## Unforgeable signature schemes
 
-When is a signature scheme called unforgeable? Let's condider this game:
+When is a signature scheme called unforgeable? Let's consider this game:
 There is an attacker who knows the public key and a challenger who knows the private key too.
 
 - The attacker can pick a document and get the challenger to sign it.
 - The challenger will sign that document and send the signed data to the attacker.
-- The game can go on as for as much as the attacker wants (at least unitl a plausible amount of documents is signed)
+- The game can go on as for as much as the attacker wants (at least until a plausible amount of documents is signed)
 
 Then the attacker tries to sign a message that the challenger has not already signed: if the forged message verifies correctly then the attacker wins, else the challenger wins.
 
@@ -32,7 +32,7 @@ So a signature scheme is *unforgeable* if, not matter what algorithm the attacke
 ## Use cases
 
 - Public keys can be used as identities
-- Signature schemes can be used to sign the last hash pointer in a blockchain, thus signing the whole blockhain.
+- Signature schemes can be used to sign the last hash pointer in a blockchain, thus signing the whole blockchain.
 
 ## Signature scheme used in Bitcoin
 
