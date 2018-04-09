@@ -1,2 +1,3 @@
-# moocs
-Notes of the MOOCs that I've taken.
+# Notes
+
+Notes about various topics, courses, books, etc.
