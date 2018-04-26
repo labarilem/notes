@@ -33,8 +33,7 @@ Principles and practices adopted should depend on goals that we want to achieve,
 
 This is what happens in the real world:
 
-strategic goals -dictate-> architecture principles -dictate-> design and delivery practices
-(fixed)                     (less fixed)                        (flexible to an extended degree)
+![](./images/princ.png)
 
 ## The required standard
 
@@ -54,9 +53,7 @@ Also, care of protocol for communication between microservices, because each ms 
 
 ## Monitoring
 
-Important to monitor the health of the whole system.
-Important to gather health and log data from nodes in a single place in order to analyze it.
-Use an agnostic log/health/data reporting protocol/format so your monitoring system does not change as services change.
+It's important to monitor the health of the whole system and gather health and log data in a single place in order to analyze it. Remember to use an agnostic log/health/data reporting protocol/format so your monitoring system does not change as services change.
 
 ## Interfaces
 
@@ -65,7 +62,7 @@ This makes it easier to handle versioning and system complexity, because it will
 
 ## Architectural safety
 
-Services need to resist to partial failures in the system. A partial failure should not damage the system as a whole.
+Services need to resist to partial failures in the system. A partial failure should not affect the system as a whole.
 
 ## Governance through code
 
