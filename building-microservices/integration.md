@@ -70,3 +70,12 @@ Another principle introduced in REST that can help us avoid the coupling between
 
 REST provides flexibility over the serialization format of the data. The most popular choices are JSON and XML.
 XML has built-in support for hypermedia while there are standards to provide hypermedia data with JSON.
+
+### Downsides to REST Over HTTP
+
+- Not easy to generate stubs for REST over HTTP services as it would be with RPC
+- Some web servers do not *fully* support all the HTTP verbs
+- Performance is penalized because of hypermedia data and HTTP overhead
+- HTTP is not suited for frequently exchanging small volumes of data, WebSockets or protocol buffers are more suitable for this kind of communication
+
+Despite these disadvantages, REST over HTTP is a sensible default choice for service-to-service interactions.
