@@ -29,7 +29,7 @@ These issues would eliminate the benefits of using microservices, so shared data
 
 These two different modes of communication can enable two different styles of collaboration:
 
-- **Request/response:** natural fit to synchronous communication, can handle asynchronous communication too using callbacks
+- **Request/response:** natural fit to synchronous communication, can handle asynchronous communication too using callbacks.
 - **Event-based:** natural fit to asynchronous communication. It's more flexible since a client just issues an event, allowing for more services to listen on that event later on, without modifying the client's code.
 
 ## Orchestration vs Choreography
@@ -79,3 +79,30 @@ XML has built-in support for hypermedia while there are standards to provide hyp
 - HTTP is not suited for frequently exchanging small volumes of data, WebSockets or protocol buffers are more suitable for this kind of communication
 
 Despite these disadvantages, REST over HTTP is a sensible default choice for service-to-service interactions.
+
+## Implementing Asynchronous Event-Based Collaboration
+
+To implement asynchronous event-based collaboration we need to consider:
+
+- A way for our microservices to emit
+events.
+- A way for our consumers to find out those events have happened.
+
+Traditionally, **message brokers** like RabbitMQ can handle both problems, while also being able to scale and have resiliency.
+
+But note that this kind of collaboration comes with a system complexity increase (e.g. if you're not careful, you could have **catastrophic failovers** as intended by Martin Fowler).
+
+**Reactive extensions** can help you a lot when handling lots of calls to downstream services. They are a popular choice in distributed systems.
+
+## DRY in Microservices
+
+Following the DRY principle can cause coupling between microservices. As a general rule, DRY is to be followed only inside service boundaries. Across different services, code duplication is a smaller problem than coupling. An exception to this rule can be model-agnostic code such as logging, which can be safely shared between microservices.
+
+### Client libraries
+
+Client libraries can cause coupling between services and clients. To limit this danger, it's best if different developer teams develop the server API and the client library: this way there should be no "logic leaks" from the server into the client.
+It's also important to give clients control on when to upgrade their client libraries, to avoid coupling in deploys.
+
+## Access by Reference
+
+Sometimes it may happen to pass around outdated information (e.g. we request a *Customer* and then we use that customer in another request, but in the meanwhile it has changed).
