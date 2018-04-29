@@ -84,8 +84,7 @@ Despite these disadvantages, REST over HTTP is a sensible default choice for ser
 
 To implement asynchronous event-based collaboration we need to consider:
 
-- A way for our microservices to emit
-events.
+- A way for our microservices to emit events.
 - A way for our consumers to find out those events have happened.
 
 Traditionally, **message brokers** like RabbitMQ can handle both problems, while also being able to scale and have resiliency.
@@ -105,4 +104,75 @@ It's also important to give clients control on when to upgrade their client libr
 
 ## Access by Reference
 
-Sometimes it may happen to pass around outdated information (e.g. we request a *Customer* and then we use that customer in another request, but in the meanwhile it has changed).
+Sometimes it may happen to pass around outdated information: we request a *Customer* and then we use that customer in another request, but in the meanwhile it has changed.
+In order to retrieve the current state, such requests must include an ID of the involved resources. But this approach has downsides too:
+
+- It may cause the *Customers* service to be accessed too much
+- It causes overhead in requests
+
+This is a tradeoff to consider. The point is: be aware of the freshness of data passed between microservices.
+
+## Service versioning
+
+The following points can help you have a good service versioning in your system:
+
+- Defer breaking changes as long as possible (e.g. by using the *Tolerant reader* pattern)
+- Robustness principle: “*Be conservative in what you do, be liberal in what you accept from others*”.
+- Catch breaking changes early, tests help a lot here.
+- Use semantic versioning.
+- Have coexisting service versions to gradually adopt the new version in the system. Another option is to concurrently deploy microservices of different versions, but suppose you need to fix a bug in the service, then you would need to deploy 2 different services. Still this is a good approach if you are doing blue/green deploys.
+
+## User interfaces
+
+Each type of user interface (e.g. browser, desktop, mobile) has its own constraints. So even though our core services are the same, we might need a way to adapt them for these constraints.
+
+Let’s look at a few models of user interfaces to see how this might be
+achieved.
+
+### API composition
+
+Each part of the UI communicates with a specific service via its API.
+
+![Image](./images/api-composition.png)
+
+Downsides:
+
+- Little ability to tailor the responses for different sorts of devices.
+- If another team is creating the UI, making even small changes requires change requests to multiple teams.
+- This communication could also be fairly chatty. Opening lots of calls directly to services can be quite intensive for mobile devices.
+
+### UI Fragment composition
+
+Rather than having our UI make API calls and map everything back to UI controls, we
+could have our services provide parts of the UI directly.
+
+![Image](./images/ui-fragment-composition.png)
+
+The same team that makes changes to the services can also be in charge of making changes to those parts of the UI, allowing to get changes out faster.
+
+Downsides:
+
+- We need to ensure consistency of the user experience, CSS and HTML style guides can help.
+- Not ideal for native interfaces, it would require falling back to the API composition model.
+- The more cross-cutting a form of interaction is, the less likely this model will fit, falling back to the API composition model.
+
+### Backends for Frontends
+
+A common solution to the problem of chatty interfaces with backend services, or the need to vary content for different types of devices, is to have a server-side aggregation endpoint, or **API gateway**.
+
+![Image](./images/api-gateway.png)
+
+The problem that can occur is that normally we’ll have one giant layer for all our services, losing ability to deploy clients independently.
+
+A model that solves this problem is **Backends for frontends** (*BFFs*), it restricts the use of backends for a specific client.
+
+![Image](./images/backends-for-frontends.png)
+
+The danger with this approach is the same as with any aggregating layer: it can take on logic it shouldn’t. These BFFs should only contain behavior specific to delivering a particular user experience.
+
+### A Hybrid Approach
+
+Some systems use different models together (e.g. BFFs for mobile and UI fragment composition for web). The tricky part still remains avoiding putting too much login into any intermediate layer. This causes coupling and low cohesion.
+
+## Integrating with Third-Party Software
+
