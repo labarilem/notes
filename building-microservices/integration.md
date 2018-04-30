@@ -2,10 +2,10 @@
 
 Desirable properties of communication between microservices:
 
-- Avoid breaking changes as much as possible
-- Technology agnostic APIs
-- Make it easy to consume APIs
-- Hidden internal implementation details
+- Avoid breaking changes as much as possible.
+- Technology agnostic APIs.
+- Make it easy to consume APIs.
+- Hidden internal implementation details.
 
 ## Shared database
 
@@ -15,9 +15,9 @@ The most common form of integration.
 
 Has the following issues:
 
-- Internal representations are not private, causing high coupling
-- Logic to modify some kind of data is present in different services, causing loss of cohesion
-- Every kind of data must be stored using the same DBMS technology
+- Internal representations are not private, causing high coupling.
+- Logic to modify some kind of data is present in different services, causing loss of cohesion.
+- Every kind of data must be stored using the same DBMS technology.
 
 These issues would eliminate the benefits of using microservices, so shared databases are to avoid.
 
@@ -48,9 +48,9 @@ The selling point of RPC is ease of use: it's really practical to make a remote 
 
 However, RPC has issues too:
 
-- Usually it causes technology coupling between client and server
-- Local calls must not be confused with remote calls, because of latency and unreliability
-- Brittleness, because server signatures and interfaces need to match exactly the ones in the client
+- Usually it causes technology coupling between client and server.
+- Local calls must not be confused with remote calls, because of latency and unreliability.
+- Brittleness, because server signatures and interfaces need to match exactly the ones in the client.
 
 Compared to database integration, RPC is certainly an improvement when we think about options for request/response collaboration.
 
@@ -73,10 +73,10 @@ XML has built-in support for hypermedia while there are standards to provide hyp
 
 ### Downsides to REST Over HTTP
 
-- Not easy to generate stubs for REST over HTTP services as it would be with RPC
-- Some web servers do not *fully* support all the HTTP verbs
-- Performance is penalized because of hypermedia data and HTTP overhead
-- HTTP is not suited for frequently exchanging small volumes of data, WebSockets or protocol buffers are more suitable for this kind of communication
+- Not easy to generate stubs for REST over HTTP services as it would be with RPC.
+- Some web servers do not *fully* support all the HTTP verbs.
+- Performance is penalized because of hypermedia data and HTTP overhead.
+- HTTP is not suited for frequently exchanging small volumes of data, WebSockets or protocol buffers are more suitable for this kind of communication.
 
 Despite these disadvantages, REST over HTTP is a sensible default choice for service-to-service interactions.
 
@@ -107,8 +107,8 @@ It's also important to give clients control on when to upgrade their client libr
 Sometimes it may happen to pass around outdated information: we request a *Customer* and then we use that customer in another request, but in the meanwhile it has changed.
 In order to retrieve the current state, such requests must include an ID of the involved resources. But this approach has downsides too:
 
-- It may cause the *Customers* service to be accessed too much
-- It causes overhead in requests
+- It may cause the *Customers* service to be accessed too much.
+- It causes overhead in requests.
 
 This is a tradeoff to consider. The point is: be aware of the freshness of data passed between microservices.
 
@@ -116,7 +116,7 @@ This is a tradeoff to consider. The point is: be aware of the freshness of data 
 
 The following points can help you have a good service versioning in your system:
 
-- Defer breaking changes as long as possible (e.g. by using the *Tolerant reader* pattern)
+- Defer breaking changes as long as possible (e.g. by using the *Tolerant reader* pattern).
 - Robustness principle: “*Be conservative in what you do, be liberal in what you accept from others*”.
 - Catch breaking changes early, tests help a lot here.
 - Use semantic versioning.
