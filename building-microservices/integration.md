@@ -176,3 +176,23 @@ Some systems use different models together (e.g. BFFs for mobile and UI fragment
 
 ## Integrating with Third-Party Software
 
+Challenges associated with integrating third-party software into your system:
+
+- **Lack of control:** probably many of the technical decisions have been made for you to simplify product usage. The tool selection process should take into account ease of use of third-party software.
+- **Customization:** many enterprise tools sell themselves on their ability to be heavily customized just for you. But the cost of customization can be more expensive than building something bespoke from scratch.
+- **Integration spaghetti:** ideally you want to standardize on a small number of types of integration. If one product forces you tu use proprietary protocols, it could mean troubles.
+
+Best practices:
+
+- Treat third-party software as a service and place all the customization code in services you control, if possible.
+- When moving away from integrated COTS or legacy software, adopt the **Strangler Application Pattern**: intercept calls to such software and route them either to the legacy services or to your new services. This allows for a gradual switch.
+
+## Summary
+
+To ensure our microservices remain as decoupled as possible from their other collaborators:
+
+- Avoid database integration at all costs.
+- Understand the trade-offs between REST and RPC, but strongly consider REST as a good starting point for request/response integration.
+- Prefer choreography over orchestration.
+- Avoid breaking changes and the need to version by understanding Postel’s Law and using tolerant readers.
+- Think of user interfaces as compositional layers.
