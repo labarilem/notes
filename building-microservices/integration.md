@@ -58,7 +58,7 @@ Compared to database integration, RPC is certainly an improvement when we think 
 
 REpresentational State Transfer (REST) is an architectural style inspired by the Web. The most important concept is the one of resource, which can be requested in different representations. This favours decoupling between internal and external representations.
 
-There are many different styles of REST, compared in the Richardson Maturity Model.
+There are many different styles of REST, compared in the [Richardson Maturity Model](https://martinfowler.com/articles/richardsonMaturityModel.html).
 
 Usually REST is implemented over HTTP because HTTP provides parts of the REST specification, such as verbs. Also, there are lots of tools supporting REST with HTTP.
 
@@ -89,7 +89,7 @@ To implement asynchronous event-based collaboration we need to consider:
 
 Traditionally, **message brokers** like RabbitMQ can handle both problems, while also being able to scale and have resiliency.
 
-But note that this kind of collaboration comes with a system complexity increase (e.g. if you're not careful, you could have **catastrophic failovers** as intended by Martin Fowler).
+But note that this kind of collaboration comes with a system complexity increase (e.g. if you're not careful, you could have [catastrophic failovers](https://martinfowler.com/bliki/CatastrophicFailover.html) as intended by Martin Fowler).
 
 **Reactive extensions** can help you a lot when handling lots of calls to downstream services. They are a popular choice in distributed systems.
 
@@ -120,7 +120,7 @@ The following points can help you have a good service versioning in your system:
 - Robustness principle: “*Be conservative in what you do, be liberal in what you accept from others*”.
 - Catch breaking changes early, tests help a lot here.
 - Use semantic versioning.
-- Have coexisting service versions to gradually adopt the new version in the system. Another option is to concurrently deploy microservices of different versions, but suppose you need to fix a bug in the service, then you would need to deploy 2 different services. Still this is a good approach if you are doing blue/green deploys.
+- Have coexisting service versions to gradually adopt the new version in the system. Another option is to concurrently deploy microservices of different versions, but suppose you need to fix a bug in the service, then you would need to deploy 2 different services. Still, this is a good approach if you are doing blue/green deploys.
 
 ## User interfaces
 
@@ -172,7 +172,7 @@ The danger with this approach is the same as with any aggregating layer: it can 
 
 ### A Hybrid Approach
 
-Some systems use different models together (e.g. BFFs for mobile and UI fragment composition for web). The tricky part still remains avoiding putting too much login into any intermediate layer. This causes coupling and low cohesion.
+Some systems use different models together (e.g. BFFs for mobile and UI fragment composition for web). The tricky part still remains avoiding putting too much logic into any intermediate layer. This causes coupling and low cohesion.
 
 ## Integrating with Third-Party Software
 
