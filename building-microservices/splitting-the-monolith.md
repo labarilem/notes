@@ -73,9 +73,22 @@ Transactions are typically used in databases, but they can be supported but othe
 
 Splitting schemas will cause the loss of transactional integrity in our system. There are several solutions to this problem:
 
-- A *try again later* mechanism, but this alone is not sufficient since it assumes that eventually a failed request will be successful. This is a form of **eventual consistency**: rather than
-using a transactional boundary to ensure that the system is in a consistent state when the transaction completes, instead we accept that the system will get itself into a consistent state at some point in the future.
-- **Compensating trasactions** can be used to undo the committed transactions preceding a failed operation. But what if a compensating transaction fails? We would need other mechanism such as autoamted jobs or human administration. Also, this mechanism becomes more difficult to manage as the numeber of operations increases in transactions.
-- **Distributed transactions**
+- A **try again later** mechanism, but this alone is not sufficient since it assumes that eventually a failed request will be successful. This is a form of **eventual consistency**: rather than using a transactional boundary to ensure that the system is in a consistent state when the transaction completes, instead we accept that the system will get itself into a consistent state at some point in the future.
+- **Compensating transactions** can be used to undo the committed transactions preceding a failed operation. But what if a compensating transaction fails? We would need other mechanism such as automated jobs or human administration. Also, this mechanism becomes more difficult to manage as the number of operations increases in transactions.
+- **Distributed transactions** are transactions done across different process or network boundaries. They are orchestrated by a *transaction manager*. The most common algorithm handling short-lived distributed transactions is **two-phase commit**. With a two-phase commit, first comes the voting phase: each participant in the distributed transaction tells the transaction manager whether it thinks its local transaction can be completed. If the transaction manager gets a yes vote from everyone, then it tells them all to go ahead and perform their commits. A single no vote is enough for the transaction manager to send out a rollback to all parties. Distributed transactions make scaling systems much more difficult, since the transaction manager is a single point of failure and waiting for response while locking resources can cause outages. Also, there is no guarantee that the transactions are actually committed when the clients approve them.
+
+Each of these solutions adds complexity. Before implementing business operations happening in a transaction, ask yourself: can they happen in different, local transactions, and rely on the concept of eventual consistency? These systems are much easier to build and scale.
+
+If you do encounter state that really needs to be kept consistent, try to avoid splitting it. If you really need to split it, try moving from a purely technical view of the process (e.g., a database transaction) and actually create a concrete concept to represent the transaction. This gives you a hook on which to run other operations like compensating transactions, and a way to monitor and manage these more complex concepts in your system.
+
+## Reporting
+
+When splitting data, we'll come across the problem of splitting reporting data too.
+
+### The Reporting Database
+
+In monolithic systems, aggregating data for reporting is easy. Usually reporting is implemented like this:
+
+![Image](./images/reporting-mono-db.png)
 
 # WIP
