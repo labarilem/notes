@@ -91,4 +91,32 @@ In monolithic systems, aggregating data for reporting is easy. Usually reporting
 
 ![Image](./images/reporting-mono-db.png)
 
+Benefits:
+
+- All data is one place so it's easy to query it.
+
+Downsides:
+
+- The db schema is a shared API between the monolith and the reporting service.
+- Cannot optimize schema structure for both use cases. Either the db is optimized for the monolith or the reporting.
+- Cannot use different technology that could be more efficient for reporting.
+
+There are several alternatives to this approach when our data is distributed across different services.
+
+### Data Retrieval via Service Calls
+
+A very simple approach: call service APIs and aggregate the results for reporting.
+
+Benefits:
+
+- Easy to implement and works well for small volumes of data (e.g. #orders placed in the last 15 minutes).
+
+Downsides:
+
+- Breaks down when trying to do reporting with large volumes of data (e.g. customer behaviour of last 24 months).
+- Reporting systems usually need to integrate with third-party tools over SQL-like interfaces, this approach would require extra work.
+- The API may not have been designed for reporting, leading to an inefficient reporting system and general slowdown. Caching can help, but reporting data is usually historic so there would be a lot of expensive cache misses. Adding reporting-specific APIs can help.
+
+### Data Pumps
+
 # WIP
