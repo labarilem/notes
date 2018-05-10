@@ -4,7 +4,7 @@ Why would you want to split a monolith?
 
 - There are lots of changes coming to a part of the monolith, splitting that part into a service will make you roll out those changes faster.
 - Separate teams work on separate parts of the monolith.
-- A part of the monolith requires increased security measures not needed by the rest of the system.
+- A part of the monolith requires high security measures not needed by the rest of the system.
 - A part of the monolith can be improved by switching technology.
 
 How do we go about decomposing monolithic applications without having to embark on a big-bang rewrite?
@@ -53,12 +53,11 @@ Usually this means we need a *Customer* microservice to handle that data. This s
 
 ### Shared tables
 
-Let's suppose we have different services accessing a table which aggregates different informations in the same record (catalog entry and stock level).
+Let's suppose we have different services accessing a table which aggregates different information in the same record (catalog entry and stock level).
 
 ![Image](./images/db-shared-tables-before.png)
 
-The answer here is to split the table in two, creating a
-stock levels table for the *Warehouse* and a catalog entry table for the *Catalog*.
+The answer here is to split the table in two, creating a stock levels table for the *Warehouse* and a catalog entry table for the *Catalog*.
 
 ### Staging the break
 
@@ -66,8 +65,7 @@ The best way to commit the database changes would be to keep the services togeth
 
 ### Transactional Boundaries
 
-Transactions allow us to say that operations either all happen
-together, or none of them happen.
+Transactions allow us to say that operations either all happen together, or none of them happen.
 
 Transactions are typically used in databases, but they can be supported but other systems such as message brokers.
 
@@ -113,10 +111,52 @@ Benefits:
 
 Downsides:
 
-- Breaks down when trying to do reporting with large volumes of data (e.g. customer behaviour of last 24 months).
+- Breaks down when trying to do reporting with large volumes of data (e.g. customer behavior of last 24 months).
 - Reporting systems usually need to integrate with third-party tools over SQL-like interfaces, this approach would require extra work.
 - The API may not have been designed for reporting, leading to an inefficient reporting system and general slowdown. Caching can help, but reporting data is usually historic so there would be a lot of expensive cache misses. Adding reporting-specific APIs can help.
 
 ### Data Pumps
 
-# WIP
+Rather than have the reporting system pull the data, the data can instead be pushed to the reporting system. This *data pump* needs to have intimate knowledge of both the internal database for the service, and also the reporting schema. The pump’s job is to map one from the other.
+
+![Image](./images/reporting-materialized-views.png)
+
+Benefits:
+
+- Can handle large amounts of data without maintaining a reporting-specific API.
+
+Downsides:
+
+- Causes coupling with the reporting db schema. The reporting service must be treated as a published API that is hard to change. There is also a potential mitigation: exposing only specific schemas that are mapped to an underlying monolithic schema, but this can cause performance issues depending on the db technology choice.
+
+### Event Data Pump
+
+We can write a subscriber listening to microservices events that pushes data in the reporting db.
+
+Benefits:
+
+- Avoids coupling between db schemas.
+- Can see reported data as it happens, opposed to wait for a scheduled data transfer.
+- It is easier to only process new events (i.e. *deltas*), while with a data pump we would need to write the code ourselves.
+- The event mapper can be managed by a different team, and it can evolve independently of the services.
+
+Downsides:
+
+- All information must be broadcast as event. It may not scale well with large volumes of data, for which a data pump is more efficient.
+
+### Backup data pump
+
+Using backup data as a source for reporting. This approach was taken by Netflix: backed up Cassandra tables would be stored in Amazon's S3 object store and accessed by Hadoop for reporting. This ended up as a tool named [Aegisthus](https://github.com/Netflix/aegisthus).
+
+Benefits:
+
+- Can handle enormous amounts of data.
+- Efficient if there is already a backup system in place.
+
+Downsides:
+
+- Has coupling with the reporting db schema.
+
+## Summary
+
+We decompose our system by finding seams along which service boundaries can emerge, and this can be an incremental approach. This way, costs of errors are mitigated and we can continue to evolve the system as we proceed.
