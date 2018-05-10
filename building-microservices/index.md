@@ -7,3 +7,4 @@
 - [Chapter 3, How to model services](./how-to-model-services.md)
 - [Chapter 4, Integration](./integration.md)
 - [Chapter 5, Splitting the monolith](./splitting-the-monolith.md)
+- [Chapter 6, Deployment](./deployment.md)
