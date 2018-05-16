@@ -147,6 +147,35 @@ Having multiple instances of your service per host.
 
 Benefits:
 
+- Simpler work for the team that manages the infrastructure.
+- Using host virtualization can add overhead and thus increase costs.
+- Easier for developers to deploy: a deploy with this setup works like a deploy to a dev machine.
+
 Downsides:
+
+- Make monitoring more difficult (e.g. monitor the host CPU usage or each instance?).
+- Causes side effects (e.g. when a service is under heavy load, it's likely some other service instances will slow down too).
+- Need to ensure that a service deployment does not affect other services on the same host.
+  Usually this is solved by deploying all service in one step, thus losing ability to deploy independently.
+- Autonomy of teams is inhibited in case services of different teams are deployed to the same host.
+- Cannot deploy images and immutable servers.
+- It can be complicated to target scaling at a service in a host.
+- If a service handles sensitive data or has different needs (e.g. another network segment), you cannot deploy it with the others.
+
+### Application Containers
+
+Use an application container (e.g. IIS or Java servlet container) that provides utilities such as management, monitoring and scaling of services.
+
+![Image](images/application-container-deploy.png)
+
+Benefits:
+
+- Has too for managing monitoring, scaling and other aspects.
+- If all services require the same runtime, this approach reduces overhead (e.g. for *n* Java services only a single JVM instance is needed).
+
+Downsides:
+
+- Technology choice and tools that automate services management are constrained.
+
 
 # WIP
