@@ -175,7 +175,111 @@ Benefits:
 
 Downsides:
 
-- Technology choice and tools that automate services management are constrained.
+- Technology choice and tools that automate services management are constrained. Losing automation here means having to do a lot of work in managing services.
+- Usually slow spin-up times, slowing feedback for developers.
+- Analyzing resources use is hard, as you have multiple applications sharing a single process.
+- Application containers have their own resource consumption overhead.
 
+### Single Service per Host
 
-# WIP
+A host contains only a single service.
+
+![Image](images/single-service-per-host-deploy.png)
+
+Benefits:
+
+- Easier to monitor resources usage.
+- Easier to avoid the side effects of having multiple services in a single host.
+- Reduces complexity of your system.
+
+Downsides:
+
+- More hosts mean more servers to manage and costs might increase.
+
+You can mitigate the complexity of managing more hosts by using a **platform as a service** (PaaS). This way, the host management problem is simplified, but you lose control over your hosts.
+
+*Tip: some PaaS try to automate too much (e.g. automate scaling), making them less effective for your specific use case.*
+
+## Automation
+
+Automation is the solution to many of the problems we have raised so far.
+
+One of the pushbacks for switching to single service per host is the perception that the amount of overhead for management will increase. If you do everything manually, it surely will, but automation will prevent this issue.
+
+Automation also allow developers to be productive, especially if they have access to the same technologies used in production because it will help catch bugs early on.
+
+Embracing a culture of automation is key if you want to keep the complexities of microservice architectures in check.
+
+## From Physical to Virtual
+
+One of the key tools available to us in managing a large number of hosts is finding ways
+of chunking up existing physical machines into smaller parts.
+
+### Traditional Virtualization
+
+Having lots of hosts can be really expensive if you need a physical server per host. By virtualizing you can split a physical machine in separate parts but of course this comes with an overhead.
+
+For example, in *Type 2* virtualization, the *hypervisor* sets aside resources for each virtual machine it manages, but these resources could be used for something else instead of being idle and reserved.
+
+![Image](images/type-2-virtualization.png)
+
+#### Vagrant
+
+A deployment platform usually employed for development and testing. It allows to define instructions about how to setup and configure VMs. This makes it easier for you to create production-like environments on your local machine.
+
+One of the downsides is that if we have one service to one VM, you may not be able to bring up
+your entire system on your local machine.
+
+### Linux containers
+
+Linux containers, instead of using an hypervisor, create a separate process space in which other processes live.
+
+![Image](images/container-virtualization.png)
+
+Each container is effectively a subtree of the overall system process tree. These containers can have physical resources allocated to them, something the kernel handles for us.
+
+Benefits:
+
+- No need for an hypervisor.
+- Much faster to provision than traditional VMs.
+- Finer-grained control over resources assignation.
+- Since they are lighter than VMs, we can have more containers running on the same host.
+
+Downsides:
+
+- The host OS has to share the same kernel with the base OS.
+- Not as isolated from other processes as VMs, not suitable for running code you don't trust.
+- How to expose containers to the outer world? A specific network configuration is needed, something that is usually provided by hypervisors.
+
+### Docker
+
+Docker is a platform built on top of lightweight containers. Docker manages the container provisioning, handles some of the networking problems and provides its own registry that allows you to store and version Docker applications.
+
+Docker can also alleviate some of the downsides of running lots of services locally for dev and test purposes, in a more efficient way than Vagrant.
+
+Several technologies are build around the Docker concepts, such as [CoreOS](https://coreos.com/), a stripped-down Linux OS that provides only the essential services to allow Docker to run.
+
+Docker itself doesn’t solve all problems for us. Think of it as a simple PaaS that works on a single machine. If you want tools to help you manage services across multiple Docker instances across multiple machines, you’ll need to look at software such as [Kubernetes](https://kubernetes.io/) or CoreOS.
+
+## A Deployment Interface
+
+Whatever underlying platform or artifacts you use, having a uniform interface to deploy a given service is vital to easily deploy microservices to development, test, production and other environments.
+
+A good way to trigger deployments is via CLI tools, because it can be triggered by other scripts, used in CI and called manually.
+
+We need some information for a deploy:
+
+1. What microservice we want to deploy.
+2. What version of said microservice we want to deploy.
+3. What environment we want our microservice deployed into.
+
+For this to work, we need to define in some way what our environments look like. YAML could be a good way of expressing our environments definitions.
+
+## Summary
+
+Main points collected in this chapter:
+
+- Maintain the ability to deploy microservices independently.
+- Separate source code and CI builds for each microservices.
+- Use a single-service per host/container model. Evaluate the tooling aiming for high levels of automation.
+- Understand how deployment choices affects developers. Creating tools that help deploying to different environments helps a lot.
