@@ -8,3 +8,4 @@
 - [Chapter 4, Integration](./integration.md)
 - [Chapter 5, Splitting the monolith](./splitting-the-monolith.md)
 - [Chapter 6, Deployment](./deployment.md)
+- [Chapter 7, Testing](./testing.md)
