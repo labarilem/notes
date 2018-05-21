@@ -1,0 +1,24 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Notes\n\n\nNotes about various topics, courses, books, etc.\n\n\n\n\nBitcoin and cryptocurrency technologies\n\n\nBuilding microservices", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#notes", 
+            "text": "Notes about various topics, courses, books, etc.   Bitcoin and cryptocurrency technologies  Building microservices", 
+            "title": "Notes"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/", 
+            "text": "Bitcoin and cryptocurrency technologies\n\n\n\n\nCryptographic hash functions\n\n\nDigital signature\n\n\nHash pointers and data structures\n\n\nCentralization and decentralization\n\n\nDistributed consensus", 
+            "title": "Bitcoind and cryptocurrency technologies"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/#bitcoin-and-cryptocurrency-technologies", 
+            "text": "Cryptographic hash functions  Digital signature  Hash pointers and data structures  Centralization and decentralization  Distributed consensus", 
+            "title": "Bitcoin and cryptocurrency technologies"
+        }
+    ]
+}
