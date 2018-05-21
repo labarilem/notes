@@ -1,0 +1,94 @@
+docs_dir: notes
+
+# Project information
+site_name: Notes
+site_description: Notes about various topics, courses, books, etc.
+site_author: Marco Labarile
+site_url: https://marcolabarile.me/notes/
+
+# Repository
+repo_name: labarilem/notes
+repo_url: https://github.com/labarilem/notes
+edit_uri: ""
+
+# Copyright
+# copyright: ''
+
+# Configuration
+theme:
+  name: 'material'
+
+  # 404 page
+  static_templates:
+    - 404.html
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  feature:
+    tabs: false
+  palette:
+    primary: blue grey
+    accent: teal
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/images/favicon-16x16.png
+  logo:
+    icon: "\uE80C"
+
+# Customization
+extra:
+  social:
+    - type: github-alt
+      link: https://github.com/labarilem
+    - type: linkedin
+      link: https://www.linkedin.com/in/marcolabarile/
+
+# Extensions
+markdown_extensions:
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Page tree
+pages:
+  - Home: index.md
+  - Bitcoind and cryptocurrency technologies: bitcoin-and-cryptocurrency-technologies/index.md
+#   - Extensions:
+#     - Admonition: extensions/admonition.md
+#     - CodeHilite: extensions/codehilite.md
+#     - Footnotes: extensions/footnotes.md
+#     - Metadata: extensions/metadata.md
+#     - Permalinks: extensions/permalinks.md
+#     - PyMdown: extensions/pymdown.md
+#   - Specimen: specimen.md
+
+#   - Author's notes: authors-notes.md
+#   - Contributing: contributing.md
+#   - License: license.md
