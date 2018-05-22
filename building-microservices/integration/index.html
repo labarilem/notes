@@ -1,0 +1,1097 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Notes about various topics, courses, books, etc.">
+      
+      
+        <link rel="canonical" href="https://marcolabarile.me/notes/building-microservices/integration/">
+      
+      
+        <meta name="author" content="Marco Labarile">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
+    
+    
+      
+        <title>Integration - Marco Labarile - Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#integration" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://marcolabarile.me/notes/" title="Marco Labarile - Notes" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Marco Labarile - Notes
+              </span>
+              <span class="md-header-nav__topic">
+                Integration
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/labarilem/notes" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      labarilem/notes
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Marco Labarile - Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/labarilem/notes" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      labarilem/notes
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Bitcoin and cryptocurrency technologies
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Bitcoin and cryptocurrency technologies
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/" title="Cryptographic hash functions" class="md-nav__link">
+      Cryptographic hash functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/digital-signature/" title="Digital signature" class="md-nav__link">
+      Digital signature
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/" title="Hash pointers" class="md-nav__link">
+      Hash pointers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization/" title="Centralization and decentralization" class="md-nav__link">
+      Centralization and decentralization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/distributed-consensus/" title="Distributed consensus" class="md-nav__link">
+      Distributed consensus
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Building microservices
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Building microservices
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../microservices/" title="Microservices" class="md-nav__link">
+      Microservices
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../evolutionary-architects/" title="Evolutionary architects" class="md-nav__link">
+      Evolutionary architects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../how-to-model-services/" title="How to model services" class="md-nav__link">
+      How to model services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Integration
+      </label>
+    
+    <a href="./" title="Integration" class="md-nav__link md-nav__link--active">
+      Integration
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shared-database" title="Shared database" class="md-nav__link">
+    Shared database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synchronous-vs-asynchronous" title="Synchronous vs Asynchronous" class="md-nav__link">
+    Synchronous vs Asynchronous
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#orchestration-vs-choreography" title="Orchestration vs Choreography" class="md-nav__link">
+    Orchestration vs Choreography
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-procedure-calls" title="Remote procedure calls" class="md-nav__link">
+    Remote procedure calls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest" title="REST" class="md-nav__link">
+    REST
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hateoas" title="HATEOAS" class="md-nav__link">
+    HATEOAS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serialization-format" title="Serialization format" class="md-nav__link">
+    Serialization format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downsides-to-rest-over-http" title="Downsides to REST Over HTTP" class="md-nav__link">
+    Downsides to REST Over HTTP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-asynchronous-event-based-collaboration" title="Implementing Asynchronous Event-Based Collaboration" class="md-nav__link">
+    Implementing Asynchronous Event-Based Collaboration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dry-in-microservices" title="DRY in Microservices" class="md-nav__link">
+    DRY in Microservices
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-libraries" title="Client libraries" class="md-nav__link">
+    Client libraries
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-by-reference" title="Access by Reference" class="md-nav__link">
+    Access by Reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-versioning" title="Service versioning" class="md-nav__link">
+    Service versioning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-interfaces" title="User interfaces" class="md-nav__link">
+    User interfaces
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-composition" title="API composition" class="md-nav__link">
+    API composition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ui-fragment-composition" title="UI Fragment composition" class="md-nav__link">
+    UI Fragment composition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backends-for-frontends" title="Backends for Frontends" class="md-nav__link">
+    Backends for Frontends
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-hybrid-approach" title="A Hybrid Approach" class="md-nav__link">
+    A Hybrid Approach
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrating-with-third-party-software" title="Integrating with Third-Party Software" class="md-nav__link">
+    Integrating with Third-Party Software
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../splitting-the-monolith/" title="Splitting the monolith" class="md-nav__link">
+      Splitting the monolith
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../deployment/" title="Deployment" class="md-nav__link">
+      Deployment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../testing/" title="Testing" class="md-nav__link">
+      Testing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../specimen/" title="Specimen" class="md-nav__link">
+      Specimen
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shared-database" title="Shared database" class="md-nav__link">
+    Shared database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synchronous-vs-asynchronous" title="Synchronous vs Asynchronous" class="md-nav__link">
+    Synchronous vs Asynchronous
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#orchestration-vs-choreography" title="Orchestration vs Choreography" class="md-nav__link">
+    Orchestration vs Choreography
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-procedure-calls" title="Remote procedure calls" class="md-nav__link">
+    Remote procedure calls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest" title="REST" class="md-nav__link">
+    REST
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hateoas" title="HATEOAS" class="md-nav__link">
+    HATEOAS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serialization-format" title="Serialization format" class="md-nav__link">
+    Serialization format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downsides-to-rest-over-http" title="Downsides to REST Over HTTP" class="md-nav__link">
+    Downsides to REST Over HTTP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-asynchronous-event-based-collaboration" title="Implementing Asynchronous Event-Based Collaboration" class="md-nav__link">
+    Implementing Asynchronous Event-Based Collaboration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dry-in-microservices" title="DRY in Microservices" class="md-nav__link">
+    DRY in Microservices
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-libraries" title="Client libraries" class="md-nav__link">
+    Client libraries
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-by-reference" title="Access by Reference" class="md-nav__link">
+    Access by Reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-versioning" title="Service versioning" class="md-nav__link">
+    Service versioning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-interfaces" title="User interfaces" class="md-nav__link">
+    User interfaces
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-composition" title="API composition" class="md-nav__link">
+    API composition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ui-fragment-composition" title="UI Fragment composition" class="md-nav__link">
+    UI Fragment composition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backends-for-frontends" title="Backends for Frontends" class="md-nav__link">
+    Backends for Frontends
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-hybrid-approach" title="A Hybrid Approach" class="md-nav__link">
+    A Hybrid Approach
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrating-with-third-party-software" title="Integrating with Third-Party Software" class="md-nav__link">
+    Integrating with Third-Party Software
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="integration">Integration<a class="headerlink" href="#integration" title="Permanent link">&para;</a></h1>
+<p>Desirable properties of communication between microservices:</p>
+<ul>
+<li>Avoid breaking changes as much as possible.</li>
+<li>Technology agnostic APIs.</li>
+<li>Make it easy to consume APIs.</li>
+<li>Hidden internal implementation details.</li>
+</ul>
+<h2 id="shared-database">Shared database<a class="headerlink" href="#shared-database" title="Permanent link">&para;</a></h2>
+<p>The most common form of integration.</p>
+<p><img alt="Image" src="../images/shared-db.png" /></p>
+<p>Has the following issues:</p>
+<ul>
+<li>Internal representations are not private, causing high coupling.</li>
+<li>Logic to modify some kind of data is present in different services, causing loss of cohesion.</li>
+<li>Every kind of data must be stored using the same DBMS technology.</li>
+</ul>
+<p>These issues would eliminate the benefits of using microservices, so shared databases are to avoid.</p>
+<h2 id="synchronous-vs-asynchronous">Synchronous vs Asynchronous<a class="headerlink" href="#synchronous-vs-asynchronous" title="Permanent link">&para;</a></h2>
+<p><strong>Synchronous communication</strong> starts with a blocking call to the server that resolves once the operation completes. It's easy to debug but lacks capabilities to effectively handle long-running processes.</p>
+<p><strong>Asynchronous communication</strong> does not wait for the server to respond. In theory, a client may even not need to know if the server completed the operation. It's not easy to debug but can effectively handle long-running processes.</p>
+<p>These two different modes of communication can enable two different styles of collaboration:</p>
+<ul>
+<li><strong>Request/response:</strong> natural fit to synchronous communication, can handle asynchronous communication too using callbacks.</li>
+<li><strong>Event-based:</strong> natural fit to asynchronous communication. It's more flexible since a client just issues an event, allowing for more services to listen on that event later on, without modifying the client's code.</li>
+</ul>
+<h2 id="orchestration-vs-choreography">Orchestration vs Choreography<a class="headerlink" href="#orchestration-vs-choreography" title="Permanent link">&para;</a></h2>
+<p><strong>Orchestration</strong> means having an orchestrator service that instructs other services on what to do and organizes the whole flow. This provides a clear view of the whole flow but can cause coupling if the orchestrator becomes a “god” microservice.</p>
+<p><strong>Choreography</strong> means that services can issue or listen to events. This approach keeps services decoupled but can make it hard to understand the whole flow.</p>
+<h2 id="remote-procedure-calls">Remote procedure calls<a class="headerlink" href="#remote-procedure-calls" title="Permanent link">&para;</a></h2>
+<p>Remote procedure call refers to the technique of making a local call and having it execute on a remote service somewhere.</p>
+<p>RPC fit well with the request/response collaboration style.</p>
+<p>The selling point of RPC is ease of use: it's really practical to make a remote call look like a local call.</p>
+<p>However, RPC has issues too:</p>
+<ul>
+<li>Usually it causes technology coupling between client and server.</li>
+<li>Local calls must not be confused with remote calls, because of latency and unreliability.</li>
+<li>Brittleness, because server signatures and interfaces need to match exactly the ones in the client.</li>
+</ul>
+<p>Compared to database integration, RPC is certainly an improvement when we think about options for request/response collaboration.</p>
+<h2 id="rest">REST<a class="headerlink" href="#rest" title="Permanent link">&para;</a></h2>
+<p>REpresentational State Transfer (REST) is an architectural style inspired by the Web. The most important concept is the one of resource, which can be requested in different representations. This favours decoupling between internal and external representations.</p>
+<p>There are many different styles of REST, compared in the <a href="https://martinfowler.com/articles/richardsonMaturityModel.html">Richardson Maturity Model</a>.</p>
+<p>Usually REST is implemented over HTTP because HTTP provides parts of the REST specification, such as verbs. Also, there are lots of tools supporting REST with HTTP.</p>
+<h3 id="hateoas">HATEOAS<a class="headerlink" href="#hateoas" title="Permanent link">&para;</a></h3>
+<p>Another principle introduced in REST that can help us avoid the coupling between client and server is the concept of <strong>hypermedia as the engine of application state</strong> (often abbreviated as HATEOAS). One of the downsides is that the navigation of controls can be quite chatty, as the client needs to follow links to find the operation it wants to perform. Ultimately, this is a trade-off.</p>
+<h3 id="serialization-format">Serialization format<a class="headerlink" href="#serialization-format" title="Permanent link">&para;</a></h3>
+<p>REST provides flexibility over the serialization format of the data. The most popular choices are JSON and XML.
+XML has built-in support for hypermedia while there are standards to provide hypermedia data with JSON.</p>
+<h3 id="downsides-to-rest-over-http">Downsides to REST Over HTTP<a class="headerlink" href="#downsides-to-rest-over-http" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Not easy to generate stubs for REST over HTTP services as it would be with RPC.</li>
+<li>Some web servers do not <em>fully</em> support all the HTTP verbs.</li>
+<li>Performance is penalized because of hypermedia data and HTTP overhead.</li>
+<li>HTTP is not suited for frequently exchanging small volumes of data, WebSockets or protocol buffers are more suitable for this kind of communication.</li>
+</ul>
+<p>Despite these disadvantages, REST over HTTP is a sensible default choice for service-to-service interactions.</p>
+<h2 id="implementing-asynchronous-event-based-collaboration">Implementing Asynchronous Event-Based Collaboration<a class="headerlink" href="#implementing-asynchronous-event-based-collaboration" title="Permanent link">&para;</a></h2>
+<p>To implement asynchronous event-based collaboration we need to consider:</p>
+<ul>
+<li>A way for our microservices to emit events.</li>
+<li>A way for our consumers to find out those events have happened.</li>
+</ul>
+<p>Traditionally, <strong>message brokers</strong> like RabbitMQ can handle both problems, while also being able to scale and have resiliency.</p>
+<p>But note that this kind of collaboration comes with a system complexity increase (e.g. if you're not careful, you could have <a href="https://martinfowler.com/bliki/CatastrophicFailover.html">catastrophic failovers</a> as intended by Martin Fowler).</p>
+<p><strong>Reactive extensions</strong> can help you a lot when handling lots of calls to downstream services. They are a popular choice in distributed systems.</p>
+<h2 id="dry-in-microservices">DRY in Microservices<a class="headerlink" href="#dry-in-microservices" title="Permanent link">&para;</a></h2>
+<p>Following the DRY principle can cause coupling between microservices. As a general rule, DRY is to be followed only inside service boundaries. Across different services, code duplication is a smaller problem than coupling. An exception to this rule can be model-agnostic code such as logging, which can be safely shared between microservices.</p>
+<h3 id="client-libraries">Client libraries<a class="headerlink" href="#client-libraries" title="Permanent link">&para;</a></h3>
+<p>Client libraries can cause coupling between services and clients. To limit this danger, it's best if different developer teams develop the server API and the client library: this way there should be no "logic leaks" from the server into the client.
+It's also important to give clients control on when to upgrade their client libraries, to avoid coupling in deploys.</p>
+<h2 id="access-by-reference">Access by Reference<a class="headerlink" href="#access-by-reference" title="Permanent link">&para;</a></h2>
+<p>Sometimes it may happen to pass around outdated information: we request a <em>Customer</em> and then we use that customer in another request, but in the meanwhile it has changed.
+In order to retrieve the current state, such requests must include an ID of the involved resources. But this approach has downsides too:</p>
+<ul>
+<li>It may cause the <em>Customers</em> service to be accessed too much.</li>
+<li>It causes overhead in requests.</li>
+</ul>
+<p>This is a tradeoff to consider. The point is: be aware of the freshness of data passed between microservices.</p>
+<h2 id="service-versioning">Service versioning<a class="headerlink" href="#service-versioning" title="Permanent link">&para;</a></h2>
+<p>The following points can help you have a good service versioning in your system:</p>
+<ul>
+<li>Defer breaking changes as long as possible (e.g. by using the <em>Tolerant reader</em> pattern).</li>
+<li>Robustness principle: “<em>Be conservative in what you do, be liberal in what you accept from others</em>”.</li>
+<li>Catch breaking changes early, tests help a lot here.</li>
+<li>Use semantic versioning.</li>
+<li>Have coexisting service versions to gradually adopt the new version in the system. Another option is to concurrently deploy microservices of different versions, but suppose you need to fix a bug in the service, then you would need to deploy 2 different services. Still, this is a good approach if you are doing blue/green deploys.</li>
+</ul>
+<h2 id="user-interfaces">User interfaces<a class="headerlink" href="#user-interfaces" title="Permanent link">&para;</a></h2>
+<p>Each type of user interface (e.g. browser, desktop, mobile) has its own constraints. So even though our core services are the same, we might need a way to adapt them for these constraints.</p>
+<p>Let’s look at a few models of user interfaces to see how this might be
+achieved.</p>
+<h3 id="api-composition">API composition<a class="headerlink" href="#api-composition" title="Permanent link">&para;</a></h3>
+<p>Each part of the UI communicates with a specific service via its API.</p>
+<p><img alt="Image" src="../images/api-composition.png" /></p>
+<p>Downsides:</p>
+<ul>
+<li>Little ability to tailor the responses for different sorts of devices.</li>
+<li>If another team is creating the UI, making even small changes requires change requests to multiple teams.</li>
+<li>This communication could also be fairly chatty. Opening lots of calls directly to services can be quite intensive for mobile devices.</li>
+</ul>
+<h3 id="ui-fragment-composition">UI Fragment composition<a class="headerlink" href="#ui-fragment-composition" title="Permanent link">&para;</a></h3>
+<p>Rather than having our UI make API calls and map everything back to UI controls, we
+could have our services provide parts of the UI directly.</p>
+<p><img alt="Image" src="../images/ui-fragment-composition.png" /></p>
+<p>The same team that makes changes to the services can also be in charge of making changes to those parts of the UI, allowing to get changes out faster.</p>
+<p>Downsides:</p>
+<ul>
+<li>We need to ensure consistency of the user experience, CSS and HTML style guides can help.</li>
+<li>Not ideal for native interfaces, it would require falling back to the API composition model.</li>
+<li>The more cross-cutting a form of interaction is, the less likely this model will fit, falling back to the API composition model.</li>
+</ul>
+<h3 id="backends-for-frontends">Backends for Frontends<a class="headerlink" href="#backends-for-frontends" title="Permanent link">&para;</a></h3>
+<p>A common solution to the problem of chatty interfaces with backend services, or the need to vary content for different types of devices, is to have a server-side aggregation endpoint, or <strong>API gateway</strong>.</p>
+<p><img alt="Image" src="../images/api-gateway.png" /></p>
+<p>The problem that can occur is that normally we’ll have one giant layer for all our services, losing ability to deploy clients independently.</p>
+<p>A model that solves this problem is <strong>Backends for frontends</strong> (<em>BFFs</em>), it restricts the use of backends for a specific client.</p>
+<p><img alt="Image" src="../images/backends-for-frontends.png" /></p>
+<p>The danger with this approach is the same as with any aggregating layer: it can take on logic it shouldn’t. These BFFs should only contain behavior specific to delivering a particular user experience.</p>
+<h3 id="a-hybrid-approach">A Hybrid Approach<a class="headerlink" href="#a-hybrid-approach" title="Permanent link">&para;</a></h3>
+<p>Some systems use different models together (e.g. BFFs for mobile and UI fragment composition for web). The tricky part still remains avoiding putting too much logic into any intermediate layer. This causes coupling and low cohesion.</p>
+<h2 id="integrating-with-third-party-software">Integrating with Third-Party Software<a class="headerlink" href="#integrating-with-third-party-software" title="Permanent link">&para;</a></h2>
+<p>Challenges associated with integrating third-party software into your system:</p>
+<ul>
+<li><strong>Lack of control:</strong> probably many of the technical decisions have been made for you to simplify product usage. The tool selection process should take into account ease of use of third-party software.</li>
+<li><strong>Customization:</strong> many enterprise tools sell themselves on their ability to be heavily customized just for you. But the cost of customization can be more expensive than building something bespoke from scratch.</li>
+<li><strong>Integration spaghetti:</strong> ideally you want to standardize on a small number of types of integration. If one product forces you tu use proprietary protocols, it could mean troubles.</li>
+</ul>
+<p>Best practices:</p>
+<ul>
+<li>Treat third-party software as a service and place all the customization code in services you control, if possible.</li>
+<li>When moving away from integrated COTS or legacy software, adopt the <strong>Strangler Application Pattern</strong>: intercept calls to such software and route them either to the legacy services or to your new services. This allows for a gradual switch.</li>
+</ul>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>To ensure our microservices remain as decoupled as possible from their other collaborators:</p>
+<ul>
+<li>Avoid database integration at all costs.</li>
+<li>Understand the trade-offs between REST and RPC, but strongly consider REST as a good starting point for request/response integration.</li>
+<li>Prefer choreography over orchestration.</li>
+<li>Avoid breaking changes and the need to version by understanding Postel’s Law and using tolerant readers.</li>
+<li>Think of user interfaces as compositional layers.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../how-to-model-services/" title="How to model services" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                How to model services
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../splitting-the-monolith/" title="Splitting the monolith" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Splitting the monolith
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/labarilem" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://www.linkedin.com/in/marcolabarile/" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

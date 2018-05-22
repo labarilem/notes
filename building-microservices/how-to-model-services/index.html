@@ -13,6 +13,8 @@
         <meta name="description" content="Notes about various topics, courses, books, etc.">
       
       
+        <link rel="canonical" href="https://marcolabarile.me/notes/building-microservices/how-to-model-services/">
+      
       
         <meta name="author" content="Marco Labarile">
       
@@ -35,22 +37,22 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="/notes/assets/images/favicon-16x16.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon-16x16.png">
       <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
     
     
       
-        <title>Marco Labarile - Notes</title>
+        <title>How to model services - Marco Labarile - Notes</title>
       
     
     
-      <link rel="stylesheet" href="/notes/assets/stylesheets/application.8d40d89b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
       
-        <link rel="stylesheet" href="/notes/assets/stylesheets/application-palette.6079476c.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
       
     
     
-      <script src="/notes/assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -97,6 +99,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
+      <a href="#how-to-model-services" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -119,7 +125,7 @@
                 Marco Labarile - Notes
               </span>
               <span class="md-header-nav__topic">
-                
+                How to model services
               </span>
             
           
@@ -236,7 +242,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/notes/" title="Home" class="md-nav__link">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -267,7 +273,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/notes/bitcoin-and-cryptocurrency-technologies/" title="Home" class="md-nav__link">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/" title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -279,7 +285,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/notes/bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/" title="Cryptographic hash functions" class="md-nav__link">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/" title="Cryptographic hash functions" class="md-nav__link">
       Cryptographic hash functions
     </a>
   </li>
@@ -291,7 +297,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/notes/bitcoin-and-cryptocurrency-technologies/digital-signature/" title="Digital signature" class="md-nav__link">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/digital-signature/" title="Digital signature" class="md-nav__link">
       Digital signature
     </a>
   </li>
@@ -303,7 +309,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/notes/bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/" title="Hash pointers" class="md-nav__link">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/" title="Hash pointers" class="md-nav__link">
       Hash pointers
     </a>
   </li>
@@ -315,7 +321,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/notes/bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization/" title="Centralization and decentralization" class="md-nav__link">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization/" title="Centralization and decentralization" class="md-nav__link">
       Centralization and decentralization
     </a>
   </li>
@@ -327,7 +333,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/notes/bitcoin-and-cryptocurrency-technologies/distributed-consensus/" title="Distributed consensus" class="md-nav__link">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/distributed-consensus/" title="Distributed consensus" class="md-nav__link">
       Distributed consensus
     </a>
   </li>
@@ -342,10 +348,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Building microservices
@@ -363,7 +371,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/notes/building-microservices/" title="Home" class="md-nav__link">
+    <a href="../" title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -375,7 +383,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/notes/building-microservices/microservices/" title="Microservices" class="md-nav__link">
+    <a href="../microservices/" title="Microservices" class="md-nav__link">
       Microservices
     </a>
   </li>
@@ -387,7 +395,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/notes/building-microservices/evolutionary-architects/" title="Evolutionary architects" class="md-nav__link">
+    <a href="../evolutionary-architects/" title="Evolutionary architects" class="md-nav__link">
       Evolutionary architects
     </a>
   </li>
@@ -397,11 +405,62 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="/notes/building-microservices/how-to-model-services/" title="How to model services" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        How to model services
+      </label>
+    
+    <a href="./" title="How to model services" class="md-nav__link md-nav__link--active">
       How to model services
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-bounded-context" title="The Bounded Context" class="md-nav__link">
+    The Bounded Context
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nesting" title="Nesting" class="md-nav__link">
+    Nesting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -411,7 +470,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/notes/building-microservices/integration/" title="Integration" class="md-nav__link">
+    <a href="../integration/" title="Integration" class="md-nav__link">
       Integration
     </a>
   </li>
@@ -423,7 +482,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/notes/building-microservices/splitting-the-monolith/" title="Splitting the monolith" class="md-nav__link">
+    <a href="../splitting-the-monolith/" title="Splitting the monolith" class="md-nav__link">
       Splitting the monolith
     </a>
   </li>
@@ -435,7 +494,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/notes/building-microservices/deployment/" title="Deployment" class="md-nav__link">
+    <a href="../deployment/" title="Deployment" class="md-nav__link">
       Deployment
     </a>
   </li>
@@ -447,7 +506,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/notes/building-microservices/testing/" title="Testing" class="md-nav__link">
+    <a href="../testing/" title="Testing" class="md-nav__link">
       Testing
     </a>
   </li>
@@ -464,7 +523,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/notes/specimen/" title="Specimen" class="md-nav__link">
+    <a href="../../specimen/" title="Specimen" class="md-nav__link">
       Specimen
     </a>
   </li>
@@ -477,12 +536,74 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-bounded-context" title="The Bounded Context" class="md-nav__link">
+    The Bounded Context
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nesting" title="Nesting" class="md-nav__link">
+    Nesting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
-
+                
+                
+                <h1 id="how-to-model-services">How to model services<a class="headerlink" href="#how-to-model-services" title="Permanent link">&para;</a></h1>
+<p>What makes a good service? The whole point of microservices is the ability to deploy them independently, so <strong>loose coupling</strong> and <strong>high cohesion</strong> (same kind of logic not distributed across different microservices) are needed.</p>
+<p>Let's introduce the fictional domain of MusicCorp, an old company who wants to sell music tapes online.</p>
+<h2 id="the-bounded-context">The Bounded Context<a class="headerlink" href="#the-bounded-context" title="Permanent link">&para;</a></h2>
+<p>Bounded context is a concept introduced in DDD (<em>Domain Driven Design</em>). A bounded context has private and public models relative to a domain context. Only public models are exposed to other contexts. Also, public models can be a different representation of private models (they can be <em>mapped</em> models).</p>
+<p>This allows for both loose coupling, since there are no references to whole models, and high cohesion, since these contexts are modeled from actual domain contexts.</p>
+<p>For example, in the MusicCorp online business, <em>Warehouse</em> and <em>Finance</em> are different bounded contexts.</p>
+<p><img alt="Image" src="../images/ddd-bc.png" /></p>
+<p>Here <em>Stock item</em> is a public model shared by each context which has different representations in each context.</p>
+<p>The benefits provided by bounded contexts makes them really good candidates to be microservices.</p>
+<p>But be careful: restructuring bounded contexts has a high cost, so architects must not fall into the <strong>premature decomposition</strong> trap. If you have a solid understanding and vision of the whole system, your bounded contexts will be solid. Otherwise, you may need to reorganize them frequently.</p>
+<h3 id="nesting">Nesting<a class="headerlink" href="#nesting" title="Permanent link">&para;</a></h3>
+<p>It's best to think first about coarse-grained bounded contexts. Then these usually can be further divided into subcontexts. Should you keep the nested contexts public or private to the parent context?
+Usually, if each subcontext has a respective team that handles that area in the organization, it's ideal to make each subcontext public (thus an effective context).</p>
+                
+                  
+                
+              
               
                 
 
@@ -495,6 +616,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../evolutionary-architects/" title="Evolutionary architects" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Evolutionary architects
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../integration/" title="Integration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Integration
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -525,9 +681,9 @@
       
     </div>
     
-      <script src="/notes/assets/javascripts/application.b438e6c5.js"></script>
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"/notes"}})</script>
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
       
     
     
