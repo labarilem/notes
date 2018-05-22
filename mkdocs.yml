@@ -1,7 +1,7 @@
 docs_dir: notes
 
 # Project information
-site_name: Notes
+site_name: Marco Labarile - Notes
 site_description: Notes about various topics, courses, books, etc.
 site_author: Marco Labarile
 site_url: https://marcolabarile.me/notes/
@@ -79,11 +79,20 @@ markdown_extensions:
 # Page tree
 pages:
   - Home: index.md
-  - Bitcoind and cryptocurrency technologies:
+  - Bitcoin and cryptocurrency technologies:
     - Home: bitcoin-and-cryptocurrency-technologies/index.md
     - Cryptographic hash functions: bitcoin-and-cryptocurrency-technologies/crypto-hash-functions.md
     - Digital signature: bitcoin-and-cryptocurrency-technologies/digital-signature.md
     - Hash pointers: bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures.md
     - Centralization and decentralization: bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization.md
     - Distributed consensus: bitcoin-and-cryptocurrency-technologies/distributed-consensus.md
+  - Building microservices:
+    - Home: building-microservices/index.md
+    - Microservices: building-microservices/microservices.md
+    - Evolutionary architects: building-microservices/evolutionary-architects.md
+    - How to model services: building-microservices/how-to-model-services.md
+    - Integration: building-microservices/integration.md
+    - Splitting the monolith: building-microservices/splitting-the-monolith.md
+    - Deployment: building-microservices/deployment.md
+    - Testing: building-microservices/testing.md
   - Specimen: specimen.md

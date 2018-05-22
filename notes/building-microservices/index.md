@@ -1,11 +1,9 @@
 # Building microservices
 
-**Designing fine-grained systems**
+Notes on the [Building Microservices: Designing Fine-Grained Systems](https://www.amazon.com/Building-Microservices-Sam-Newman/dp/1491950358) book by Sam Newman.
 
-- [Chapter 1, Microservices](./microservices.md)
-- [Chapter 2, Evolutionary architects](./evolutionary-architects.md)
-- [Chapter 3, How to model services](./how-to-model-services.md)
-- [Chapter 4, Integration](./integration.md)
-- [Chapter 5, Splitting the monolith](./splitting-the-monolith.md)
-- [Chapter 6, Deployment](./deployment.md)
-- [Chapter 7, Testing](./testing.md)
+About this book:
+
+>Distributed systems have become more fine-grained in the past 10 years, shifting from code-heavy monolithic applications to smaller, self-contained microservices. But developing these systems brings its own set of headaches. With lots of examples and practical advice, this book takes a holistic view of the topics that system architects and administrators must consider when building, managing, and evolving microservice architectures.
+>
+>Microservice technologies are moving quickly. Author Sam Newman provides you with a firm grounding in the concepts while diving into current solutions for modeling, integrating, testing, deploying, and monitoring your own autonomous services. You’ll follow a fictional company throughout the book to learn how building a microservice architecture affects a single domain.
