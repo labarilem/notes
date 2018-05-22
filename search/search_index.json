@@ -2,23 +2,303 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Notes\n\n\nNotes about various topics, courses, books, etc.\n\n\n\n\nBitcoin and cryptocurrency technologies\n\n\nBuilding microservices", 
+            "text": "Notes\n\n\nNotes about various topics, courses, books, etc.\n\n\nCourses:\n\n\n\n\nBitcoin and cryptocurrency technologies\n\n\n\n\nBooks:\n\n\n\n\nBuilding microservices", 
             "title": "Home"
         }, 
         {
             "location": "/#notes", 
-            "text": "Notes about various topics, courses, books, etc.   Bitcoin and cryptocurrency technologies  Building microservices", 
+            "text": "Notes about various topics, courses, books, etc.  Courses:   Bitcoin and cryptocurrency technologies   Books:   Building microservices", 
             "title": "Notes"
         }, 
         {
             "location": "/bitcoin-and-cryptocurrency-technologies/", 
-            "text": "Bitcoin and cryptocurrency technologies\n\n\n\n\nCryptographic hash functions\n\n\nDigital signature\n\n\nHash pointers and data structures\n\n\nCentralization and decentralization\n\n\nDistributed consensus", 
-            "title": "Bitcoind and cryptocurrency technologies"
+            "text": "Bitcoin and cryptocurrency technologies\n\n\nThe 2018 edition of the Coursera MOOC \nBitcoin and Cryptocurrency Technologies\n.\n\n\nAbout this course:\n\n\n\n\nTo really understand what is special about Bitcoin, we need to understand how it works at a technical level. We\u2019ll address the important questions about Bitcoin, such as:\n\n\nHow does Bitcoin work? What makes Bitcoin different? How secure are your Bitcoins? How anonymous are Bitcoin users? What determines the price of Bitcoins? Can cryptocurrencies be regulated? What might the future hold?\n\n\nAfter this course, you\u2019ll know everything you need to be able to separate fact from fiction when reading claims about Bitcoin and other cryptocurrencies. You\u2019ll have the conceptual foundations you need to engineer secure software that interacts with the Bitcoin network. And you\u2019ll be able to integrate ideas from Bitcoin in your own projects.\nCourse Lecturers:\nArvind Narayanan, Princeton University", 
+            "title": "Home"
         }, 
         {
             "location": "/bitcoin-and-cryptocurrency-technologies/#bitcoin-and-cryptocurrency-technologies", 
-            "text": "Cryptographic hash functions  Digital signature  Hash pointers and data structures  Centralization and decentralization  Distributed consensus", 
+            "text": "The 2018 edition of the Coursera MOOC  Bitcoin and Cryptocurrency Technologies .  About this course:   To really understand what is special about Bitcoin, we need to understand how it works at a technical level. We\u2019ll address the important questions about Bitcoin, such as:  How does Bitcoin work? What makes Bitcoin different? How secure are your Bitcoins? How anonymous are Bitcoin users? What determines the price of Bitcoins? Can cryptocurrencies be regulated? What might the future hold?  After this course, you\u2019ll know everything you need to be able to separate fact from fiction when reading claims about Bitcoin and other cryptocurrencies. You\u2019ll have the conceptual foundations you need to engineer secure software that interacts with the Bitcoin network. And you\u2019ll be able to integrate ideas from Bitcoin in your own projects.\nCourse Lecturers:\nArvind Narayanan, Princeton University", 
             "title": "Bitcoin and cryptocurrency technologies"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/", 
+            "text": "Hash function\n\n\nA function that maps a string to a fixed size output.\n\n\nH(x): x string -\n fixed size output\n\n\nProperties\n\n\nCollision-free\n\n\nIt's hard to find a collision.\nNote that no hash function has ever been formally proved to be collision-free.\n\n\nApplication\n\n\nMessage digest:\n if \nH(x) = H(y)\n then it's safe to assume that \nx = y\n. This means that hash functions can help verify the integrity of documents without scanning the whole document.\n\n\nHiding\n\n\nGiven \nH(x)\n, it's hard to find \nx\n.\n\n\nApplication\n\n\nCommitment problem:\n we want to commit to value and reveal it later to an audience. If we hash that value, thanks to this property, we know that it will be hard for attackers to correctly guess it before we chose to disclose it. While our audience also knows that we wouldn't be able to change the committed value because hash functions are collision-free: it would be infeasible to generate a collision with the value we picked.\n\n\nPuzzle-friendly\n\n\nGiven a puzzle \nid\n and a target set \nY\n, try to find a solution \nx\n such that \nH(id | x) is in Y\n.\nPuzzle-friendly means that, for the stated problem, no solving strategy is much better that trying random values of x.\n\n\nApplication\n\n\nCrypto puzzles:\n puzzles that can be used as proof of work. These puzzles are used in blockchain based coin technologies such as Bitcoin.\n\n\nHash function examples\n\n\nSHA-256\n\n\nA popular hash function.\nA high level description of SHA-256 is given by the following diagram:", 
+            "title": "Cryptographic hash functions"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/#hash-function", 
+            "text": "A function that maps a string to a fixed size output.  H(x): x string -  fixed size output", 
+            "title": "Hash function"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/#properties", 
+            "text": "", 
+            "title": "Properties"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/#collision-free", 
+            "text": "It's hard to find a collision.\nNote that no hash function has ever been formally proved to be collision-free.", 
+            "title": "Collision-free"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/#application", 
+            "text": "Message digest:  if  H(x) = H(y)  then it's safe to assume that  x = y . This means that hash functions can help verify the integrity of documents without scanning the whole document.", 
+            "title": "Application"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/#hiding", 
+            "text": "Given  H(x) , it's hard to find  x .", 
+            "title": "Hiding"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/#application_1", 
+            "text": "Commitment problem:  we want to commit to value and reveal it later to an audience. If we hash that value, thanks to this property, we know that it will be hard for attackers to correctly guess it before we chose to disclose it. While our audience also knows that we wouldn't be able to change the committed value because hash functions are collision-free: it would be infeasible to generate a collision with the value we picked.", 
+            "title": "Application"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/#puzzle-friendly", 
+            "text": "Given a puzzle  id  and a target set  Y , try to find a solution  x  such that  H(id | x) is in Y .\nPuzzle-friendly means that, for the stated problem, no solving strategy is much better that trying random values of x.", 
+            "title": "Puzzle-friendly"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/#application_2", 
+            "text": "Crypto puzzles:  puzzles that can be used as proof of work. These puzzles are used in blockchain based coin technologies such as Bitcoin.", 
+            "title": "Application"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/#hash-function-examples", 
+            "text": "", 
+            "title": "Hash function examples"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/#sha-256", 
+            "text": "A popular hash function.\nA high level description of SHA-256 is given by the following diagram:", 
+            "title": "SHA-256"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/digital-signature/", 
+            "text": "Digital signature\n\n\nDigital signatures must verify 2 properties:\n\n\n\n\n\n\nOnly you can sign some data, while anyone can verify the fact that you signed it.\n\n\n\n\n\n\nThe signature must be specific to the data that it signs: if it isn't, anyone can just copy the signature you shared and apply it to different documents.\n\n\n\n\n\n\nImplementation\n\n\nDigital signature schemes use a \npublic key\n and a \nprivate key\n:\n\n\n\n\n\n\nThe private key is used to sign data\n\n\n\n\n\n\nThe public key is used to verify signed data\n\n\n\n\n\n\nDigital signature schemes must guarantee that signed data is always correctly verified.\n\n\nUnforgeable signature schemes\n\n\nWhen is a signature scheme called unforgeable? Let's consider this game:\nThere is an attacker who knows the public key and a challenger who knows the private key too.\n\n\n\n\nThe attacker can pick a document and get the challenger to sign it.\n\n\nThe challenger will sign that document and send the signed data to the attacker.\n\n\nThe game can go on as for as much as the attacker wants (at least until a plausible amount of documents is signed)\n\n\n\n\nThen the attacker tries to sign a message that the challenger has not already signed: if the forged message verifies correctly then the attacker wins, else the challenger wins.\n\n\nSo a signature scheme is \nunforgeable\n if, not matter what algorithm the attacker is using, he has only a slim chance to succeed.\n\n\nUse cases\n\n\n\n\nPublic keys can be used as identities\n\n\nSignature schemes can be used to sign the last hash pointer in a blockchain, thus signing the whole blockchain.\n\n\n\n\nSignature scheme used in Bitcoin\n\n\nBitcoin uses ECDSA. Note that a good randomness source is essential to avoid leaking your private key using your public key.", 
+            "title": "Digital signature"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/digital-signature/#digital-signature", 
+            "text": "Digital signatures must verify 2 properties:    Only you can sign some data, while anyone can verify the fact that you signed it.    The signature must be specific to the data that it signs: if it isn't, anyone can just copy the signature you shared and apply it to different documents.", 
+            "title": "Digital signature"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/digital-signature/#implementation", 
+            "text": "Digital signature schemes use a  public key  and a  private key :    The private key is used to sign data    The public key is used to verify signed data    Digital signature schemes must guarantee that signed data is always correctly verified.", 
+            "title": "Implementation"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/digital-signature/#unforgeable-signature-schemes", 
+            "text": "When is a signature scheme called unforgeable? Let's consider this game:\nThere is an attacker who knows the public key and a challenger who knows the private key too.   The attacker can pick a document and get the challenger to sign it.  The challenger will sign that document and send the signed data to the attacker.  The game can go on as for as much as the attacker wants (at least until a plausible amount of documents is signed)   Then the attacker tries to sign a message that the challenger has not already signed: if the forged message verifies correctly then the attacker wins, else the challenger wins.  So a signature scheme is  unforgeable  if, not matter what algorithm the attacker is using, he has only a slim chance to succeed.", 
+            "title": "Unforgeable signature schemes"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/digital-signature/#use-cases", 
+            "text": "Public keys can be used as identities  Signature schemes can be used to sign the last hash pointer in a blockchain, thus signing the whole blockchain.", 
+            "title": "Use cases"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/digital-signature/#signature-scheme-used-in-bitcoin", 
+            "text": "Bitcoin uses ECDSA. Note that a good randomness source is essential to avoid leaking your private key using your public key.", 
+            "title": "Signature scheme used in Bitcoin"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/", 
+            "text": "Hash pointer\n\n\nA \nhash pointer\n consists of 2 informations:\n\n\n\n\nAddress where some info is stored\n\n\nHash of that info\n\n\n\n\nHash pointers can be used in every non-cyclical data structures that uses pointers.\n\n\nBlockchain\n\n\nA \nblockchain\n is a list of linked records, called blocks. Each block contains a cryptographic hash of the previous block.\n\n\n\n\nUse cases\n\n\nA blockchain can be used as a tamper evident log. For example, in Bitcoin, a blockchain logs all the transactions (organized in blocks) approved by the network.\n\n\nMerkle tree\n\n\nA \nMerkle tree\n is a tamper evident binary tree structure.\nThe following diagram explains how to build a Merkle tree starting from a known amount of data blocks:\n\n\n\n\nA Merkle tree needs to show \nlog(N)\n items to provide proof of membership for a given data block. The time complexity of this operation is \nlog(N)\n too.\n\n\nUse cases\n\n\nMerkle trees can be used to give informations about a sequence of transactions without needing the data of all the transactions in the sequence, while still preventing attackers to easily tamper that data.", 
+            "title": "Hash pointers"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/#hash-pointer", 
+            "text": "A  hash pointer  consists of 2 informations:   Address where some info is stored  Hash of that info   Hash pointers can be used in every non-cyclical data structures that uses pointers.", 
+            "title": "Hash pointer"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/#blockchain", 
+            "text": "A  blockchain  is a list of linked records, called blocks. Each block contains a cryptographic hash of the previous block.", 
+            "title": "Blockchain"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/#use-cases", 
+            "text": "A blockchain can be used as a tamper evident log. For example, in Bitcoin, a blockchain logs all the transactions (organized in blocks) approved by the network.", 
+            "title": "Use cases"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/#merkle-tree", 
+            "text": "A  Merkle tree  is a tamper evident binary tree structure.\nThe following diagram explains how to build a Merkle tree starting from a known amount of data blocks:   A Merkle tree needs to show  log(N)  items to provide proof of membership for a given data block. The time complexity of this operation is  log(N)  too.", 
+            "title": "Merkle tree"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/#use-cases_1", 
+            "text": "Merkle trees can be used to give informations about a sequence of transactions without needing the data of all the transactions in the sequence, while still preventing attackers to easily tamper that data.", 
+            "title": "Use cases"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization/", 
+            "text": "Centralization vs Decentralization\n\n\nUsually, in complex system, decentralization is not all-or-nothing (e.g. the email protocol is decentralized but there are private email providers).\n\n\nAspects of decentralization in cryptocurrencies\n\n\n\n\nWho maintains the ledger?\n\n\nWho has authority over transactions validity?\n\n\nWho creates new \ncoins\n?\n\n\nWho determines how the rules of the system change?\n\n\nHow does the currency acquire exchange value?\n\n\n\n\nNote that the cryptocurrencies protocols usually are decentralized but services built around them may be centralized (e.g. exchanges).\n\n\nAspects of decentralization in Bitcoin\n\n\n\n\nBitcoin is based on a p2p network:\n anybody is allowed to join the network. Also, the barrier to entry is really low.\n\n\nMining:\n anyone is allowed to mine Bitcoins, but in this case the power concentrates in few entities in the network.\n\n\nSoftware updates:\n Bitcoin core developers are trusted by the whole community and thus they have a centralized power over the network.", 
+            "title": "Centralization and decentralization"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization/#centralization-vs-decentralization", 
+            "text": "Usually, in complex system, decentralization is not all-or-nothing (e.g. the email protocol is decentralized but there are private email providers).", 
+            "title": "Centralization vs Decentralization"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization/#aspects-of-decentralization-in-cryptocurrencies", 
+            "text": "Who maintains the ledger?  Who has authority over transactions validity?  Who creates new  coins ?  Who determines how the rules of the system change?  How does the currency acquire exchange value?   Note that the cryptocurrencies protocols usually are decentralized but services built around them may be centralized (e.g. exchanges).", 
+            "title": "Aspects of decentralization in cryptocurrencies"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization/#aspects-of-decentralization-in-bitcoin", 
+            "text": "Bitcoin is based on a p2p network:  anybody is allowed to join the network. Also, the barrier to entry is really low.  Mining:  anyone is allowed to mine Bitcoins, but in this case the power concentrates in few entities in the network.  Software updates:  Bitcoin core developers are trusted by the whole community and thus they have a centralized power over the network.", 
+            "title": "Aspects of decentralization in Bitcoin"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/distributed-consensus/", 
+            "text": "Distributed consensus\n\n\nA key challenge of distributed systems is achieving \ndistributed consensus\n, because it is required for reliability in the system.\nAs example, consider a distributed database: if sometimes consensus is not achieved then some databases will not be consistent with the others.\n\n\nDefinition\n\n\nLet's suppose there is a network with \nN\n nodes. Each node receives an input value. Consensus in the network happens if:\n\n\n\n\nThe consensus protocol terminates.\n\n\nAll \nN\n nodes decide on the same value.\n\n\nThe decided value must be one of the input values.\n\n\n\n\nConsensus in Bitcoin\n\n\nLet's examine what happens when Alice wants to pay Bob some bitcoins:\n\n\n\n\nAlice signs the transaction referencing Bob's public key. The transactions contain the hash pointing to previously received coins by Alice.\n\n\nAlice broadcasts the transaction to the whole network.\n\n\nIf Bob wants to be notified of the transaction, he might run a Bitcoin node. But his listening is not required for him to receive coins. The network will acknowledge (if valid) the transaction nonetheless.\n\n\n\n\nIt is really important that the network reaches consensus on the validity and ordering of transactions if we want the whole system to work.\n\n\nBut we cannot solve this problem with an algorithm that has the consensus properties described before, because:\n\n\n\n\nNodes may crash\n\n\nNodes may be malicious\n\n\nA p2p network is imperfect by nature (e.g. not all nodes are connected, there are faults, there is latency because the network has no notion of global time, etc.)\n\n\n\n\nAlso, the literature on distributed consensus is pessimistic, presenting several impossibility results (e.g. \nByzantine generals problem\n)\n\n\nStill, there exist algorithms for achieving distributed consensus that trade off some properties with others (e.g. \nPaxos\n).\n\n\nBut note that the hypotheses under which impossible results were proved are not applicable to the Bitcoin network. In fact, distributed consensus works better in practice than in theory for Bitcoin, because:\n\n\n\n\nThe idea of \nincentive\n is introduced\n\n\nConsensus happens over long periods of time (1h usually), not in fixed periods. As time goes on, the probability that an invalid transaction is considered valid decreases exponentially.\n\n\n\n\nSo Bitcoins solves the distributed consensus problem with a probabilistic approach.", 
+            "title": "Distributed consensus"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/distributed-consensus/#distributed-consensus", 
+            "text": "A key challenge of distributed systems is achieving  distributed consensus , because it is required for reliability in the system.\nAs example, consider a distributed database: if sometimes consensus is not achieved then some databases will not be consistent with the others.", 
+            "title": "Distributed consensus"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/distributed-consensus/#definition", 
+            "text": "Let's suppose there is a network with  N  nodes. Each node receives an input value. Consensus in the network happens if:   The consensus protocol terminates.  All  N  nodes decide on the same value.  The decided value must be one of the input values.", 
+            "title": "Definition"
+        }, 
+        {
+            "location": "/bitcoin-and-cryptocurrency-technologies/distributed-consensus/#consensus-in-bitcoin", 
+            "text": "Let's examine what happens when Alice wants to pay Bob some bitcoins:   Alice signs the transaction referencing Bob's public key. The transactions contain the hash pointing to previously received coins by Alice.  Alice broadcasts the transaction to the whole network.  If Bob wants to be notified of the transaction, he might run a Bitcoin node. But his listening is not required for him to receive coins. The network will acknowledge (if valid) the transaction nonetheless.   It is really important that the network reaches consensus on the validity and ordering of transactions if we want the whole system to work.  But we cannot solve this problem with an algorithm that has the consensus properties described before, because:   Nodes may crash  Nodes may be malicious  A p2p network is imperfect by nature (e.g. not all nodes are connected, there are faults, there is latency because the network has no notion of global time, etc.)   Also, the literature on distributed consensus is pessimistic, presenting several impossibility results (e.g.  Byzantine generals problem )  Still, there exist algorithms for achieving distributed consensus that trade off some properties with others (e.g.  Paxos ).  But note that the hypotheses under which impossible results were proved are not applicable to the Bitcoin network. In fact, distributed consensus works better in practice than in theory for Bitcoin, because:   The idea of  incentive  is introduced  Consensus happens over long periods of time (1h usually), not in fixed periods. As time goes on, the probability that an invalid transaction is considered valid decreases exponentially.   So Bitcoins solves the distributed consensus problem with a probabilistic approach.", 
+            "title": "Consensus in Bitcoin"
+        }, 
+        {
+            "location": "/specimen/", 
+            "text": "Specimen\n\n\nBody copy\n\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras arcu libero,\nmollis sed massa vel, \nornare viverra ex\n. Mauris a ullamcorper lacus. Nullam\nurna elit, malesuada eget finibus ut, ullamcorper ac tortor. Vestibulum sodales\npulvinar nisl, pharetra aliquet est. Quisque volutpat erat ac nisi accumsan\ntempor.\n\n\nSed suscipit\n, orci non pretium pretium, quam mi gravida metus, vel\nvenenatis justo est condimentum diam. Maecenas non ornare justo. Nam a ipsum\neros. \nNulla aliquam\n orci sit amet nisl posuere malesuada. Proin aliquet\nnulla velit, quis ultricies orci feugiat et. \nUt tincidunt sollicitudin\n\ntincidunt. Aenean ullamcorper sit amet nulla at interdum.\n\n\nHeadings\n\n\nThe 3\nrd\n level\n\n\nThe 4\nth\n level\n\n\nThe 5\nth\n level\n\n\nThe 6\nth\n level\n\n\nHeadings \nwith secondary text\n\n\nThe 3\nrd\n level \nwith secondary text\n\n\nThe 4\nth\n level \nwith secondary text\n\n\nThe 5\nth\n level \nwith secondary text\n\n\nThe 6\nth\n level \nwith secondary text\n\n\nBlockquotes\n\n\n\n\nMorbi eget dapibus felis. Vivamus venenatis porttitor tortor sit amet rutrum.\n  Pellentesque aliquet quam enim, eu volutpat urna rutrum a. Nam vehicula nunc\n  mauris, a ultricies libero efficitur sed. \nClass aptent\n taciti sociosqu ad\n  litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie\n  imperdiet consectetur.\n\n\n\n\nBlockquote nesting\n\n\n\n\nSed aliquet\n, neque at rutrum mollis, neque nisi tincidunt nibh, vitae\n  faucibus lacus nunc at lacus. Nunc scelerisque, quam id cursus sodales, lorem\n  \nlibero fermentum\n urna, ut efficitur elit ligula et nunc.\n\n\n\n\nMauris dictum mi lacus, sit amet pellentesque urna vehicula fringilla.\n    Ut sit amet placerat ante. Proin sed elementum nulla. Nunc vitae sem odio.\n    Suspendisse ac eros arcu. Vivamus orci erat, volutpat a tempor et, rutrum.\n    eu odio.\n\n\n\n\nSuspendisse rutrum facilisis risus\n, eu posuere neque commodo a.\n      Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed nec leo\n      bibendum, sodales mauris ut, tincidunt massa.\n\n\n\n\n\n\n\n\nOther content blocks\n\n\n\n\nVestibulum vitae orci quis ante viverra ultricies ut eget turpis. Sed eu\n  lectus dapibus, eleifend nulla varius, lobortis turpis. In ac hendrerit nisl,\n  sit amet laoreet nibh.\n  \nvar\n \n_extends\n \n=\n \nfunction\n(\ntarget\n)\n \n{\n\n  \nfor\n \n(\nvar\n \ni\n \n=\n \n1\n;\n \ni\n \n \narguments\n.\nlength\n;\n \ni\n++\n)\n \n{\n\n    \nvar\n \nsource\n \n=\n \narguments\n[\ni\n];\n\n    \nfor\n \n(\nvar\n \nkey\n \nin\n \nsource\n)\n \n{\n\n      \ntarget\n[\nkey\n]\n \n=\n \nsource\n[\nkey\n];\n\n    \n}\n\n  \n}\n\n\n  \nreturn\n \ntarget\n;\n\n\n};\n\n\n\n\n\n\nPraesent at \nreturn\n \ntarget\n, sodales nibh vel, tempor felis. Fusce\n      vel lacinia lacus. Suspendisse rhoncus nunc non nisi iaculis ultrices.\n      Donec consectetur mauris non neque imperdiet, eget volutpat libero.\n\n\n\n\n\n\nLists\n\n\nUnordered lists\n\n\n\n\n\n\nSed sagittis eleifend rutrum. Donec vitae suscipit est. Nullam tempus tellus\n  non sem sollicitudin, quis rutrum leo facilisis. Nulla tempor lobortis orci,\n  at elementum urna sodales vitae. In in vehicula nulla, quis ornare libero.\n\n\n\n\nDuis mollis est eget nibh volutpat, fermentum aliquet dui mollis.\n\n\nNam vulputate tincidunt fringilla.\n\n\nNullam dignissim ultrices urna non auctor.\n\n\n\n\n\n\n\n\nAliquam metus eros, pretium sed nulla venenatis, faucibus auctor ex. Proin ut\n  eros sed sapien ullamcorper consequat. Nunc ligula ante, fringilla at aliquam\n  ac, aliquet sed mauris.\n\n\n\n\n\n\nNulla et rhoncus turpis. Mauris ultricies elementum leo. Duis efficitur\n  accumsan nibh eu mattis. Vivamus tempus velit eros, porttitor placerat nibh\n  lacinia sed. Aenean in finibus diam.\n\n\n\n\n\n\nOrdered lists\n\n\n\n\n\n\nInteger vehicula feugiat magna, a mollis tellus. Nam mollis ex ante, quis\n  elementum eros tempor rutrum. Aenean efficitur lobortis lacinia. Nulla\n  consectetur feugiat sodales.\n\n\n\n\n\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur\n  ridiculus mus. Aliquam ornare feugiat quam et egestas. Nunc id erat et quam\n  pellentesque lacinia eu vel odio.\n\n\n\n\n\n\nVivamus venenatis porttitor tortor sit amet rutrum. Pellentesque aliquet\n  quam enim, eu volutpat urna rutrum a. Nam vehicula nunc mauris, a\n  ultricies libero efficitur sed.\n\n\n\n\nMauris dictum mi lacus\n\n\nUt sit amet placerat ante\n\n\nSuspendisse ac eros arcu\n\n\n\n\n\n\n\n\nMorbi eget dapibus felis. Vivamus venenatis porttitor tortor sit amet\n  rutrum. Pellentesque aliquet quam enim, eu volutpat urna rutrum a. Sed\n  aliquet, neque at rutrum mollis, neque nisi tincidunt nibh.\n\n\n\n\n\n\nPellentesque eget \nvar\n \n_extends\n ornare tellus, ut gravida mi.\n\nvar\n \n_extends\n \n=\n \nfunction\n(\ntarget\n)\n \n{\n\n\n  \nfor\n \n(\nvar\n \ni\n \n=\n \n1\n;\n \ni\n \n \narguments\n.\nlength\n;\n \ni\n++\n)\n \n{\n\n    \nvar\n \nsource\n \n=\n \narguments\n[\ni\n];\n\n    \nfor\n \n(\nvar\n \nkey\n \nin\n \nsource\n)\n \n{\n\n      \ntarget\n[\nkey\n]\n \n=\n \nsource\n[\nkey\n];\n\n    \n}\n\n  \n}\n\n  \nreturn\n \ntarget\n;\n\n\n};\n\n\n\n\n\n\n\n\n\n\n\n\nVivamus id mi enim. Integer id turpis sapien. Ut condimentum lobortis\n  sagittis. Aliquam purus tellus, faucibus eget urna at, iaculis venenatis\n  nulla. Vivamus a pharetra leo.\n\n\n\n\n\n\nDefinition lists\n\n\n\n\nLorem ipsum dolor sit amet\n\n\n\n\nSed sagittis eleifend rutrum. Donec vitae suscipit est. Nullam tempus\ntellus non sem sollicitudin, quis rutrum leo facilisis. Nulla tempor\nlobortis orci, at elementum urna sodales vitae. In in vehicula nulla.\n\n\nDuis mollis est eget nibh volutpat, fermentum aliquet dui mollis.\nNam vulputate tincidunt fringilla.\nNullam dignissim ultrices urna non auctor.\n\n\n\n\nCras arcu libero\n\n\n\n\nAliquam metus eros, pretium sed nulla venenatis, faucibus auctor ex. Proin\nut eros sed sapien ullamcorper consequat. Nunc ligula ante, fringilla at\naliquam ac, aliquet sed mauris.\n\n\n\n\n\n\nCode blocks\n\n\nInline\n\n\nMorbi eget \ndapibus felis\n. Vivamus \nvenenatis porttitor\n tortor sit amet\nrutrum. Class aptent taciti sociosqu ad litora torquent per conubia nostra,\nper inceptos himenaeos. \nPellentesque aliquet quam enim\n, eu volutpat urna\nrutrum a.\n\n\nNam vehicula nunc \nreturn\n \ntarget\n mauris, a ultricies libero efficitur\nsed. Sed molestie imperdiet consectetur. Vivamus a pharetra leo. Pellentesque\neget ornare tellus, ut gravida mi. Fusce vel lacinia lacus.\n\n\nListing\n\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\nvar\n \n_extends\n \n=\n \nfunction\n(\ntarget\n)\n \n{\n\n  \nfor\n \n(\nvar\n \ni\n \n=\n \n1\n;\n \ni\n \n \narguments\n.\nlength\n;\n \ni\n++\n)\n \n{\n\n    \nvar\n \nsource\n \n=\n \narguments\n[\ni\n];\n\n    \nfor\n \n(\nvar\n \nkey\n \nin\n \nsource\n)\n \n{\n\n      \ntarget\n[\nkey\n]\n \n=\n \nsource\n[\nkey\n];\n\n    \n}\n\n  \n}\n\n\n  \nreturn\n \ntarget\n;\n\n\n};\n\n\n\n\n\n\n\nHorizontal rules\n\n\nAenean in finibus diam. Duis mollis est eget nibh volutpat, fermentum aliquet\ndui mollis. Nam vulputate tincidunt fringilla. Nullam dignissim ultrices urna\nnon auctor.\n\n\n\n\nInteger vehicula feugiat magna, a mollis tellus. Nam mollis ex ante, quis\nelementum eros tempor rutrum. Aenean efficitur lobortis lacinia. Nulla\nconsectetur feugiat sodales.\n\n\nData tables\n\n\n\n\n\n\n\n\nSollicitudo / Pellentesi\n\n\nconsectetur\n\n\nadipiscing\n\n\nelit\n\n\narcu\n\n\nsed\n\n\n\n\n\n\n\n\n\n\nVivamus a pharetra\n\n\nyes\n\n\nyes\n\n\nyes\n\n\nyes\n\n\nyes\n\n\n\n\n\n\nOrnare viverra ex\n\n\nyes\n\n\nyes\n\n\nyes\n\n\nyes\n\n\nyes\n\n\n\n\n\n\nMauris a ullamcorper\n\n\nyes\n\n\nyes\n\n\npartial\n\n\nyes\n\n\nyes\n\n\n\n\n\n\nNullam urna elit\n\n\nyes\n\n\nyes\n\n\nyes\n\n\nyes\n\n\nyes\n\n\n\n\n\n\nMalesuada eget finibus\n\n\nyes\n\n\nyes\n\n\nyes\n\n\nyes\n\n\nyes\n\n\n\n\n\n\nUllamcorper\n\n\nyes\n\n\nyes\n\n\nyes\n\n\nyes\n\n\nyes\n\n\n\n\n\n\nVestibulum sodales\n\n\nyes\n\n\n-\n\n\nyes\n\n\n-\n\n\nyes\n\n\n\n\n\n\nPulvinar nisl\n\n\nyes\n\n\nyes\n\n\nyes\n\n\n-\n\n\n-\n\n\n\n\n\n\nPharetra aliquet est\n\n\nyes\n\n\nyes\n\n\nyes\n\n\nyes\n\n\nyes\n\n\n\n\n\n\nSed suscipit\n\n\nyes\n\n\nyes\n\n\nyes\n\n\nyes\n\n\nyes\n\n\n\n\n\n\nOrci non pretium\n\n\nyes\n\n\npartial\n\n\n-\n\n\n-\n\n\n-\n\n\n\n\n\n\n\n\nSed sagittis eleifend rutrum. Donec vitae suscipit est. Nullam tempus tellus\nnon sem sollicitudin, quis rutrum leo facilisis. Nulla tempor lobortis orci,\nat elementum urna sodales vitae. In in vehicula nulla, quis ornare libero.\n\n\n\n\n\n\n\n\nLeft\n\n\nCenter\n\n\nRight\n\n\n\n\n\n\n\n\n\n\nLorem\n\n\ndolor\n\n\namet\n\n\n\n\n\n\nipsum\n\n\nsit\n\n\n\n\n\n\n\n\n\n\nVestibulum vitae orci quis ante viverra ultricies ut eget turpis. Sed eu\nlectus dapibus, eleifend nulla varius, lobortis turpis. In ac hendrerit nisl,\nsit amet laoreet nibh.\n\n\n\n  \n\n    \n\n    \n\n  \n\n  \n\n    \n\n      \nTable\n\n      \nwith colgroups (Pandoc)\n\n    \n\n  \n\n  \n\n    \n\n      \nLorem\n\n      \nipsum dolor sit amet.\n\n    \n\n    \n\n      \nSed sagittis\n\n      \neleifend rutrum. Donec vitae suscipit est.", 
+            "title": "Specimen"
+        }, 
+        {
+            "location": "/specimen/#specimen", 
+            "text": "", 
+            "title": "Specimen"
+        }, 
+        {
+            "location": "/specimen/#body-copy", 
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras arcu libero,\nmollis sed massa vel,  ornare viverra ex . Mauris a ullamcorper lacus. Nullam\nurna elit, malesuada eget finibus ut, ullamcorper ac tortor. Vestibulum sodales\npulvinar nisl, pharetra aliquet est. Quisque volutpat erat ac nisi accumsan\ntempor.  Sed suscipit , orci non pretium pretium, quam mi gravida metus, vel\nvenenatis justo est condimentum diam. Maecenas non ornare justo. Nam a ipsum\neros.  Nulla aliquam  orci sit amet nisl posuere malesuada. Proin aliquet\nnulla velit, quis ultricies orci feugiat et.  Ut tincidunt sollicitudin \ntincidunt. Aenean ullamcorper sit amet nulla at interdum.", 
+            "title": "Body copy"
+        }, 
+        {
+            "location": "/specimen/#headings", 
+            "text": "", 
+            "title": "Headings"
+        }, 
+        {
+            "location": "/specimen/#the-3rd-level", 
+            "text": "", 
+            "title": "The 3rd level"
+        }, 
+        {
+            "location": "/specimen/#the-4th-level", 
+            "text": "", 
+            "title": "The 4th level"
+        }, 
+        {
+            "location": "/specimen/#the-5th-level", 
+            "text": "", 
+            "title": "The 5th level"
+        }, 
+        {
+            "location": "/specimen/#the-6th-level", 
+            "text": "", 
+            "title": "The 6th level"
+        }, 
+        {
+            "location": "/specimen/#headings-with-secondary-text", 
+            "text": "", 
+            "title": "Headings with secondary text"
+        }, 
+        {
+            "location": "/specimen/#the-3rd-level-with-secondary-text", 
+            "text": "", 
+            "title": "The 3rd level with secondary text"
+        }, 
+        {
+            "location": "/specimen/#the-4th-level-with-secondary-text", 
+            "text": "", 
+            "title": "The 4th level with secondary text"
+        }, 
+        {
+            "location": "/specimen/#the-5th-level-with-secondary-text", 
+            "text": "", 
+            "title": "The 5th level with secondary text"
+        }, 
+        {
+            "location": "/specimen/#the-6th-level-with-secondary-text", 
+            "text": "", 
+            "title": "The 6th level with secondary text"
+        }, 
+        {
+            "location": "/specimen/#blockquotes", 
+            "text": "Morbi eget dapibus felis. Vivamus venenatis porttitor tortor sit amet rutrum.\n  Pellentesque aliquet quam enim, eu volutpat urna rutrum a. Nam vehicula nunc\n  mauris, a ultricies libero efficitur sed.  Class aptent  taciti sociosqu ad\n  litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie\n  imperdiet consectetur.", 
+            "title": "Blockquotes"
+        }, 
+        {
+            "location": "/specimen/#blockquote-nesting", 
+            "text": "Sed aliquet , neque at rutrum mollis, neque nisi tincidunt nibh, vitae\n  faucibus lacus nunc at lacus. Nunc scelerisque, quam id cursus sodales, lorem\n   libero fermentum  urna, ut efficitur elit ligula et nunc.   Mauris dictum mi lacus, sit amet pellentesque urna vehicula fringilla.\n    Ut sit amet placerat ante. Proin sed elementum nulla. Nunc vitae sem odio.\n    Suspendisse ac eros arcu. Vivamus orci erat, volutpat a tempor et, rutrum.\n    eu odio.   Suspendisse rutrum facilisis risus , eu posuere neque commodo a.\n      Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed nec leo\n      bibendum, sodales mauris ut, tincidunt massa.", 
+            "title": "Blockquote nesting"
+        }, 
+        {
+            "location": "/specimen/#other-content-blocks", 
+            "text": "Vestibulum vitae orci quis ante viverra ultricies ut eget turpis. Sed eu\n  lectus dapibus, eleifend nulla varius, lobortis turpis. In ac hendrerit nisl,\n  sit amet laoreet nibh.\n   var   _extends   =   function ( target )   { \n   for   ( var   i   =   1 ;   i     arguments . length ;   i ++ )   { \n     var   source   =   arguments [ i ]; \n     for   ( var   key   in   source )   { \n       target [ key ]   =   source [ key ]; \n     } \n   }     return   target ;  };    Praesent at  return   target , sodales nibh vel, tempor felis. Fusce\n      vel lacinia lacus. Suspendisse rhoncus nunc non nisi iaculis ultrices.\n      Donec consectetur mauris non neque imperdiet, eget volutpat libero.", 
+            "title": "Other content blocks"
+        }, 
+        {
+            "location": "/specimen/#lists", 
+            "text": "", 
+            "title": "Lists"
+        }, 
+        {
+            "location": "/specimen/#unordered-lists", 
+            "text": "Sed sagittis eleifend rutrum. Donec vitae suscipit est. Nullam tempus tellus\n  non sem sollicitudin, quis rutrum leo facilisis. Nulla tempor lobortis orci,\n  at elementum urna sodales vitae. In in vehicula nulla, quis ornare libero.   Duis mollis est eget nibh volutpat, fermentum aliquet dui mollis.  Nam vulputate tincidunt fringilla.  Nullam dignissim ultrices urna non auctor.     Aliquam metus eros, pretium sed nulla venenatis, faucibus auctor ex. Proin ut\n  eros sed sapien ullamcorper consequat. Nunc ligula ante, fringilla at aliquam\n  ac, aliquet sed mauris.    Nulla et rhoncus turpis. Mauris ultricies elementum leo. Duis efficitur\n  accumsan nibh eu mattis. Vivamus tempus velit eros, porttitor placerat nibh\n  lacinia sed. Aenean in finibus diam.", 
+            "title": "Unordered lists"
+        }, 
+        {
+            "location": "/specimen/#ordered-lists", 
+            "text": "Integer vehicula feugiat magna, a mollis tellus. Nam mollis ex ante, quis\n  elementum eros tempor rutrum. Aenean efficitur lobortis lacinia. Nulla\n  consectetur feugiat sodales.    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur\n  ridiculus mus. Aliquam ornare feugiat quam et egestas. Nunc id erat et quam\n  pellentesque lacinia eu vel odio.    Vivamus venenatis porttitor tortor sit amet rutrum. Pellentesque aliquet\n  quam enim, eu volutpat urna rutrum a. Nam vehicula nunc mauris, a\n  ultricies libero efficitur sed.   Mauris dictum mi lacus  Ut sit amet placerat ante  Suspendisse ac eros arcu     Morbi eget dapibus felis. Vivamus venenatis porttitor tortor sit amet\n  rutrum. Pellentesque aliquet quam enim, eu volutpat urna rutrum a. Sed\n  aliquet, neque at rutrum mollis, neque nisi tincidunt nibh.    Pellentesque eget  var   _extends  ornare tellus, ut gravida mi. var   _extends   =   function ( target )   {     for   ( var   i   =   1 ;   i     arguments . length ;   i ++ )   { \n     var   source   =   arguments [ i ]; \n     for   ( var   key   in   source )   { \n       target [ key ]   =   source [ key ]; \n     } \n   } \n   return   target ;  };       Vivamus id mi enim. Integer id turpis sapien. Ut condimentum lobortis\n  sagittis. Aliquam purus tellus, faucibus eget urna at, iaculis venenatis\n  nulla. Vivamus a pharetra leo.", 
+            "title": "Ordered lists"
+        }, 
+        {
+            "location": "/specimen/#definition-lists", 
+            "text": "Lorem ipsum dolor sit amet   Sed sagittis eleifend rutrum. Donec vitae suscipit est. Nullam tempus\ntellus non sem sollicitudin, quis rutrum leo facilisis. Nulla tempor\nlobortis orci, at elementum urna sodales vitae. In in vehicula nulla.  Duis mollis est eget nibh volutpat, fermentum aliquet dui mollis.\nNam vulputate tincidunt fringilla.\nNullam dignissim ultrices urna non auctor.   Cras arcu libero   Aliquam metus eros, pretium sed nulla venenatis, faucibus auctor ex. Proin\nut eros sed sapien ullamcorper consequat. Nunc ligula ante, fringilla at\naliquam ac, aliquet sed mauris.", 
+            "title": "Definition lists"
+        }, 
+        {
+            "location": "/specimen/#code-blocks", 
+            "text": "", 
+            "title": "Code blocks"
+        }, 
+        {
+            "location": "/specimen/#inline", 
+            "text": "Morbi eget  dapibus felis . Vivamus  venenatis porttitor  tortor sit amet\nrutrum. Class aptent taciti sociosqu ad litora torquent per conubia nostra,\nper inceptos himenaeos.  Pellentesque aliquet quam enim , eu volutpat urna\nrutrum a.  Nam vehicula nunc  return   target  mauris, a ultricies libero efficitur\nsed. Sed molestie imperdiet consectetur. Vivamus a pharetra leo. Pellentesque\neget ornare tellus, ut gravida mi. Fusce vel lacinia lacus.", 
+            "title": "Inline"
+        }, 
+        {
+            "location": "/specimen/#listing", 
+            "text": "1\n2\n3\n4\n5\n6\n7\n8\n9 var   _extends   =   function ( target )   { \n   for   ( var   i   =   1 ;   i     arguments . length ;   i ++ )   { \n     var   source   =   arguments [ i ]; \n     for   ( var   key   in   source )   { \n       target [ key ]   =   source [ key ]; \n     } \n   }     return   target ;  };", 
+            "title": "Listing"
+        }, 
+        {
+            "location": "/specimen/#horizontal-rules", 
+            "text": "Aenean in finibus diam. Duis mollis est eget nibh volutpat, fermentum aliquet\ndui mollis. Nam vulputate tincidunt fringilla. Nullam dignissim ultrices urna\nnon auctor.   Integer vehicula feugiat magna, a mollis tellus. Nam mollis ex ante, quis\nelementum eros tempor rutrum. Aenean efficitur lobortis lacinia. Nulla\nconsectetur feugiat sodales.", 
+            "title": "Horizontal rules"
+        }, 
+        {
+            "location": "/specimen/#data-tables", 
+            "text": "Sollicitudo / Pellentesi  consectetur  adipiscing  elit  arcu  sed      Vivamus a pharetra  yes  yes  yes  yes  yes    Ornare viverra ex  yes  yes  yes  yes  yes    Mauris a ullamcorper  yes  yes  partial  yes  yes    Nullam urna elit  yes  yes  yes  yes  yes    Malesuada eget finibus  yes  yes  yes  yes  yes    Ullamcorper  yes  yes  yes  yes  yes    Vestibulum sodales  yes  -  yes  -  yes    Pulvinar nisl  yes  yes  yes  -  -    Pharetra aliquet est  yes  yes  yes  yes  yes    Sed suscipit  yes  yes  yes  yes  yes    Orci non pretium  yes  partial  -  -  -     Sed sagittis eleifend rutrum. Donec vitae suscipit est. Nullam tempus tellus\nnon sem sollicitudin, quis rutrum leo facilisis. Nulla tempor lobortis orci,\nat elementum urna sodales vitae. In in vehicula nulla, quis ornare libero.     Left  Center  Right      Lorem  dolor  amet    ipsum  sit      Vestibulum vitae orci quis ante viverra ultricies ut eget turpis. Sed eu\nlectus dapibus, eleifend nulla varius, lobortis turpis. In ac hendrerit nisl,\nsit amet laoreet nibh.  \n   \n     \n     \n   \n   \n     \n       Table \n       with colgroups (Pandoc) \n     \n   \n   \n     \n       Lorem \n       ipsum dolor sit amet. \n     \n     \n       Sed sagittis \n       eleifend rutrum. Donec vitae suscipit est.", 
+            "title": "Data tables"
         }
     ]
 }

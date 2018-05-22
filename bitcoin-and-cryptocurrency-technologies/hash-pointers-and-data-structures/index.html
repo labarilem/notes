@@ -13,7 +13,7 @@
         <meta name="description" content="Notes about various topics, courses, books, etc.">
       
       
-        <link rel="canonical" href="https://marcolabarile.me/notes/">
+        <link rel="canonical" href="https://marcolabarile.me/notes/bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/">
       
       
         <meta name="author" content="Marco Labarile">
@@ -37,22 +37,22 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="./assets/images/favicon-16x16.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon-16x16.png">
       <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
     
     
       
-        <title>Notes</title>
+        <title>Hash pointers - Notes</title>
       
     
     
-      <link rel="stylesheet" href="./assets/stylesheets/application.8d40d89b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
       
-        <link rel="stylesheet" href="./assets/stylesheets/application-palette.6079476c.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
       
     
     
-      <script src="./assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -99,7 +99,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#notes" tabindex="1" class="md-skip">
+      <a href="#hash-pointer" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -125,7 +125,7 @@
                 Notes
               </span>
               <span class="md-header-nav__topic">
-                Home
+                Hash pointers
               </span>
             
           
@@ -240,20 +240,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-    <a href="." title="Home" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
-    
   </li>
 
     
@@ -261,10 +252,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Bitcoind and cryptocurrency technologies
@@ -282,7 +275,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/" title="Home" class="md-nav__link">
+    <a href="../" title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -294,7 +287,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/" title="Cryptographic hash functions" class="md-nav__link">
+    <a href="../crypto-hash-functions/" title="Cryptographic hash functions" class="md-nav__link">
       Cryptographic hash functions
     </a>
   </li>
@@ -306,7 +299,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/digital-signature/" title="Digital signature" class="md-nav__link">
+    <a href="../digital-signature/" title="Digital signature" class="md-nav__link">
       Digital signature
     </a>
   </li>
@@ -316,11 +309,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/" title="Hash pointers" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Hash pointers" class="md-nav__link md-nav__link--active">
       Hash pointers
     </a>
+    
   </li>
 
         
@@ -330,7 +332,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization/" title="Centralization and decentralization" class="md-nav__link">
+    <a href="../centralization-vs-decentralization/" title="Centralization and decentralization" class="md-nav__link">
       Centralization and decentralization
     </a>
   </li>
@@ -342,7 +344,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/distributed-consensus/" title="Distributed consensus" class="md-nav__link">
+    <a href="../distributed-consensus/" title="Distributed consensus" class="md-nav__link">
       Distributed consensus
     </a>
   </li>
@@ -359,7 +361,7 @@
 
 
   <li class="md-nav__item">
-    <a href="specimen/" title="Specimen" class="md-nav__link">
+    <a href="../../specimen/" title="Specimen" class="md-nav__link">
       Specimen
     </a>
   </li>
@@ -393,16 +395,25 @@
               
                 
                 
-                <h1 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h1>
-<p>Notes about various topics, courses, books, etc.</p>
-<p>Courses:</p>
+                <h1 id="hash-pointer">Hash pointer<a class="headerlink" href="#hash-pointer" title="Permanent link">&para;</a></h1>
+<p>A <em>hash pointer</em> consists of 2 informations:</p>
 <ul>
-<li><a href="bitcoin-and-cryptocurrency-technologies/">Bitcoin and cryptocurrency technologies</a></li>
+<li>Address where some info is stored</li>
+<li>Hash of that info</li>
 </ul>
-<p>Books:</p>
-<ul>
-<li><a href="./building-microservices/index.md">Building microservices</a></li>
-</ul>
+<p>Hash pointers can be used in every non-cyclical data structures that uses pointers.</p>
+<h1 id="blockchain">Blockchain<a class="headerlink" href="#blockchain" title="Permanent link">&para;</a></h1>
+<p>A <em>blockchain</em> is a list of linked records, called blocks. Each block contains a cryptographic hash of the previous block.</p>
+<p><img alt="" src="../images/blockchain.svg" /></p>
+<h2 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<p>A blockchain can be used as a tamper evident log. For example, in Bitcoin, a blockchain logs all the transactions (organized in blocks) approved by the network.</p>
+<h1 id="merkle-tree">Merkle tree<a class="headerlink" href="#merkle-tree" title="Permanent link">&para;</a></h1>
+<p>A <em>Merkle tree</em> is a tamper evident binary tree structure.
+The following diagram explains how to build a Merkle tree starting from a known amount of data blocks:</p>
+<p><img alt="" src="../images/merkle-tree.png" /></p>
+<p>A Merkle tree needs to show <em>log(N)</em> items to provide proof of membership for a given data block. The time complexity of this operation is <em>log(N)</em> too.</p>
+<h2 id="use-cases_1">Use cases<a class="headerlink" href="#use-cases_1" title="Permanent link">&para;</a></h2>
+<p>Merkle trees can be used to give informations about a sequence of transactions without needing the data of all the transactions in the sequence, while still preventing attackers to easily tamper that data.</p>
                 
                   
                 
@@ -423,14 +434,28 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
+          <a href="../digital-signature/" title="Digital signature" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Digital signature
+              </span>
+            </div>
+          </a>
         
-          <a href="bitcoin-and-cryptocurrency-technologies/" title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../centralization-vs-decentralization/" title="Centralization and decentralization" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Home
+                Centralization and decentralization
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -470,9 +495,9 @@
       
     </div>
     
-      <script src="./assets/javascripts/application.b438e6c5.js"></script>
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"."}})</script>
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
       
     
     

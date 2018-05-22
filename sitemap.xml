@@ -4,15 +4,55 @@
     
     <url>
      <loc>https://marcolabarile.me/notes//</loc>
-     <lastmod>2018-05-21</lastmod>
+     <lastmod>2018-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
+        
     <url>
      <loc>https://marcolabarile.me/notes//bitcoin-and-cryptocurrency-technologies/</loc>
-     <lastmod>2018-05-21</lastmod>
+     <lastmod>2018-05-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://marcolabarile.me/notes//bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/</loc>
+     <lastmod>2018-05-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://marcolabarile.me/notes//bitcoin-and-cryptocurrency-technologies/digital-signature/</loc>
+     <lastmod>2018-05-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://marcolabarile.me/notes//bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/</loc>
+     <lastmod>2018-05-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://marcolabarile.me/notes//bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization/</loc>
+     <lastmod>2018-05-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://marcolabarile.me/notes//bitcoin-and-cryptocurrency-technologies/distributed-consensus/</loc>
+     <lastmod>2018-05-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>https://marcolabarile.me/notes//specimen/</loc>
+     <lastmod>2018-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

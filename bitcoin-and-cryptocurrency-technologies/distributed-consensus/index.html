@@ -13,7 +13,7 @@
         <meta name="description" content="Notes about various topics, courses, books, etc.">
       
       
-        <link rel="canonical" href="https://marcolabarile.me/notes/">
+        <link rel="canonical" href="https://marcolabarile.me/notes/bitcoin-and-cryptocurrency-technologies/distributed-consensus/">
       
       
         <meta name="author" content="Marco Labarile">
@@ -37,22 +37,22 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="./assets/images/favicon-16x16.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon-16x16.png">
       <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
     
     
       
-        <title>Notes</title>
+        <title>Distributed consensus - Notes</title>
       
     
     
-      <link rel="stylesheet" href="./assets/stylesheets/application.8d40d89b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
       
-        <link rel="stylesheet" href="./assets/stylesheets/application-palette.6079476c.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
       
     
     
-      <script src="./assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -99,7 +99,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#notes" tabindex="1" class="md-skip">
+      <a href="#distributed-consensus" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -125,7 +125,7 @@
                 Notes
               </span>
               <span class="md-header-nav__topic">
-                Home
+                Distributed consensus
               </span>
             
           
@@ -240,20 +240,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-    <a href="." title="Home" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
-    
   </li>
 
     
@@ -261,10 +252,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Bitcoind and cryptocurrency technologies
@@ -282,7 +275,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/" title="Home" class="md-nav__link">
+    <a href="../" title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -294,7 +287,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/" title="Cryptographic hash functions" class="md-nav__link">
+    <a href="../crypto-hash-functions/" title="Cryptographic hash functions" class="md-nav__link">
       Cryptographic hash functions
     </a>
   </li>
@@ -306,7 +299,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/digital-signature/" title="Digital signature" class="md-nav__link">
+    <a href="../digital-signature/" title="Digital signature" class="md-nav__link">
       Digital signature
     </a>
   </li>
@@ -318,7 +311,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/" title="Hash pointers" class="md-nav__link">
+    <a href="../hash-pointers-and-data-structures/" title="Hash pointers" class="md-nav__link">
       Hash pointers
     </a>
   </li>
@@ -330,7 +323,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization/" title="Centralization and decentralization" class="md-nav__link">
+    <a href="../centralization-vs-decentralization/" title="Centralization and decentralization" class="md-nav__link">
       Centralization and decentralization
     </a>
   </li>
@@ -340,11 +333,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/distributed-consensus/" title="Distributed consensus" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Distributed consensus
+      </label>
+    
+    <a href="./" title="Distributed consensus" class="md-nav__link md-nav__link--active">
       Distributed consensus
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definition" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consensus-in-bitcoin" title="Consensus in Bitcoin" class="md-nav__link">
+    Consensus in Bitcoin
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -359,7 +397,7 @@
 
 
   <li class="md-nav__item">
-    <a href="specimen/" title="Specimen" class="md-nav__link">
+    <a href="../../specimen/" title="Specimen" class="md-nav__link">
       Specimen
     </a>
   </li>
@@ -382,6 +420,29 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definition" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consensus-in-bitcoin" title="Consensus in Bitcoin" class="md-nav__link">
+    Consensus in Bitcoin
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -393,16 +454,38 @@
               
                 
                 
-                <h1 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h1>
-<p>Notes about various topics, courses, books, etc.</p>
-<p>Courses:</p>
+                <h1 id="distributed-consensus">Distributed consensus<a class="headerlink" href="#distributed-consensus" title="Permanent link">&para;</a></h1>
+<p>A key challenge of distributed systems is achieving <em>distributed consensus</em>, because it is required for reliability in the system.
+As example, consider a distributed database: if sometimes consensus is not achieved then some databases will not be consistent with the others.</p>
+<h2 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
+<p>Let's suppose there is a network with <em>N</em> nodes. Each node receives an input value. Consensus in the network happens if:</p>
+<ol>
+<li>The consensus protocol terminates.</li>
+<li>All <em>N</em> nodes decide on the same value.</li>
+<li>The decided value must be one of the input values.</li>
+</ol>
+<h2 id="consensus-in-bitcoin">Consensus in Bitcoin<a class="headerlink" href="#consensus-in-bitcoin" title="Permanent link">&para;</a></h2>
+<p>Let's examine what happens when Alice wants to pay Bob some bitcoins:</p>
+<ol>
+<li>Alice signs the transaction referencing Bob's public key. The transactions contain the hash pointing to previously received coins by Alice.</li>
+<li>Alice broadcasts the transaction to the whole network.</li>
+<li>If Bob wants to be notified of the transaction, he might run a Bitcoin node. But his listening is not required for him to receive coins. The network will acknowledge (if valid) the transaction nonetheless.</li>
+</ol>
+<p>It is really important that the network reaches consensus on the validity and ordering of transactions if we want the whole system to work.</p>
+<p>But we cannot solve this problem with an algorithm that has the consensus properties described before, because:</p>
 <ul>
-<li><a href="bitcoin-and-cryptocurrency-technologies/">Bitcoin and cryptocurrency technologies</a></li>
+<li>Nodes may crash</li>
+<li>Nodes may be malicious</li>
+<li>A p2p network is imperfect by nature (e.g. not all nodes are connected, there are faults, there is latency because the network has no notion of global time, etc.)</li>
 </ul>
-<p>Books:</p>
+<p>Also, the literature on distributed consensus is pessimistic, presenting several impossibility results (e.g. <a href="https://en.wikipedia.org/wiki/Byzantine_fault_tolerance#Byzantine_Generals'_Problem">Byzantine generals problem</a>)</p>
+<p>Still, there exist algorithms for achieving distributed consensus that trade off some properties with others (e.g. <a href="https://en.wikipedia.org/wiki/Paxos_(computer_science)">Paxos</a>).</p>
+<p>But note that the hypotheses under which impossible results were proved are not applicable to the Bitcoin network. In fact, distributed consensus works better in practice than in theory for Bitcoin, because:</p>
 <ul>
-<li><a href="./building-microservices/index.md">Building microservices</a></li>
+<li>The idea of <em>incentive</em> is introduced</li>
+<li>Consensus happens over long periods of time (1h usually), not in fixed periods. As time goes on, the probability that an invalid transaction is considered valid decreases exponentially.</li>
 </ul>
+<p>So Bitcoins solves the distributed consensus problem with a probabilistic approach.</p>
                 
                   
                 
@@ -423,14 +506,28 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
+          <a href="../centralization-vs-decentralization/" title="Centralization and decentralization" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Centralization and decentralization
+              </span>
+            </div>
+          </a>
         
-          <a href="bitcoin-and-cryptocurrency-technologies/" title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../../specimen/" title="Specimen" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Home
+                Specimen
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -470,9 +567,9 @@
       
     </div>
     
-      <script src="./assets/javascripts/application.b438e6c5.js"></script>
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"."}})</script>
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
       
     
     

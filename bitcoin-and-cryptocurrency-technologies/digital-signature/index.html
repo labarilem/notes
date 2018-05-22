@@ -13,7 +13,7 @@
         <meta name="description" content="Notes about various topics, courses, books, etc.">
       
       
-        <link rel="canonical" href="https://marcolabarile.me/notes/">
+        <link rel="canonical" href="https://marcolabarile.me/notes/bitcoin-and-cryptocurrency-technologies/digital-signature/">
       
       
         <meta name="author" content="Marco Labarile">
@@ -37,22 +37,22 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="./assets/images/favicon-16x16.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon-16x16.png">
       <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
     
     
       
-        <title>Notes</title>
+        <title>Digital signature - Notes</title>
       
     
     
-      <link rel="stylesheet" href="./assets/stylesheets/application.8d40d89b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
       
-        <link rel="stylesheet" href="./assets/stylesheets/application-palette.6079476c.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
       
     
     
-      <script src="./assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -99,7 +99,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#notes" tabindex="1" class="md-skip">
+      <a href="#digital-signature" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -125,7 +125,7 @@
                 Notes
               </span>
               <span class="md-header-nav__topic">
-                Home
+                Digital signature
               </span>
             
           
@@ -240,20 +240,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-    <a href="." title="Home" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
-    
   </li>
 
     
@@ -261,10 +252,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Bitcoind and cryptocurrency technologies
@@ -282,7 +275,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/" title="Home" class="md-nav__link">
+    <a href="../" title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -294,7 +287,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/" title="Cryptographic hash functions" class="md-nav__link">
+    <a href="../crypto-hash-functions/" title="Cryptographic hash functions" class="md-nav__link">
       Cryptographic hash functions
     </a>
   </li>
@@ -304,11 +297,70 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/digital-signature/" title="Digital signature" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Digital signature
+      </label>
+    
+    <a href="./" title="Digital signature" class="md-nav__link md-nav__link--active">
       Digital signature
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unforgeable-signature-schemes" title="Unforgeable signature schemes" class="md-nav__link">
+    Unforgeable signature schemes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" title="Use cases" class="md-nav__link">
+    Use cases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signature-scheme-used-in-bitcoin" title="Signature scheme used in Bitcoin" class="md-nav__link">
+    Signature scheme used in Bitcoin
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -318,7 +370,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/" title="Hash pointers" class="md-nav__link">
+    <a href="../hash-pointers-and-data-structures/" title="Hash pointers" class="md-nav__link">
       Hash pointers
     </a>
   </li>
@@ -330,7 +382,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization/" title="Centralization and decentralization" class="md-nav__link">
+    <a href="../centralization-vs-decentralization/" title="Centralization and decentralization" class="md-nav__link">
       Centralization and decentralization
     </a>
   </li>
@@ -342,7 +394,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/distributed-consensus/" title="Distributed consensus" class="md-nav__link">
+    <a href="../distributed-consensus/" title="Distributed consensus" class="md-nav__link">
       Distributed consensus
     </a>
   </li>
@@ -359,7 +411,7 @@
 
 
   <li class="md-nav__item">
-    <a href="specimen/" title="Specimen" class="md-nav__link">
+    <a href="../../specimen/" title="Specimen" class="md-nav__link">
       Specimen
     </a>
   </li>
@@ -382,6 +434,43 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unforgeable-signature-schemes" title="Unforgeable signature schemes" class="md-nav__link">
+    Unforgeable signature schemes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" title="Use cases" class="md-nav__link">
+    Use cases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signature-scheme-used-in-bitcoin" title="Signature scheme used in Bitcoin" class="md-nav__link">
+    Signature scheme used in Bitcoin
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -393,16 +482,44 @@
               
                 
                 
-                <h1 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h1>
-<p>Notes about various topics, courses, books, etc.</p>
-<p>Courses:</p>
+                <h1 id="digital-signature">Digital signature<a class="headerlink" href="#digital-signature" title="Permanent link">&para;</a></h1>
+<p>Digital signatures must verify 2 properties:</p>
 <ul>
-<li><a href="bitcoin-and-cryptocurrency-technologies/">Bitcoin and cryptocurrency technologies</a></li>
+<li>
+<p>Only you can sign some data, while anyone can verify the fact that you signed it.</p>
+</li>
+<li>
+<p>The signature must be specific to the data that it signs: if it isn't, anyone can just copy the signature you shared and apply it to different documents.</p>
+</li>
 </ul>
-<p>Books:</p>
+<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
+<p>Digital signature schemes use a <em>public key</em> and a <em>private key</em>:</p>
 <ul>
-<li><a href="./building-microservices/index.md">Building microservices</a></li>
+<li>
+<p>The private key is used to sign data</p>
+</li>
+<li>
+<p>The public key is used to verify signed data</p>
+</li>
 </ul>
+<p>Digital signature schemes must guarantee that signed data is always correctly verified.</p>
+<h2 id="unforgeable-signature-schemes">Unforgeable signature schemes<a class="headerlink" href="#unforgeable-signature-schemes" title="Permanent link">&para;</a></h2>
+<p>When is a signature scheme called unforgeable? Let's consider this game:
+There is an attacker who knows the public key and a challenger who knows the private key too.</p>
+<ul>
+<li>The attacker can pick a document and get the challenger to sign it.</li>
+<li>The challenger will sign that document and send the signed data to the attacker.</li>
+<li>The game can go on as for as much as the attacker wants (at least until a plausible amount of documents is signed)</li>
+</ul>
+<p>Then the attacker tries to sign a message that the challenger has not already signed: if the forged message verifies correctly then the attacker wins, else the challenger wins.</p>
+<p>So a signature scheme is <em>unforgeable</em> if, not matter what algorithm the attacker is using, he has only a slim chance to succeed.</p>
+<h2 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Public keys can be used as identities</li>
+<li>Signature schemes can be used to sign the last hash pointer in a blockchain, thus signing the whole blockchain.</li>
+</ul>
+<h2 id="signature-scheme-used-in-bitcoin">Signature scheme used in Bitcoin<a class="headerlink" href="#signature-scheme-used-in-bitcoin" title="Permanent link">&para;</a></h2>
+<p>Bitcoin uses ECDSA. Note that a good randomness source is essential to avoid leaking your private key using your public key.</p>
                 
                   
                 
@@ -423,14 +540,28 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
+          <a href="../crypto-hash-functions/" title="Cryptographic hash functions" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Cryptographic hash functions
+              </span>
+            </div>
+          </a>
         
-          <a href="bitcoin-and-cryptocurrency-technologies/" title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../hash-pointers-and-data-structures/" title="Hash pointers" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Home
+                Hash pointers
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -470,9 +601,9 @@
       
     </div>
     
-      <script src="./assets/javascripts/application.b438e6c5.js"></script>
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"."}})</script>
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
       
     
     

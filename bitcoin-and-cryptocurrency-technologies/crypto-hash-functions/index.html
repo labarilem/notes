@@ -13,7 +13,7 @@
         <meta name="description" content="Notes about various topics, courses, books, etc.">
       
       
-        <link rel="canonical" href="https://marcolabarile.me/notes/">
+        <link rel="canonical" href="https://marcolabarile.me/notes/bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/">
       
       
         <meta name="author" content="Marco Labarile">
@@ -37,22 +37,22 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="./assets/images/favicon-16x16.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon-16x16.png">
       <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
     
     
       
-        <title>Notes</title>
+        <title>Cryptographic hash functions - Notes</title>
       
     
     
-      <link rel="stylesheet" href="./assets/stylesheets/application.8d40d89b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
       
-        <link rel="stylesheet" href="./assets/stylesheets/application-palette.6079476c.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
       
     
     
-      <script src="./assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -99,7 +99,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#notes" tabindex="1" class="md-skip">
+      <a href="#hash-function" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -125,7 +125,7 @@
                 Notes
               </span>
               <span class="md-header-nav__topic">
-                Home
+                Cryptographic hash functions
               </span>
             
           
@@ -240,20 +240,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-    <a href="." title="Home" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
-    
   </li>
 
     
@@ -261,10 +252,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Bitcoind and cryptocurrency technologies
@@ -282,7 +275,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/" title="Home" class="md-nav__link">
+    <a href="../" title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -292,11 +285,129 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/" title="Cryptographic hash functions" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Cryptographic hash functions
+      </label>
+    
+    <a href="./" title="Cryptographic hash functions" class="md-nav__link md-nav__link--active">
       Cryptographic hash functions
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#properties" title="Properties" class="md-nav__link">
+    Properties
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collision-free" title="Collision-free" class="md-nav__link">
+    Collision-free
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application" title="Application" class="md-nav__link">
+    Application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hiding" title="Hiding" class="md-nav__link">
+    Hiding
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application_1" title="Application" class="md-nav__link">
+    Application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puzzle-friendly" title="Puzzle-friendly" class="md-nav__link">
+    Puzzle-friendly
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application_2" title="Application" class="md-nav__link">
+    Application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hash-function-examples" title="Hash function examples" class="md-nav__link">
+    Hash function examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sha-256" title="SHA-256" class="md-nav__link">
+    SHA-256
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -306,7 +417,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/digital-signature/" title="Digital signature" class="md-nav__link">
+    <a href="../digital-signature/" title="Digital signature" class="md-nav__link">
       Digital signature
     </a>
   </li>
@@ -318,7 +429,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/" title="Hash pointers" class="md-nav__link">
+    <a href="../hash-pointers-and-data-structures/" title="Hash pointers" class="md-nav__link">
       Hash pointers
     </a>
   </li>
@@ -330,7 +441,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization/" title="Centralization and decentralization" class="md-nav__link">
+    <a href="../centralization-vs-decentralization/" title="Centralization and decentralization" class="md-nav__link">
       Centralization and decentralization
     </a>
   </li>
@@ -342,7 +453,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bitcoin-and-cryptocurrency-technologies/distributed-consensus/" title="Distributed consensus" class="md-nav__link">
+    <a href="../distributed-consensus/" title="Distributed consensus" class="md-nav__link">
       Distributed consensus
     </a>
   </li>
@@ -359,7 +470,7 @@
 
 
   <li class="md-nav__item">
-    <a href="specimen/" title="Specimen" class="md-nav__link">
+    <a href="../../specimen/" title="Specimen" class="md-nav__link">
       Specimen
     </a>
   </li>
@@ -382,6 +493,102 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#properties" title="Properties" class="md-nav__link">
+    Properties
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collision-free" title="Collision-free" class="md-nav__link">
+    Collision-free
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application" title="Application" class="md-nav__link">
+    Application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hiding" title="Hiding" class="md-nav__link">
+    Hiding
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application_1" title="Application" class="md-nav__link">
+    Application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puzzle-friendly" title="Puzzle-friendly" class="md-nav__link">
+    Puzzle-friendly
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application_2" title="Application" class="md-nav__link">
+    Application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hash-function-examples" title="Hash function examples" class="md-nav__link">
+    Hash function examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sha-256" title="SHA-256" class="md-nav__link">
+    SHA-256
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -393,16 +600,29 @@
               
                 
                 
-                <h1 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h1>
-<p>Notes about various topics, courses, books, etc.</p>
-<p>Courses:</p>
-<ul>
-<li><a href="bitcoin-and-cryptocurrency-technologies/">Bitcoin and cryptocurrency technologies</a></li>
-</ul>
-<p>Books:</p>
-<ul>
-<li><a href="./building-microservices/index.md">Building microservices</a></li>
-</ul>
+                <h1 id="hash-function">Hash function<a class="headerlink" href="#hash-function" title="Permanent link">&para;</a></h1>
+<p>A function that maps a string to a fixed size output.</p>
+<p><em>H(x): x string -&gt; fixed size output</em></p>
+<h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
+<h3 id="collision-free">Collision-free<a class="headerlink" href="#collision-free" title="Permanent link">&para;</a></h3>
+<p>It's hard to find a collision.
+Note that no hash function has ever been formally proved to be collision-free.</p>
+<h6 id="application">Application<a class="headerlink" href="#application" title="Permanent link">&para;</a></h6>
+<p><strong>Message digest:</strong> if <em>H(x) = H(y)</em> then it's safe to assume that <em>x = y</em>. This means that hash functions can help verify the integrity of documents without scanning the whole document.</p>
+<h3 id="hiding">Hiding<a class="headerlink" href="#hiding" title="Permanent link">&para;</a></h3>
+<p>Given <em>H(x)</em>, it's hard to find <em>x</em>.</p>
+<h6 id="application_1">Application<a class="headerlink" href="#application_1" title="Permanent link">&para;</a></h6>
+<p><strong>Commitment problem:</strong> we want to commit to value and reveal it later to an audience. If we hash that value, thanks to this property, we know that it will be hard for attackers to correctly guess it before we chose to disclose it. While our audience also knows that we wouldn't be able to change the committed value because hash functions are collision-free: it would be infeasible to generate a collision with the value we picked.</p>
+<h3 id="puzzle-friendly">Puzzle-friendly<a class="headerlink" href="#puzzle-friendly" title="Permanent link">&para;</a></h3>
+<p>Given a puzzle <em>id</em> and a target set <em>Y</em>, try to find a solution <em>x</em> such that <em>H(id | x) is in Y</em>.
+Puzzle-friendly means that, for the stated problem, no solving strategy is much better that trying random values of x.</p>
+<h6 id="application_2">Application<a class="headerlink" href="#application_2" title="Permanent link">&para;</a></h6>
+<p><strong>Crypto puzzles:</strong> puzzles that can be used as proof of work. These puzzles are used in blockchain based coin technologies such as Bitcoin.</p>
+<h2 id="hash-function-examples">Hash function examples<a class="headerlink" href="#hash-function-examples" title="Permanent link">&para;</a></h2>
+<h2 id="sha-256">SHA-256<a class="headerlink" href="#sha-256" title="Permanent link">&para;</a></h2>
+<p>A popular hash function.
+A high level description of SHA-256 is given by the following diagram:</p>
+<p><img alt="" src="../images/sha256.png" /></p>
                 
                   
                 
@@ -423,14 +643,28 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
+          <a href="../" title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
         
-          <a href="bitcoin-and-cryptocurrency-technologies/" title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../digital-signature/" title="Digital signature" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Home
+                Digital signature
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -470,9 +704,9 @@
       
     </div>
     
-      <script src="./assets/javascripts/application.b438e6c5.js"></script>
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"."}})</script>
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
       
     
     
