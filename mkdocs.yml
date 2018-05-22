@@ -31,7 +31,7 @@ theme:
   feature:
     tabs: false
   palette:
-    primary: blue grey
+    primary: teal
     accent: teal
   font:
     text: Roboto
@@ -79,16 +79,11 @@ markdown_extensions:
 # Page tree
 pages:
   - Home: index.md
-  - Bitcoind and cryptocurrency technologies: bitcoin-and-cryptocurrency-technologies/index.md
-#   - Extensions:
-#     - Admonition: extensions/admonition.md
-#     - CodeHilite: extensions/codehilite.md
-#     - Footnotes: extensions/footnotes.md
-#     - Metadata: extensions/metadata.md
-#     - Permalinks: extensions/permalinks.md
-#     - PyMdown: extensions/pymdown.md
-#   - Specimen: specimen.md
-
-#   - Author's notes: authors-notes.md
-#   - Contributing: contributing.md
-#   - License: license.md
+  - Bitcoind and cryptocurrency technologies:
+    - Home: bitcoin-and-cryptocurrency-technologies/index.md
+    - Cryptographic hash functions: bitcoin-and-cryptocurrency-technologies/crypto-hash-functions.md
+    - Digital signature: bitcoin-and-cryptocurrency-technologies/digital-signature.md
+    - Hash pointers: bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures.md
+    - Centralization and decentralization: bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization.md
+    - Distributed consensus: bitcoin-and-cryptocurrency-technologies/distributed-consensus.md
+  - Specimen: specimen.md
