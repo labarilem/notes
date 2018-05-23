@@ -1,6 +1,6 @@
 # Notes
 
-Notes about various topics, courses, books, etc.
+Notes about various topics, courses, books, etc. Go [here](https://marcolabarile.me/notes/) to browse them.
 
 Courses:
 
