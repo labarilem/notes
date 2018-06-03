@@ -12,6 +12,10 @@ Books:
 
 ## Contributors
 
+### Getting started
+
+Read the [mkdocs-material guide](https://squidfunk.github.io/mkdocs-material/getting-started/).
+
 ### How to serve local website
 
 Run:

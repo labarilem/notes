@@ -2,7 +2,7 @@
 
 Notes on the 2018 edition of the Coursera MOOC [Bitcoin and Cryptocurrency Technologies](https://www.coursera.org/learn/cryptocurrency) by Princeton University.
 
- About this course:
+About this course:
 
 > To really understand what is special about Bitcoin, we need to understand how it works at a technical level. We’ll address the important questions about Bitcoin, such as:
 >
@@ -11,3 +11,11 @@ Notes on the 2018 edition of the Coursera MOOC [Bitcoin and Cryptocurrency Techn
 > After this course, you’ll know everything you need to be able to separate fact from fiction when reading claims about Bitcoin and other cryptocurrencies. You’ll have the conceptual foundations you need to engineer secure software that interacts with the Bitcoin network. And you’ll be able to integrate ideas from Bitcoin in your own projects.
 Course Lecturers:
 Arvind Narayanan, Princeton University
+
+Lessons:
+
+1. [Cryptographic hash functions](./crypto-hash-functions.md)
+2. [Digital signature](./digital-signature.md)
+3. [Hash pointers](./hash-pointers-and-data-structures.md)
+4. [Centralization and decentralization](./centralization-vs-decentralization.md)
+5. [Distributed consensus](./distributed-consensus.md)

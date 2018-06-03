@@ -31,8 +31,8 @@ theme:
   feature:
     tabs: false
   palette:
-    primary: teal
-    accent: teal
+    primary: green
+    accent: green
   font:
     text: Roboto
     code: Roboto Mono
