@@ -95,4 +95,3 @@ pages:
     - Splitting the monolith: building-microservices/splitting-the-monolith.md
     - Deployment: building-microservices/deployment.md
     - Testing: building-microservices/testing.md
-  - Specimen: specimen.md
