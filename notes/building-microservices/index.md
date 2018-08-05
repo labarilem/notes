@@ -17,3 +17,4 @@ Chapters:
 5. [Splitting the monolith](./splitting-the-monolith.md)
 6. [Deployment](./deployment.md)
 7. [Testing](./testing.md)
+7. [Monitoring](./monitoring.md)
