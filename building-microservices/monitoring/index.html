@@ -574,6 +574,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../conway/" title="Conway's Law and System Desing" class="md-nav__link">
+      Conway's Law and System Desing
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -722,13 +746,13 @@
 <p>For example, out monitoring system could publish a message in a queue from time to time and track how the system behaves when handling that message. If any issues are found, they are reported and we would be able to debug them because we have low-level monitoring in place too.
 Sending this fake message is an example of a <em>synthetic transaction</em> used to ensure the system was behaving semantically, which is why this technique is often called <em>semantic monitoring</em>.</p>
 <p>But how to implement semantic monitoring?
-We can reuse the code in our tests and run a subste of it against the production system. You must carefully check the data requirements and ensure that no side effects are going to take place. A common solution is to enable a set of fake users that will perform synthetic transaction in production.</p>
+We can reuse the code in our tests and run a subset of it against the production system. You must carefully check the data requirements and ensure that no side effects are going to take place. A common solution is to enable a set of fake users that will perform synthetic transaction in production.</p>
 <h2 id="correlation-ids">Correlation IDs<a class="headerlink" href="#correlation-ids" title="Permanent link">&para;</a></h2>
-<p>With a large number of services, a single initiating call can end up generating multiple more downstream service calls.</p>
+<p>With many services, a single initiating call can end up generating multiple more downstream service calls.</p>
 <p>How to track these calls?</p>
 <p>A possible solution is to use correlation IDs: when the first call is made, you generate a GUID for the call. This is then passed along to all subsequent calls.</p>
 <p>It would be better to adopt correlation ids from the start, because it's usually very hard to retro fit call logs with correlation ids.</p>
-<p>Also note that using correlation IDs justifies the development of a client library shared between microservices, because it would simplify communication a lot. Just remember to keep these shared libraries as thin as possible to avoid any kind of coupling.</p>
+<p>Also, note that using correlation IDs justifies the development of a client library shared between microservices, because it would simplify communication a lot. Just remember to keep these shared libraries as thin as possible to avoid any kind of coupling.</p>
 <h2 id="cascading-failures">Cascading Failures<a class="headerlink" href="#cascading-failures" title="Permanent link">&para;</a></h2>
 <p>Cascading failures can be especially perilous. Imagine a situation where a service cannot communicate with a downstream service while they both look healthy.</p>
 <p>Using synthetic monitoring would pick up the problem. But we’d also need to report on the fact that one service cannot see another in order to determine the cause of the problem. Therefore, monitoring the integration points between systems is fundamental. Each service instance should track and expose the health of its downstream dependencies, from the database to other collaborating services.</p>
@@ -789,6 +813,20 @@ We can reuse the code in our tests and run a subste of it against the production
             </div>
           </a>
         
+        
+          <a href="../security/" title="Security" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Security
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>

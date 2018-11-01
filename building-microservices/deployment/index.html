@@ -709,6 +709,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../conway/" title="Conway's Law and System Desing" class="md-nav__link">
+      Conway's Law and System Desing
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1041,7 +1065,7 @@ Usually these are:</p>
 <li>Performance/load test environment.</li>
 <li>Production environment.</li>
 </ol>
-<p>As you go on in the pipeline, you want the environments to look more like the production environment, allowing to catch production problems before they happen in production.
+<p>As you go on in the pipeline, you want the environments to look more like the production environment, allowing us to catch production problems before they happen in production.
 But consider that production environments are more expensive and slower to set up. So you should balance the ability to find production-like bugs with the ability to get fast feedback from builds.</p>
 <h2 id="service-configuration">Service configuration<a class="headerlink" href="#service-configuration" title="Permanent link">&para;</a></h2>
 <p>Our services need some configuration (e.g. db username and password). Ideally this should be a small amount of data. Also, it's best to minimize configuration that changes between environments, so that you minimize chances for environment-specific bugs.
@@ -1113,16 +1137,14 @@ But how to handle this kind of configuration?</p>
 <p>Automation also allow developers to be productive, especially if they have access to the same technologies used in production because it will help catch bugs early on.</p>
 <p>Embracing a culture of automation is key if you want to keep the complexities of microservice architectures in check.</p>
 <h2 id="from-physical-to-virtual">From Physical to Virtual<a class="headerlink" href="#from-physical-to-virtual" title="Permanent link">&para;</a></h2>
-<p>One of the key tools available to us in managing a large number of hosts is finding ways
-of chunking up existing physical machines into smaller parts.</p>
+<p>One of the key tools available to us in managing many hosts is finding ways of chunking up existing physical machines into smaller parts.</p>
 <h3 id="traditional-virtualization">Traditional Virtualization<a class="headerlink" href="#traditional-virtualization" title="Permanent link">&para;</a></h3>
 <p>Having lots of hosts can be really expensive if you need a physical server per host. By virtualizing you can split a physical machine in separate parts but of course this comes with an overhead.</p>
 <p>For example, in <em>Type 2</em> virtualization, the <em>hypervisor</em> sets aside resources for each virtual machine it manages, but these resources could be used for something else instead of being idle and reserved.</p>
 <p><img alt="Image" src="../images/type-2-virtualization.png" /></p>
 <h4 id="vagrant">Vagrant<a class="headerlink" href="#vagrant" title="Permanent link">&para;</a></h4>
-<p>A deployment platform usually employed for development and testing. It allows to define instructions about how to setup and configure VMs. This makes it easier for you to create production-like environments on your local machine.</p>
-<p>One of the downsides is that if we have one service to one VM, you may not be able to bring up
-your entire system on your local machine.</p>
+<p>A deployment platform usually employed for development and testing. It allows us to define instructions about how to setup and configure VMs. This makes it easier for you to create production-like environments on your local machine.</p>
+<p>One of the downsides is that if we have one service to one VM, you may not be able to bring up your entire system on your local machine.</p>
 <h3 id="linux-containers">Linux containers<a class="headerlink" href="#linux-containers" title="Permanent link">&para;</a></h3>
 <p>Linux containers, instead of using an hypervisor, create a separate process space in which other processes live.</p>
 <p><img alt="Image" src="../images/container-virtualization.png" /></p>
@@ -1131,7 +1153,7 @@ your entire system on your local machine.</p>
 <ul>
 <li>No need for an hypervisor.</li>
 <li>Much faster to provision than traditional VMs.</li>
-<li>Finer-grained control over resources assignation.</li>
+<li>Finer-grained control over assignation of resources.</li>
 <li>Since they are lighter than VMs, we can have more containers running on the same host.</li>
 </ul>
 <p>Downsides:</p>
@@ -1141,8 +1163,8 @@ your entire system on your local machine.</p>
 <li>How to expose containers to the outer world? A specific network configuration is needed, something that is usually provided by hypervisors.</li>
 </ul>
 <h3 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
-<p>Docker is a platform built on top of lightweight containers. Docker manages the container provisioning, handles some of the networking problems and provides its own registry that allows you to store and version Docker applications.</p>
-<p>Docker can also alleviate some of the downsides of running lots of services locally for dev and test purposes, in a more efficient way than Vagrant.</p>
+<p>Docker is a platform built on top of lightweight containers. Docker manages the container provisioning, handles some networking problems and provides its own registry that allows you to store and version Docker applications.</p>
+<p>Docker can also alleviate some downsides of running lots of services locally for dev and test purposes, in a more efficient way than Vagrant.</p>
 <p>Several technologies are build around the Docker concepts, such as <a href="https://coreos.com/">CoreOS</a>, a stripped-down Linux OS that provides only the essential services to allow Docker to run.</p>
 <p>Docker itself doesn’t solve all problems for us. Think of it as a simple PaaS that works on a single machine. If you want tools to help you manage services across multiple Docker instances across multiple machines, you’ll need to look at software such as <a href="https://kubernetes.io/">Kubernetes</a> or CoreOS.</p>
 <h2 id="a-deployment-interface">A Deployment Interface<a class="headerlink" href="#a-deployment-interface" title="Permanent link">&para;</a></h2>
@@ -1161,7 +1183,7 @@ your entire system on your local machine.</p>
 <li>Maintain the ability to deploy microservices independently.</li>
 <li>Separate source code and CI builds for each microservices.</li>
 <li>Use a single-service per host/container model. Evaluate the tooling aiming for high levels of automation.</li>
-<li>Understand how deployment choices affects developers. Creating tools that help deploying to different environments helps a lot.</li>
+<li>Understand how deployment choices affects developers. Creating tools that make it easy to deploy to different environments helps a lot.</li>
 </ul>
                 
                   

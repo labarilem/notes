@@ -662,6 +662,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../conway/" title="Conway's Law and System Desing" class="md-nav__link">
+      Conway's Law and System Desing
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -904,7 +928,7 @@
 <p>Compared to database integration, RPC is certainly an improvement when we think about options for request/response collaboration.</p>
 <h2 id="rest">REST<a class="headerlink" href="#rest" title="Permanent link">&para;</a></h2>
 <p>REpresentational State Transfer (REST) is an architectural style inspired by the Web. The most important concept is the one of resource, which can be requested in different representations. This favours decoupling between internal and external representations.</p>
-<p>There are many different styles of REST, compared in the <a href="https://martinfowler.com/articles/richardsonMaturityModel.html">Richardson Maturity Model</a>.</p>
+<p>There are many styles of REST, compared in the <a href="https://martinfowler.com/articles/richardsonMaturityModel.html">Richardson Maturity Model</a>.</p>
 <p>Usually REST is implemented over HTTP because HTTP provides parts of the REST specification, such as verbs. Also, there are lots of tools supporting REST with HTTP.</p>
 <h3 id="hateoas">HATEOAS<a class="headerlink" href="#hateoas" title="Permanent link">&para;</a></h3>
 <p>Another principle introduced in REST that can help us avoid the coupling between client and server is the concept of <strong>hypermedia as the engine of application state</strong> (often abbreviated as HATEOAS). One of the downsides is that the navigation of controls can be quite chatty, as the client needs to follow links to find the operation it wants to perform. Ultimately, this is a trade-off.</p>
@@ -931,7 +955,7 @@ XML has built-in support for hypermedia while there are standards to provide hyp
 <h2 id="dry-in-microservices">DRY in Microservices<a class="headerlink" href="#dry-in-microservices" title="Permanent link">&para;</a></h2>
 <p>Following the DRY principle can cause coupling between microservices. As a general rule, DRY is to be followed only inside service boundaries. Across different services, code duplication is a smaller problem than coupling. An exception to this rule can be model-agnostic code such as logging, which can be safely shared between microservices.</p>
 <h3 id="client-libraries">Client libraries<a class="headerlink" href="#client-libraries" title="Permanent link">&para;</a></h3>
-<p>Client libraries can cause coupling between services and clients. To limit this danger, it's best if different developer teams develop the server API and the client library: this way there should be no "logic leaks" from the server into the client.
+<p>Client libraries can cause coupling between services and clients. To limit this danger, it's best if different developer teams develop the server API and the client library: this way there should be no <em>logic leaks</em> from the server into the client.
 It's also important to give clients control on when to upgrade their client libraries, to avoid coupling in deploys.</p>
 <h2 id="access-by-reference">Access by Reference<a class="headerlink" href="#access-by-reference" title="Permanent link">&para;</a></h2>
 <p>Sometimes it may happen to pass around outdated information: we request a <em>Customer</em> and then we use that customer in another request, but in the meanwhile it has changed.
@@ -952,8 +976,7 @@ In order to retrieve the current state, such requests must include an ID of the 
 </ul>
 <h2 id="user-interfaces">User interfaces<a class="headerlink" href="#user-interfaces" title="Permanent link">&para;</a></h2>
 <p>Each type of user interface (e.g. browser, desktop, mobile) has its own constraints. So even though our core services are the same, we might need a way to adapt them for these constraints.</p>
-<p>Let’s look at a few models of user interfaces to see how this might be
-achieved.</p>
+<p>Let’s look at a few models of user interfaces to see how this might be achieved.</p>
 <h3 id="api-composition">API composition<a class="headerlink" href="#api-composition" title="Permanent link">&para;</a></h3>
 <p>Each part of the UI communicates with a specific service via its API.</p>
 <p><img alt="Image" src="../images/api-composition.png" /></p>
@@ -964,10 +987,9 @@ achieved.</p>
 <li>This communication could also be fairly chatty. Opening lots of calls directly to services can be quite intensive for mobile devices.</li>
 </ul>
 <h3 id="ui-fragment-composition">UI Fragment composition<a class="headerlink" href="#ui-fragment-composition" title="Permanent link">&para;</a></h3>
-<p>Rather than having our UI make API calls and map everything back to UI controls, we
-could have our services provide parts of the UI directly.</p>
+<p>Rather than having our UI make API calls and map everything back to UI controls, we could have our services provide parts of the UI directly.</p>
 <p><img alt="Image" src="../images/ui-fragment-composition.png" /></p>
-<p>The same team that makes changes to the services can also be in charge of making changes to those parts of the UI, allowing to get changes out faster.</p>
+<p>The same team that makes changes to the services can also be in charge of making changes to those parts of the UI, allowing us to get changes out faster.</p>
 <p>Downsides:</p>
 <ul>
 <li>We need to ensure consistency of the user experience, CSS and HTML style guides can help.</li>
@@ -988,7 +1010,7 @@ could have our services provide parts of the UI directly.</p>
 <ul>
 <li><strong>Lack of control:</strong> probably many of the technical decisions have been made for you to simplify product usage. The tool selection process should take into account ease of use of third-party software.</li>
 <li><strong>Customization:</strong> many enterprise tools sell themselves on their ability to be heavily customized just for you. But the cost of customization can be more expensive than building something bespoke from scratch.</li>
-<li><strong>Integration spaghetti:</strong> ideally you want to standardize on a small number of types of integration. If one product forces you tu use proprietary protocols, it could mean troubles.</li>
+<li><strong>Integration spaghetti:</strong> ideally you want to standardize on a few types of integration. If one product forces you tu use proprietary protocols, it could mean troubles.</li>
 </ul>
 <p>Best practices:</p>
 <ul>

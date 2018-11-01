@@ -13,7 +13,7 @@
         <meta name="description" content="Notes about various topics, courses, books, etc.">
       
       
-        <link rel="canonical" href="https://marcolabarile.me/notes/building-microservices/splitting-the-monolith/">
+        <link rel="canonical" href="https://marcolabarile.me/notes/building-microservices/security/">
       
       
         <meta name="author" content="Marco Labarile">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Splitting the monolith - Marco Labarile - Notes</title>
+        <title>Security - Marco Labarile - Notes</title>
       
     
     
@@ -99,7 +99,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#splitting-the-monolith" tabindex="1" class="md-skip">
+      <a href="#security" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -125,7 +125,7 @@
                 Marco Labarile - Notes
               </span>
               <span class="md-header-nav__topic">
-                Splitting the monolith
+                Security
               </span>
             
           
@@ -429,159 +429,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Splitting the monolith
-      </label>
-    
-    <a href="./" title="Splitting the monolith" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../splitting-the-monolith/" title="Splitting the monolith" class="md-nav__link">
       Splitting the monolith
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#seams" title="Seams" class="md-nav__link">
-    Seams
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#databases" title="Databases" class="md-nav__link">
-    Databases
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#foreign-keys" title="Foreign keys" class="md-nav__link">
-    Foreign keys
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#shared-static-data" title="Shared static data" class="md-nav__link">
-    Shared static data
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#shared-mutable-data" title="Shared mutable data" class="md-nav__link">
-    Shared mutable data
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#shared-tables" title="Shared tables" class="md-nav__link">
-    Shared tables
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#staging-the-break" title="Staging the break" class="md-nav__link">
-    Staging the break
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transactional-boundaries" title="Transactional Boundaries" class="md-nav__link">
-    Transactional Boundaries
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reporting" title="Reporting" class="md-nav__link">
-    Reporting
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-reporting-database" title="The Reporting Database" class="md-nav__link">
-    The Reporting Database
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-retrieval-via-service-calls" title="Data Retrieval via Service Calls" class="md-nav__link">
-    Data Retrieval via Service Calls
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-pumps" title="Data Pumps" class="md-nav__link">
-    Data Pumps
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#event-data-pump" title="Event Data Pump" class="md-nav__link">
-    Event Data Pump
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#backup-data-pump" title="Backup data pump" class="md-nav__link">
-    Backup data pump
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" title="Summary" class="md-nav__link">
-    Summary
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -625,11 +477,166 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../security/" title="Security" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Security
+      </label>
+    
+    <a href="./" title="Security" class="md-nav__link md-nav__link--active">
       Security
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-and-authorization" title="Authentication and Authorization" class="md-nav__link">
+    Authentication and Authorization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#single-sign-on" title="Single Sign-On" class="md-nav__link">
+    Single Sign-On
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-sign-on-gateway" title="Single Sign-On Gateway" class="md-nav__link">
+    Single Sign-On Gateway
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-to-service-authentication-and-authorization" title="Service-to-Service Authentication and Authorization" class="md-nav__link">
+    Service-to-Service Authentication and Authorization
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allow-everything-inside-the-perimeter" title="Allow Everything Inside the Perimeter" class="md-nav__link">
+    Allow Everything Inside the Perimeter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#https-basic-authentication" title="HTTP(S) Basic Authentication" class="md-nav__link">
+    HTTP(S) Basic Authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reuse-a-sso-implementation" title="Reuse a SSO implementation" class="md-nav__link">
+    Reuse a SSO implementation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-certificates" title="Client certificates" class="md-nav__link">
+    Client certificates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hmac-over-http" title="HMAC over HTTP" class="md-nav__link">
+    HMAC over HTTP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-keys" title="API Keys" class="md-nav__link">
+    API Keys
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-deputy-problem" title="The deputy problem" class="md-nav__link">
+    The deputy problem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#securing-data-at-rest" title="Securing Data at Rest" class="md-nav__link">
+    Securing Data at Rest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-protections" title="Other protections" class="md-nav__link">
+    Other protections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-human-element" title="The Human Element" class="md-nav__link">
+    The Human Element
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baking-security-in" title="Baking Security In" class="md-nav__link">
+    Baking Security In
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -671,58 +678,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#seams" title="Seams" class="md-nav__link">
-    Seams
+  <a href="#authentication-and-authorization" title="Authentication and Authorization" class="md-nav__link">
+    Authentication and Authorization
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#databases" title="Databases" class="md-nav__link">
-    Databases
+  <a href="#single-sign-on" title="Single Sign-On" class="md-nav__link">
+    Single Sign-On
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#foreign-keys" title="Foreign keys" class="md-nav__link">
-    Foreign keys
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#shared-static-data" title="Shared static data" class="md-nav__link">
-    Shared static data
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#shared-mutable-data" title="Shared mutable data" class="md-nav__link">
-    Shared mutable data
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#shared-tables" title="Shared tables" class="md-nav__link">
-    Shared tables
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#staging-the-break" title="Staging the break" class="md-nav__link">
-    Staging the break
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transactional-boundaries" title="Transactional Boundaries" class="md-nav__link">
-    Transactional Boundaries
+  <a href="#single-sign-on-gateway" title="Single Sign-On Gateway" class="md-nav__link">
+    Single Sign-On Gateway
   </a>
   
 </li>
@@ -733,50 +705,92 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reporting" title="Reporting" class="md-nav__link">
-    Reporting
+  <a href="#service-to-service-authentication-and-authorization" title="Service-to-Service Authentication and Authorization" class="md-nav__link">
+    Service-to-Service Authentication and Authorization
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-reporting-database" title="The Reporting Database" class="md-nav__link">
-    The Reporting Database
+  <a href="#allow-everything-inside-the-perimeter" title="Allow Everything Inside the Perimeter" class="md-nav__link">
+    Allow Everything Inside the Perimeter
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#data-retrieval-via-service-calls" title="Data Retrieval via Service Calls" class="md-nav__link">
-    Data Retrieval via Service Calls
+  <a href="#https-basic-authentication" title="HTTP(S) Basic Authentication" class="md-nav__link">
+    HTTP(S) Basic Authentication
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#data-pumps" title="Data Pumps" class="md-nav__link">
-    Data Pumps
+  <a href="#reuse-a-sso-implementation" title="Reuse a SSO implementation" class="md-nav__link">
+    Reuse a SSO implementation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#event-data-pump" title="Event Data Pump" class="md-nav__link">
-    Event Data Pump
+  <a href="#client-certificates" title="Client certificates" class="md-nav__link">
+    Client certificates
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#backup-data-pump" title="Backup data pump" class="md-nav__link">
-    Backup data pump
+  <a href="#hmac-over-http" title="HMAC over HTTP" class="md-nav__link">
+    HMAC over HTTP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-keys" title="API Keys" class="md-nav__link">
+    API Keys
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-deputy-problem" title="The deputy problem" class="md-nav__link">
+    The deputy problem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#securing-data-at-rest" title="Securing Data at Rest" class="md-nav__link">
+    Securing Data at Rest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-protections" title="Other protections" class="md-nav__link">
+    Other protections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-human-element" title="The Human Element" class="md-nav__link">
+    The Human Element
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baking-security-in" title="Baking Security In" class="md-nav__link">
+    Baking Security In
+  </a>
   
 </li>
       
@@ -804,121 +818,153 @@
               
                 
                 
-                <h1 id="splitting-the-monolith">Splitting the monolith<a class="headerlink" href="#splitting-the-monolith" title="Permanent link">&para;</a></h1>
-<p>Why would you want to split a monolith?</p>
+                <h1 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h1>
+<p>We need to be aware of the importance of customers' data in our systems. How can we work out what is <em>enough</em> security to protect that data?</p>
+<h2 id="authentication-and-authorization">Authentication and Authorization<a class="headerlink" href="#authentication-and-authorization" title="Permanent link">&para;</a></h2>
+<p><strong>Authentication</strong> is the mechanism by which an actor proves that he is who he says he is. The actor who is being authenticated is called <strong>principal</strong>.</p>
+<p><strong>Authorization</strong> maps a principal to the action he's allowed to do.</p>
+<p>Generally, in monolithic applications, web framework provide all the authentication and authorization functionalities for you. While in distributed systems we aim to authenticate a principal a single time for all microservices.</p>
+<h2 id="single-sign-on">Single Sign-On<a class="headerlink" href="#single-sign-on" title="Permanent link">&para;</a></h2>
+<p>SSO is a common approach to authentication and authorization.</p>
+<p><em>How it works:</em></p>
+<p>When a <em>principal</em> tries to access a <em>resource</em>, she is directed to authenticate with an <em>identity provider</em> that may ask her to provide a <em>secret</em>. If the identity provider is satisfied of the secret, it gives information to the service provider, allowing it to decide whether to grant her access to the resource.</p>
+<p>The identity provider can be an external (e.g. Google's OpenID Connect service) or internal (common for enterprise platforms).</p>
+<p>Common SSO implementations:</p>
 <ul>
-<li>There are lots of changes coming to a part of the monolith, splitting that part into a service will make you roll out those changes faster.</li>
-<li>Separate teams work on separate parts of the monolith.</li>
-<li>A part of the monolith requires high security measures not needed by the rest of the system.</li>
-<li>A part of the monolith can be improved by switching technology.</li>
+<li><a href="https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language">SAML</a> (SOAP-based standard)</li>
+<li><a href="https://en.wikipedia.org/wiki/OpenID_Connect">OpenID Connect</a> (authentication layer on top of OAuth 2.0)</li>
 </ul>
-<p>How do we go about decomposing monolithic applications without having to embark on a big-bang rewrite?</p>
-<h2 id="seams">Seams<a class="headerlink" href="#seams" title="Permanent link">&para;</a></h2>
-<p>We want our services to be highly cohesive and loosely coupled. The problem with the monolith is that all too often it is the opposite of both.</p>
-<p>A seam is a portion of the code that can be treated in isolation and worked on without impacting the rest of the codebase. Bounded contexts are good seams.</p>
-<p>So when splitting, the first step is to identify seams in our system and then gradually move the code of these seams into different packages. Tests are really useful to make sure you're not introducing bugs with this packaging. This process will also help identify seams that you did not think of: they will come out when you are left with some code that you don't know in which package to place.</p>
-<p>The splitting should start from the seam that is least depended on.</p>
-<h2 id="databases">Databases<a class="headerlink" href="#databases" title="Permanent link">&para;</a></h2>
-<p>We have to find seams in databases too, but this is a difficult task.</p>
-<p>After having packaged your application code by seams, you should do the same for the code accessing the database (usually the code in the so called <em>repository layer</em>).</p>
-<h3 id="foreign-keys">Foreign keys<a class="headerlink" href="#foreign-keys" title="Permanent link">&para;</a></h3>
-<p>Some tables may have foreign keys linking them to other tables. A common solution for this problem is to remove the table relationship and make the service accessing that table call the API of the service handling the other table.</p>
-<p><img alt="Image" src="../images/db-api-split.png" /></p>
-<h3 id="shared-static-data">Shared static data<a class="headerlink" href="#shared-static-data" title="Permanent link">&para;</a></h3>
-<p>Let's suppose we have different services accessing a table filled with static data.</p>
-<p><img alt="Image" src="../images/db-static-data.png" /></p>
-<p>There are several solutions:</p>
-<ol>
-<li>Duplicate tables in each db, but this can cause consistency issues.</li>
-<li>Treat static data as code/configuration files in each service. This can cause consistency issues too, but they would be far easier to solve.</li>
-<li>Create a microservice to handle the static data. This is overkill in most situations, but it can be justified if the static data has high complexity.</li>
-</ol>
-<h3 id="shared-mutable-data">Shared mutable data<a class="headerlink" href="#shared-mutable-data" title="Permanent link">&para;</a></h3>
-<p>Let's suppose we have different services accessing a table filled with mutable data.</p>
-<p><img alt="Image" src="../images/db-mutable-data.png" /></p>
-<p>Usually this means we need a <em>Customer</em> microservice to handle that data. This service can then be called by <em>Warehouse</em> and <em>Finance</em>.</p>
-<h3 id="shared-tables">Shared tables<a class="headerlink" href="#shared-tables" title="Permanent link">&para;</a></h3>
-<p>Let's suppose we have different services accessing a table which aggregates different information in the same record (catalog entry and stock level).</p>
-<p><img alt="Image" src="../images/db-shared-tables-before.png" /></p>
-<p>The answer here is to split the table in two, creating a stock levels table for the <em>Warehouse</em> and a catalog entry table for the <em>Catalog</em>.</p>
-<h3 id="staging-the-break">Staging the break<a class="headerlink" href="#staging-the-break" title="Permanent link">&para;</a></h3>
-<p>The best way to commit the database changes would be to keep the services together and split the schemas. The db split will increase the number of db calls and make you lose transactional integrity. Having the same application will enable you to deal more easily with these problems. Then, when you are satisfied with the new db, you can commit the changes.</p>
-<h3 id="transactional-boundaries">Transactional Boundaries<a class="headerlink" href="#transactional-boundaries" title="Permanent link">&para;</a></h3>
-<p>Transactions allow us to say that operations either all happen together, or none of them happen.</p>
-<p>Transactions are typically used in databases, but they can be supported but other systems such as message brokers.</p>
-<p>Splitting schemas will cause the loss of transactional integrity in our system. There are several solutions to this problem:</p>
-<ul>
-<li>A <strong>try again later</strong> mechanism, but this alone is not sufficient since it assumes that eventually a failed request will be successful. This is a form of <strong>eventual consistency</strong>: rather than using a transactional boundary to ensure that the system is in a consistent state when the transaction completes, instead we accept that the system will get itself into a consistent state at some point in the future.</li>
-<li><strong>Compensating transactions</strong> can be used to undo the committed transactions preceding a failed operation. But what if a compensating transaction fails? We would need other mechanism such as automated jobs or human administration. Also, this mechanism becomes more difficult to manage as the number of operations increases in transactions.</li>
-<li><strong>Distributed transactions</strong> are transactions done across different process or network boundaries. They are orchestrated by a <em>transaction manager</em>. The most common algorithm handling short-lived distributed transactions is <strong>two-phase commit</strong>. With a two-phase commit, first comes the voting phase: each participant in the distributed transaction tells the transaction manager whether it thinks its local transaction can be completed. If the transaction manager gets a yes vote from everyone, then it tells them all to go ahead and perform their commits. A single no vote is enough for the transaction manager to send out a rollback to all parties. Distributed transactions make scaling systems much more difficult, since the transaction manager is a single point of failure and waiting for response while locking resources can cause outages. Also, there is no guarantee that the transactions are actually committed when the clients approve them.</li>
-</ul>
-<p>Each of these solutions adds complexity. Before implementing business operations happening in a transaction, ask yourself: can they happen in different, local transactions, and rely on the concept of eventual consistency? These systems are much easier to build and scale.</p>
-<p>If you do encounter state that really needs to be kept consistent, try to avoid splitting it. If you really need to split it, try moving from a purely technical view of the process (e.g., a database transaction) and actually create a concrete concept to represent the transaction. This gives you a hook on which to run other operations like compensating transactions, and a way to monitor and manage these more complex concepts in your system.</p>
-<h2 id="reporting">Reporting<a class="headerlink" href="#reporting" title="Permanent link">&para;</a></h2>
-<p>When splitting data, we'll come across the problem of splitting reporting data too.</p>
-<h3 id="the-reporting-database">The Reporting Database<a class="headerlink" href="#the-reporting-database" title="Permanent link">&para;</a></h3>
-<p>In monolithic systems, aggregating data for reporting is easy. Usually reporting is implemented like this:</p>
-<p><img alt="Image" src="../images/reporting-mono-db.png" /></p>
+<h3 id="single-sign-on-gateway">Single Sign-On Gateway<a class="headerlink" href="#single-sign-on-gateway" title="Permanent link">&para;</a></h3>
+<p>Rather than having each microservice communicate with the identity provider, you could add a SSO Gateway to your system:</p>
+<p><img alt="Image" src="../images/sso-gateway.png" /></p>
+<p>Information about principals can be passed to downstream microservices with HTTP headers.</p>
 <p>Benefits:</p>
 <ul>
-<li>All data is one place so it's easy to query it.</li>
+<li>Drastically reduces network usage in your system.</li>
+<li>Can be used to terminate HTTPS at this level, run intrusion detection and so on.</li>
 </ul>
 <p>Downsides:</p>
 <ul>
-<li>The db schema is a shared API between the monolith and the reporting service.</li>
-<li>Cannot optimize schema structure for both use cases. Either the db is optimized for the monolith or the reporting.</li>
-<li>Cannot use different technology that could be more efficient for reporting.</li>
+<li>You need to make sure that developers are able to launch microservices behind a SSO gateway to test the system without too much effort.</li>
+<li>Could give a false sense of security.</li>
 </ul>
-<p>There are several alternatives to this approach when our data is distributed across different services.</p>
-<h3 id="data-retrieval-via-service-calls">Data Retrieval via Service Calls<a class="headerlink" href="#data-retrieval-via-service-calls" title="Permanent link">&para;</a></h3>
-<p>A very simple approach: call service APIs and aggregate the results for reporting.</p>
+<p>A gateway may be able to provide fairly effective coarse-grained authorization using <em>roles</em>. Always prefer coarse over fine-grained authorization. The latter make your system hard to manage and reason about because business rules end up in the identity provider. Instead, these rules should be owned by your microservices.</p>
+<h2 id="service-to-service-authentication-and-authorization">Service-to-Service Authentication and Authorization<a class="headerlink" href="#service-to-service-authentication-and-authorization" title="Permanent link">&para;</a></h2>
+<p>When talking about programs authenticating with each other, we have several possibilities.</p>
+<h3 id="allow-everything-inside-the-perimeter">Allow Everything Inside the Perimeter<a class="headerlink" href="#allow-everything-inside-the-perimeter" title="Permanent link">&para;</a></h3>
+<p>Authentication is placed only at the perimeter of the system. Depending on the sensitivity of the data, this approach could be fine.</p>
 <p>Benefits:</p>
 <ul>
-<li>Easy to implement and works well for small volumes of data (e.g. #orders placed in the last 15 minutes).</li>
+<li>Very easy to implement.</li>
 </ul>
 <p>Downsides:</p>
 <ul>
-<li>Breaks down when trying to do reporting with large volumes of data (e.g. customer behavior of last 24 months).</li>
-<li>Reporting systems usually need to integrate with third-party tools over SQL-like interfaces, this approach would require extra work.</li>
-<li>The API may not have been designed for reporting, leading to an inefficient reporting system and general slowdown. Caching can help, but reporting data is usually historic so there would be a lot of expensive cache misses. Adding reporting-specific APIs can help.</li>
+<li>Should an attacker penetrate the <em>perimeter</em>, you'll end up with major troubles. This can be mitigated by using HTTPS but still the stakes are high.</li>
 </ul>
-<h3 id="data-pumps">Data Pumps<a class="headerlink" href="#data-pumps" title="Permanent link">&para;</a></h3>
-<p>Rather than have the reporting system pull the data, the data can instead be pushed to the reporting system. This <em>data pump</em> needs to have intimate knowledge of both the internal database for the service, and also the reporting schema. The pump’s job is to map one from the other.</p>
-<p><img alt="Image" src="../images/reporting-materialized-views.png" /></p>
+<h3 id="https-basic-authentication">HTTP(S) Basic Authentication<a class="headerlink" href="#https-basic-authentication" title="Permanent link">&para;</a></h3>
+<p>HTTP Basic Authentication allows for a client to send username and password in a standard HTTP header. This should normally be used with HTTPS to securely send credentials.</p>
 <p>Benefits:</p>
 <ul>
-<li>Can handle large amounts of data without maintaining a reporting-specific API.</li>
+<li>Well understood and supported standard.</li>
 </ul>
 <p>Downsides:</p>
 <ul>
-<li>Causes coupling with the reporting db schema. The reporting service must be treated as a published API that is hard to change. There is also a potential mitigation: exposing only specific schemas that are mapped to an underlying monolithic schema, but this can cause performance issues depending on the db technology choice.</li>
+<li>You need to manage SSL certificates for your microservices.</li>
+<li>The overhead of HTTPS traffic can place additional strain on servers.</li>
+<li>SSL encrypted traffic can usually be cached only at service level.</li>
+<li>You need to manage user and passwords, either by syncing with an existing identity provider or independently (could cause functionality duplication).</li>
 </ul>
-<h3 id="event-data-pump">Event Data Pump<a class="headerlink" href="#event-data-pump" title="Permanent link">&para;</a></h3>
-<p>We can write a subscriber listening to microservices events that pushes data in the reporting db.</p>
+<h3 id="reuse-a-sso-implementation">Reuse a SSO implementation<a class="headerlink" href="#reuse-a-sso-implementation" title="Permanent link">&para;</a></h3>
+<p>If you already have a SSO gateway implemented, you could reuse it for service-to-service authentication. Microservices should have their own <em>service accounts</em> to authenticate with each other.</p>
 <p>Benefits:</p>
 <ul>
-<li>Avoids coupling between db schemas.</li>
-<li>Can see reported data as it happens, opposed to wait for a scheduled data transfer.</li>
-<li>It is easier to only process new events (i.e. <em>deltas</em>), while with a data pump we would need to write the code ourselves.</li>
-<li>The event mapper can be managed by a different team, and it can evolve independently of the services.</li>
+<li>Reuses existing infrastructure.</li>
+<li>With each microservice having its own credentials, it's easy to revoke/restore them if they get compromised.</li>
 </ul>
 <p>Downsides:</p>
 <ul>
-<li>All information must be broadcast as event. It may not scale well with large volumes of data, for which a data pump is more efficient.</li>
+<li>You need to write code that supports the SSO implementation of your choice.</li>
+<li>You need to securely store the service accounts' credentials.</li>
 </ul>
-<h3 id="backup-data-pump">Backup data pump<a class="headerlink" href="#backup-data-pump" title="Permanent link">&para;</a></h3>
-<p>Using backup data as a source for reporting. This approach was taken by Netflix: backed up Cassandra tables would be stored in Amazon's S3 object store and accessed by Hadoop for reporting. This ended up as a tool named <a href="https://github.com/Netflix/aegisthus">Aegisthus</a>.</p>
+<h3 id="client-certificates">Client certificates<a class="headerlink" href="#client-certificates" title="Permanent link">&para;</a></h3>
+<p>Clients can install their own TLS certificates to authenticate to servers. This could be a mandatory choice if your service-to-service traffic goes through networks you don't control (e.g. Internet).</p>
 <p>Benefits:</p>
 <ul>
-<li>Can handle enormous amounts of data.</li>
-<li>Efficient if there is already a backup system in place.</li>
+<li>Servers have strong guarantee that they're communicating with the right client.</li>
 </ul>
 <p>Downsides:</p>
 <ul>
-<li>Has coupling with the reporting db schema.</li>
+<li>Even more difficult than managing only server certificates.</li>
 </ul>
+<h3 id="hmac-over-http">HMAC over HTTP<a class="headerlink" href="#hmac-over-http" title="Permanent link">&para;</a></h3>
+<p>An alternative approach is to use a <a href="https://en.wikipedia.org/wiki/HMAC">hash-based messaging code (HMAC)</a> to sign the request with a hash computed from the request's body and a private key.</p>
+<p>Benefits:</p>
+<ul>
+<li>Prevents MITM attacks.</li>
+<li>Traffic can be cached more easily than HTTPS traffic.</li>
+<li>Usually the overhead of generating hashes is lower than the one caused by HTTPS.</li>
+</ul>
+<p>Downsides:</p>
+<ul>
+<li>You need a way to share the secret key.</li>
+<li>Hard to revoke the private key in case it's compromised.</li>
+<li>It's a pattern, not a standard, so there are divergent ways to implement it.</li>
+<li>Traffic is not encrypted.</li>
+</ul>
+<h3 id="api-keys">API Keys<a class="headerlink" href="#api-keys" title="Permanent link">&para;</a></h3>
+<p>API keys allow a service to identify who is making a call, and place limits on what they can do.</p>
+<p>Benefits:</p>
+<ul>
+<li>Easy to use for service-to-service authentication.</li>
+</ul>
+<p>Downsides:</p>
+<ul>
+<li>You need an API keys manager. Still, there are a lot of available tools.</li>
+</ul>
+<h2 id="the-deputy-problem">The deputy problem<a class="headerlink" href="#the-deputy-problem" title="Permanent link">&para;</a></h2>
+<p>Having a principal authenticate with a given microservice is simple. But what happens if that service then needs to call more services to complete an operation?</p>
+<p><img alt="Image" src="../images/deputy-problem.png" /></p>
+<p>Without countermeasures, users can potentially trick the system into making calls to microservices that retrieve information they're not allowed to access (e.g. other users' data).</p>
+<p>There is no simple answer to this problem. Depending on the sensitivity of the operation, you have different choices:</p>
+<ul>
+<li>Use an implicit trust model inside the microservices perimeter.</li>
+<li>Verify the identity of the caller before accepting a request (this could add duplicate logic in your microservices).</li>
+<li>Ask the caller to provide the credentials of the original principal.</li>
+</ul>
+<h2 id="securing-data-at-rest">Securing Data at Rest<a class="headerlink" href="#securing-data-at-rest" title="Permanent link">&para;</a></h2>
+<p>It's important to carefully store data at rest to limit the damage if an attacker obtains access to it.c Some principles to observe:</p>
+<ul>
+<li>Use existing implementations of cryptographic algorithms.</li>
+<li>Be careful how you manage your keys.</li>
+<li>Identify sensitive data that should be encrypted and data that can be shown in logs.</li>
+<li>Encrypt data when you first see it. Only decrypt it on demand.</li>
+<li>Encrypt backups.</li>
+</ul>
+<h2 id="other-protections">Other protections<a class="headerlink" href="#other-protections" title="Permanent link">&para;</a></h2>
+<p>There are other protective measures that you can apply to your system:</p>
+<ul>
+<li>Firewall.</li>
+<li>Logging (but be careful of what you log!).</li>
+<li>Intrusion detection systems.</li>
+<li>Network segregation (e.g. put separate microservices in separate networks).</li>
+</ul>
+<p>Best practices:</p>
+<ul>
+<li>Keep your software updated and look out for new vulnerabilities.</li>
+<li>Give the service user on the server OS as few permissions as possible.</li>
+<li>Be frugal: collect only the data you need.</li>
+</ul>
+<h2 id="the-human-element">The Human Element<a class="headerlink" href="#the-human-element" title="Permanent link">&para;</a></h2>
+<p>You may also need policies to deal with the human element in your organization:</p>
+<ul>
+<li>How do you revoke access to credentials when someone leaves the organization?</li>
+<li>How can you protect yourself against social engineering?</li>
+</ul>
+<h2 id="baking-security-in">Baking Security In<a class="headerlink" href="#baking-security-in" title="Permanent link">&para;</a></h2>
+<p>Helping educate developers about security concerns is key. Also, you can integrate automated vulnerabilities probing tools in your CI build.</p>
+<p>But when in doubt, reach out to an expert for a thorough check of your system.</p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<p>We decompose our system by finding seams along which service boundaries can emerge, and this can be an incremental approach. This way, costs of errors are mitigated and we can continue to evolve the system as we proceed.</p>
+<p>Having a system decomposed into finer-grained services gives us many more options as to how to solve a problem. This concept applies to security too. So, while we have additional problems to solve (e.g. the deputy problem), we can apply a mix of known solutions to solve these problems.</p>
                 
                   
                 
@@ -939,7 +985,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../integration/" title="Integration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../monitoring/" title="Monitoring" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -948,19 +994,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Integration
+                Monitoring
               </span>
             </div>
           </a>
         
         
-          <a href="../deployment/" title="Deployment" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../conway/" title="Conway's Law and System Desing" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Deployment
+                Conway's Law and System Desing
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
