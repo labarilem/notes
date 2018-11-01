@@ -58,7 +58,7 @@ Compared to database integration, RPC is certainly an improvement when we think 
 
 REpresentational State Transfer (REST) is an architectural style inspired by the Web. The most important concept is the one of resource, which can be requested in different representations. This favours decoupling between internal and external representations.
 
-There are many different styles of REST, compared in the [Richardson Maturity Model](https://martinfowler.com/articles/richardsonMaturityModel.html).
+There are many styles of REST, compared in the [Richardson Maturity Model](https://martinfowler.com/articles/richardsonMaturityModel.html).
 
 Usually REST is implemented over HTTP because HTTP provides parts of the REST specification, such as verbs. Also, there are lots of tools supporting REST with HTTP.
 
@@ -99,7 +99,7 @@ Following the DRY principle can cause coupling between microservices. As a gener
 
 ### Client libraries
 
-Client libraries can cause coupling between services and clients. To limit this danger, it's best if different developer teams develop the server API and the client library: this way there should be no "logic leaks" from the server into the client.
+Client libraries can cause coupling between services and clients. To limit this danger, it's best if different developer teams develop the server API and the client library: this way there should be no *logic leaks* from the server into the client.
 It's also important to give clients control on when to upgrade their client libraries, to avoid coupling in deploys.
 
 ## Access by Reference
@@ -126,8 +126,7 @@ The following points can help you have a good service versioning in your system:
 
 Each type of user interface (e.g. browser, desktop, mobile) has its own constraints. So even though our core services are the same, we might need a way to adapt them for these constraints.
 
-Let’s look at a few models of user interfaces to see how this might be
-achieved.
+Let’s look at a few models of user interfaces to see how this might be achieved.
 
 ### API composition
 
@@ -143,12 +142,11 @@ Downsides:
 
 ### UI Fragment composition
 
-Rather than having our UI make API calls and map everything back to UI controls, we
-could have our services provide parts of the UI directly.
+Rather than having our UI make API calls and map everything back to UI controls, we could have our services provide parts of the UI directly.
 
 ![Image](./images/ui-fragment-composition.png)
 
-The same team that makes changes to the services can also be in charge of making changes to those parts of the UI, allowing to get changes out faster.
+The same team that makes changes to the services can also be in charge of making changes to those parts of the UI, allowing us to get changes out faster.
 
 Downsides:
 
@@ -180,7 +178,7 @@ Challenges associated with integrating third-party software into your system:
 
 - **Lack of control:** probably many of the technical decisions have been made for you to simplify product usage. The tool selection process should take into account ease of use of third-party software.
 - **Customization:** many enterprise tools sell themselves on their ability to be heavily customized just for you. But the cost of customization can be more expensive than building something bespoke from scratch.
-- **Integration spaghetti:** ideally you want to standardize on a small number of types of integration. If one product forces you tu use proprietary protocols, it could mean troubles.
+- **Integration spaghetti:** ideally you want to standardize on a few types of integration. If one product forces you tu use proprietary protocols, it could mean troubles.
 
 Best practices:
 

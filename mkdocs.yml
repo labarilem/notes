@@ -96,3 +96,5 @@ pages:
     - Deployment: building-microservices/deployment.md
     - Testing: building-microservices/testing.md
     - Monitoring: building-microservices/monitoring.md
+    - Security: building-microservices/security.md
+    - Conway's Law and System Desing: building-microservices/conway.md

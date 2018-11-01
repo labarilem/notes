@@ -50,11 +50,11 @@ For example, out monitoring system could publish a message in a queue from time 
 Sending this fake message is an example of a *synthetic transaction* used to ensure the system was behaving semantically, which is why this technique is often called *semantic monitoring*.
 
 But how to implement semantic monitoring?
-We can reuse the code in our tests and run a subste of it against the production system. You must carefully check the data requirements and ensure that no side effects are going to take place. A common solution is to enable a set of fake users that will perform synthetic transaction in production.
+We can reuse the code in our tests and run a subset of it against the production system. You must carefully check the data requirements and ensure that no side effects are going to take place. A common solution is to enable a set of fake users that will perform synthetic transaction in production.
 
 ## Correlation IDs
 
-With a large number of services, a single initiating call can end up generating multiple more downstream service calls.
+With many services, a single initiating call can end up generating multiple more downstream service calls.
 
 How to track these calls?
 
@@ -62,7 +62,7 @@ A possible solution is to use correlation IDs: when the first call is made, you 
 
 It would be better to adopt correlation ids from the start, because it's usually very hard to retro fit call logs with correlation ids.
 
-Also note that using correlation IDs justifies the development of a client library shared between microservices, because it would simplify communication a lot. Just remember to keep these shared libraries as thin as possible to avoid any kind of coupling.
+Also, note that using correlation IDs justifies the development of a client library shared between microservices, because it would simplify communication a lot. Just remember to keep these shared libraries as thin as possible to avoid any kind of coupling.
 
 ## Cascading Failures
 

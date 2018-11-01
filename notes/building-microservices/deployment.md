@@ -117,7 +117,7 @@ Usually these are:
 3. Performance/load test environment.
 4. Production environment.
 
-As you go on in the pipeline, you want the environments to look more like the production environment, allowing to catch production problems before they happen in production.
+As you go on in the pipeline, you want the environments to look more like the production environment, allowing us to catch production problems before they happen in production.
 But consider that production environments are more expensive and slower to set up. So you should balance the ability to find production-like bugs with the ability to get fast feedback from builds.
 
 ## Service configuration
@@ -212,8 +212,7 @@ Embracing a culture of automation is key if you want to keep the complexities of
 
 ## From Physical to Virtual
 
-One of the key tools available to us in managing a large number of hosts is finding ways
-of chunking up existing physical machines into smaller parts.
+One of the key tools available to us in managing many hosts is finding ways of chunking up existing physical machines into smaller parts.
 
 ### Traditional Virtualization
 
@@ -225,10 +224,9 @@ For example, in *Type 2* virtualization, the *hypervisor* sets aside resources f
 
 #### Vagrant
 
-A deployment platform usually employed for development and testing. It allows to define instructions about how to setup and configure VMs. This makes it easier for you to create production-like environments on your local machine.
+A deployment platform usually employed for development and testing. It allows us to define instructions about how to setup and configure VMs. This makes it easier for you to create production-like environments on your local machine.
 
-One of the downsides is that if we have one service to one VM, you may not be able to bring up
-your entire system on your local machine.
+One of the downsides is that if we have one service to one VM, you may not be able to bring up your entire system on your local machine.
 
 ### Linux containers
 
@@ -242,7 +240,7 @@ Benefits:
 
 - No need for an hypervisor.
 - Much faster to provision than traditional VMs.
-- Finer-grained control over resources assignation.
+- Finer-grained control over assignation of resources.
 - Since they are lighter than VMs, we can have more containers running on the same host.
 
 Downsides:
@@ -253,9 +251,9 @@ Downsides:
 
 ### Docker
 
-Docker is a platform built on top of lightweight containers. Docker manages the container provisioning, handles some of the networking problems and provides its own registry that allows you to store and version Docker applications.
+Docker is a platform built on top of lightweight containers. Docker manages the container provisioning, handles some networking problems and provides its own registry that allows you to store and version Docker applications.
 
-Docker can also alleviate some of the downsides of running lots of services locally for dev and test purposes, in a more efficient way than Vagrant.
+Docker can also alleviate some downsides of running lots of services locally for dev and test purposes, in a more efficient way than Vagrant.
 
 Several technologies are build around the Docker concepts, such as [CoreOS](https://coreos.com/), a stripped-down Linux OS that provides only the essential services to allow Docker to run.
 
@@ -282,4 +280,4 @@ Main points collected in this chapter:
 - Maintain the ability to deploy microservices independently.
 - Separate source code and CI builds for each microservices.
 - Use a single-service per host/container model. Evaluate the tooling aiming for high levels of automation.
-- Understand how deployment choices affects developers. Creating tools that help deploying to different environments helps a lot.
+- Understand how deployment choices affects developers. Creating tools that make it easy to deploy to different environments helps a lot.
