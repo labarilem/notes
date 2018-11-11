@@ -1,0 +1,1205 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Notes about various topics, courses, books, etc.">
+      
+      
+        <link rel="canonical" href="https://marcolabarile.me/notes/building-microservices/microservices-at-scale/">
+      
+      
+        <meta name="author" content="Marco Labarile">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon-16x16.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
+    
+    
+      
+        <title>Microservices at Scale - Marco Labarile - Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="green" data-md-color-accent="green">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#microservices-at-scale" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://marcolabarile.me/notes/" title="Marco Labarile - Notes" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Marco Labarile - Notes
+              </span>
+              <span class="md-header-nav__topic">
+                Microservices at Scale
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/labarilem/notes" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      labarilem/notes
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Marco Labarile - Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/labarilem/notes" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      labarilem/notes
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Bitcoin and cryptocurrency technologies
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Bitcoin and cryptocurrency technologies
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/" title="Cryptographic hash functions" class="md-nav__link">
+      Cryptographic hash functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/digital-signature/" title="Digital signature" class="md-nav__link">
+      Digital signature
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/" title="Hash pointers" class="md-nav__link">
+      Hash pointers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization/" title="Centralization and decentralization" class="md-nav__link">
+      Centralization and decentralization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/distributed-consensus/" title="Distributed consensus" class="md-nav__link">
+      Distributed consensus
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Building microservices
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Building microservices
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../microservices/" title="Microservices" class="md-nav__link">
+      Microservices
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../evolutionary-architects/" title="Evolutionary architects" class="md-nav__link">
+      Evolutionary architects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../how-to-model-services/" title="How to model services" class="md-nav__link">
+      How to model services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../integration/" title="Integration" class="md-nav__link">
+      Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../splitting-the-monolith/" title="Splitting the monolith" class="md-nav__link">
+      Splitting the monolith
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../deployment/" title="Deployment" class="md-nav__link">
+      Deployment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../testing/" title="Testing" class="md-nav__link">
+      Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../monitoring/" title="Monitoring" class="md-nav__link">
+      Monitoring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../conway/" title="Conway's Law and System Desing" class="md-nav__link">
+      Conway's Law and System Desing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Microservices at Scale
+      </label>
+    
+    <a href="./" title="Microservices at Scale" class="md-nav__link md-nav__link--active">
+      Microservices at Scale
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#failure-is-everywhere" title="Failure Is Everywhere" class="md-nav__link">
+    Failure Is Everywhere
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-much-is-too-much" title="How Much Is Too Much?" class="md-nav__link">
+    How Much Is Too Much?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-safety-measures" title="Architectural Safety Measures" class="md-nav__link">
+    Architectural Safety Measures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling" title="Scaling" class="md-nav__link">
+    Scaling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling-databases" title="Scaling Databases" class="md-nav__link">
+    Scaling Databases
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scaling-for-reads" title="Scaling for Reads" class="md-nav__link">
+    Scaling for Reads
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-for-writes" title="Scaling for Writes" class="md-nav__link">
+    Scaling for Writes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqrs" title="CQRS" class="md-nav__link">
+    CQRS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caching" title="Caching" class="md-nav__link">
+    Caching
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caching-in-http" title="Caching in HTTP" class="md-nav__link">
+    Caching in HTTP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caching-for-writes" title="Caching for writes" class="md-nav__link">
+    Caching for writes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caching-for-resilience" title="Caching for Resilience" class="md-nav__link">
+    Caching for Resilience
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hiding-the-origin" title="Hiding the origin" class="md-nav__link">
+    Hiding the origin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keep-it-simple" title="Keep it simple" class="md-nav__link">
+    Keep it simple
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autoscaling" title="Autoscaling" class="md-nav__link">
+    Autoscaling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cap-theorem" title="CAP Theorem" class="md-nav__link">
+    CAP Theorem
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sacrificing-consistency" title="Sacrificing Consistency" class="md-nav__link">
+    Sacrificing Consistency
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sacrificing-availability" title="Sacrificing Availability" class="md-nav__link">
+    Sacrificing Availability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sacrificing-partition-tolerance" title="Sacrificing Partition Tolerance" class="md-nav__link">
+    Sacrificing Partition Tolerance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ap-or-cp" title="AP or CP?" class="md-nav__link">
+    AP or CP?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-discovery" title="Service discovery" class="md-nav__link">
+    Service discovery
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dns" title="DNS" class="md-nav__link">
+    DNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-service-registries" title="Dynamic Service Registries" class="md-nav__link">
+    Dynamic Service Registries
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documenting-services" title="Documenting Services" class="md-nav__link">
+    Documenting Services
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../conclusion/" title="Bringing It All Together" class="md-nav__link">
+      Bringing It All Together
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#failure-is-everywhere" title="Failure Is Everywhere" class="md-nav__link">
+    Failure Is Everywhere
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-much-is-too-much" title="How Much Is Too Much?" class="md-nav__link">
+    How Much Is Too Much?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-safety-measures" title="Architectural Safety Measures" class="md-nav__link">
+    Architectural Safety Measures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling" title="Scaling" class="md-nav__link">
+    Scaling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling-databases" title="Scaling Databases" class="md-nav__link">
+    Scaling Databases
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scaling-for-reads" title="Scaling for Reads" class="md-nav__link">
+    Scaling for Reads
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-for-writes" title="Scaling for Writes" class="md-nav__link">
+    Scaling for Writes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqrs" title="CQRS" class="md-nav__link">
+    CQRS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caching" title="Caching" class="md-nav__link">
+    Caching
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caching-in-http" title="Caching in HTTP" class="md-nav__link">
+    Caching in HTTP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caching-for-writes" title="Caching for writes" class="md-nav__link">
+    Caching for writes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caching-for-resilience" title="Caching for Resilience" class="md-nav__link">
+    Caching for Resilience
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hiding-the-origin" title="Hiding the origin" class="md-nav__link">
+    Hiding the origin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keep-it-simple" title="Keep it simple" class="md-nav__link">
+    Keep it simple
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autoscaling" title="Autoscaling" class="md-nav__link">
+    Autoscaling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cap-theorem" title="CAP Theorem" class="md-nav__link">
+    CAP Theorem
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sacrificing-consistency" title="Sacrificing Consistency" class="md-nav__link">
+    Sacrificing Consistency
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sacrificing-availability" title="Sacrificing Availability" class="md-nav__link">
+    Sacrificing Availability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sacrificing-partition-tolerance" title="Sacrificing Partition Tolerance" class="md-nav__link">
+    Sacrificing Partition Tolerance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ap-or-cp" title="AP or CP?" class="md-nav__link">
+    AP or CP?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-discovery" title="Service discovery" class="md-nav__link">
+    Service discovery
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dns" title="DNS" class="md-nav__link">
+    DNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-service-registries" title="Dynamic Service Registries" class="md-nav__link">
+    Dynamic Service Registries
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documenting-services" title="Documenting Services" class="md-nav__link">
+    Documenting Services
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="microservices-at-scale">Microservices at Scale<a class="headerlink" href="#microservices-at-scale" title="Permanent link">&para;</a></h1>
+<p>What happens when we have to handle failure of multiple separate services or manage hundreds of services?</p>
+<h2 id="failure-is-everywhere">Failure Is Everywhere<a class="headerlink" href="#failure-is-everywhere" title="Permanent link">&para;</a></h2>
+<p><a href="https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing">The network is unreliable</a>, hard disks are unreliable too. The problem is: <strong>failure becomes a statistical certainty at scale</strong>.</p>
+<p>You should spend a bit less of your time trying to stop the inevitable, and a bit more of your time dealing with it gracefully. This means developing <strong>antifragile systems</strong>, just like Netflix and Amazon are doing.</p>
+<h2 id="how-much-is-too-much">How Much Is Too Much?<a class="headerlink" href="#how-much-is-too-much" title="Permanent link">&para;</a></h2>
+<p>Services may have different cross-functional requirements. Usually these come from users but you can ask them specific questions to gain the information you need.</p>
+<p>When it comes to considering if and how to scale out your system to better handle load or failure, start by understanding the following requirements:</p>
+<ul>
+<li>Response time/latency</li>
+<li>Availability</li>
+<li>Durability of data</li>
+</ul>
+<p>Once you have these requirements in place, you’ll want a way to systematically measure them on an ongoing basis.</p>
+<h2 id="architectural-safety-measures">Architectural Safety Measures<a class="headerlink" href="#architectural-safety-measures" title="Permanent link">&para;</a></h2>
+<p>There are a few patterns that we can make use of to ensure that if something does go wrong, it doesn’t cause nasty ripple-out effects.</p>
+<ul>
+<li>Put <strong>timeouts</strong> on all out-of-process calls, and pick a default timeout for everything. Log when timeouts occur, look at what happens, and change them accordingly.</li>
+<li>Use <strong>circuit breakers</strong>. With a circuit breaker, after a certain number of requests to the downstream resource have failed, the circuit breaker is blown. All further requests fail fast while the circuit breaker is in its blown state. After a certain period, the client sends a few requests through to see if the downstream service has recovered, and if it gets enough healthy responses it resets the circuit breaker.</li>
+<li>In shipping, a <strong>bulkhead</strong> is a part of the ship that can be sealed off to protect the rest of the ship. So if the ship springs a leak, you can close the bulkhead doors. You lose part of the ship, but the rest of it remains intact.<br />
+This concept can be adopted in software by <em>isolating components</em>. Circuit breakers can be used as an automatic mechanism to seal a bulkhead.</li>
+<li><strong>Isolation</strong>. The more one service depends on another being up, the more the health of one impacts the ability of the other to do its job.</li>
+<li>In <strong>idempotent operations</strong>, the outcome doesn’t change after the first application, even if the operation is subsequently applied multiple times. This is very useful when we want to replay messages that we aren’t sure have been processed, a common way of recovering from error.</li>
+</ul>
+<h2 id="scaling">Scaling<a class="headerlink" href="#scaling" title="Permanent link">&para;</a></h2>
+<p>We scale our systems in general for one of two reasons: safety and performance. Let’s look at some common scaling techniques and think about how they apply to microservice architectures:</p>
+<ul>
+<li>Prefer <strong>horizontal scaling</strong> to vertical scaling because the former adds resilience too and is more cost-efficient.</li>
+<li><strong>Split workloads</strong> across different hosts as it increases resiliency by reducing failure impact area. It also makes it easier to scale instances. You can even split a single microservice into multiple host if there are parts with critical workloads.</li>
+<li><strong>Spread the risk</strong> by ensuring that multiple hosts are spread on different physical machines. Or spread on multiple datacenter regions.</li>
+<li>Put multiple instances of a single microservice behind a <strong>load balancer</strong>. This allow us to add more instances of our microservice in a way that is transparent to any service consumers. Also, we can place <em>SSL termination</em> at this level.</li>
+<li>Use <strong>worker-based systems</strong> to share load and reduce fragility of operations.</li>
+<li>The need to change our systems to deal with scale isn’t a sign of failure. It is a sign of success. SO don't plan ahead for handling massive loads.</li>
+</ul>
+<h2 id="scaling-databases">Scaling Databases<a class="headerlink" href="#scaling-databases" title="Permanent link">&para;</a></h2>
+<p>What if we are storing data in a database? We’ll need to know how to scale that too.</p>
+<p>Straight off, it is important to separate the concept of <em>availability of the service</em> from the <em>durability of the data</em> itself.</p>
+<h3 id="scaling-for-reads">Scaling for Reads<a class="headerlink" href="#scaling-for-reads" title="Permanent link">&para;</a></h3>
+<p>In a relational database management system (RDBMS), data can be copied from a primary node to one or more replicas. This is often done to ensure that a copy of our data is kept safe, but we can also use it to distribute our reads, while writes are made to the master database.</p>
+<p><img alt="Image" src="../images/db-replica-reads.png" /></p>
+<h3 id="scaling-for-writes">Scaling for Writes<a class="headerlink" href="#scaling-for-writes" title="Permanent link">&para;</a></h3>
+<p>A common approach when scaling for writes is to use <strong>sharding</strong>. With sharding, you have multiple database nodes. You take a piece of data to be written, apply some hashing function to the key of the data, and based on the result of the function learn where to send the data.</p>
+<p>Benefits:</p>
+<ul>
+<li>Writes are scaled on multiple <em>shards</em>.</li>
+</ul>
+<p>Downsides:</p>
+<ul>
+<li>Difficult to handle queries involving multiple <em>shards</em>.</li>
+<li>Usually, no resiliency is added since data is not replicated between shards.</li>
+</ul>
+<h3 id="cqrs">CQRS<a class="headerlink" href="#cqrs" title="Permanent link">&para;</a></h3>
+<p>The Command-Query Responsibility Segregation (CQRS) pattern refers to an alternate model for storing and querying information: part of the system deals with commands, which capture requests to modify state, while another part of the system deals with queries.</p>
+<p>The command and query parts of our system could live in different services, or on different hardware, and could make use of radically different types of data store. This can unlock many ways to handle scale.</p>
+<h2 id="caching">Caching<a class="headerlink" href="#caching" title="Permanent link">&para;</a></h2>
+<p>Caching is a commonly used performance optimization whereby the previous result of some operation is stored, so that subsequent requests can use this stored value rather than spending time and resources recalculating the value.</p>
+<p>THere are 3 models of caching:</p>
+<ul>
+<li>In <strong>client-side caching</strong>, the client stores the cached result. This drastically reduces network load but it's tricky to write a good cache invalidator and changes to the caching strategy need to be rolled out to every client.</li>
+<li>With <strong>proxy caching</strong>, a proxy is placed between the client and the server. This is often a very simple way to add caching to an existing system. The additional network hops are worth the cost.</li>
+<li>WIth <strong>server-side caching</strong>, the server handles the cached results. Everything is opaque to the client but network calls continue to be made.</li>
+</ul>
+<h3 id="caching-in-http">Caching in HTTP<a class="headerlink" href="#caching-in-http" title="Permanent link">&para;</a></h3>
+<p>HTTP provides some really useful controls to help us cache:</p>
+<ul>
+<li>We can use <strong>cache-control</strong> directives to tell client whether to cache the resource at all.</li>
+<li>An <strong>ETag</strong> is used to determine if the value of a resource has changed. This becomes powerful when using a <em>conditional GET</em>: it allows us to retrieve only modified data.</li>
+</ul>
+<h3 id="caching-for-writes">Caching for writes<a class="headerlink" href="#caching-for-writes" title="Permanent link">&para;</a></h3>
+<p>By using a <strong>write-behind cache</strong>, you can write to a local cache, and at some later point the data will be flushed to a downstream source.</p>
+<p>This can be useful when you have bursts of writes, or when there is a good chance that the same data will be written multiple times.</p>
+<h3 id="caching-for-resilience">Caching for Resilience<a class="headerlink" href="#caching-for-resilience" title="Permanent link">&para;</a></h3>
+<p>Caching can be used to implement resiliency in case of failure. With client-side caching, if the downstream service is unavailable, the client could decide to simply use cached but potentially stale data.</p>
+<h3 id="hiding-the-origin">Hiding the origin<a class="headerlink" href="#hiding-the-origin" title="Permanent link">&para;</a></h3>
+<p>With a normal cache, if a request results in a cache miss, the request goes on to the origin to fetch the fresh data with the caller blocking, waiting on the result. But, if we suffer a massive cache miss, many requests will hit the origin.
+One way to protect the origin in such a situation is to use asynchronous cache filling:</p>
+<p><img alt="Image" src="../images/async-cache-fill.png" /></p>
+<h3 id="keep-it-simple">Keep it simple<a class="headerlink" href="#keep-it-simple" title="Permanent link">&para;</a></h3>
+<p>The more caches between you and the source of fresh data, the more stale the data can be, and the harder it can be to determine the freshness of the data that a client eventually sees.</p>
+<h2 id="autoscaling">Autoscaling<a class="headerlink" href="#autoscaling" title="Permanent link">&para;</a></h2>
+<p>There are different approaches to autoscaling:</p>
+<ol>
+<li>You could have the scaling of your services triggered by well-known trends that emerged form gathered data.</li>
+<li>You could be reactive, bringing up additional instances when you see an increase in load or an instance failure, and remove instances when you no longer needed them.</li>
+<li>A combination of the previous two.</li>
+</ol>
+<p>Being reactive and predictive can help you be very cost-efficient if you're on a pay-per-use platform.</p>
+<h2 id="cap-theorem">CAP Theorem<a class="headerlink" href="#cap-theorem" title="Permanent link">&para;</a></h2>
+<p>In a distributed system, we have 3 properties available: consistency, availability and partition tolerance. The theorem states that we get to keep only 2 of them. You can read the proof <a href="https://mwhittaker.github.io/blog/an_illustrated_proof_of_the_cap_theorem/">here</a>.</p>
+<h3 id="sacrificing-consistency">Sacrificing Consistency<a class="headerlink" href="#sacrificing-consistency" title="Permanent link">&para;</a></h3>
+<p>In a failure situation, sacrificing consistency means that if we keep accepting writes then at some point in the future they have to be resynchronized. The longer the partition lasts, the more difficult this resynchronization can become.</p>
+<p>In reality, even with a functioning network, replication of data is not instantaneous because of network latency. Systems that go with AP are called <strong>eventually consistent</strong>.</p>
+<h3 id="sacrificing-availability">Sacrificing Availability<a class="headerlink" href="#sacrificing-availability" title="Permanent link">&para;</a></h3>
+<p>If we really need consistency, then we need to sacrifice availability. But how to achieve consistency in a distributed system?
+I want to read a record from the local database node. I have to go and ask the other node if the record it's up to date. But I also have to ask that database node to not allow it to be updated while the read completes; this means I need to initiate a transactional read across multiple nodes to ensure consistency. Transactional reads are make the system very slow.</p>
+<p>In CP systems, tradeoffs can be made (e.g. instead of asking every node in the network, we may be satisfied by asking half the nodes in the network if a record is up to date).</p>
+<h3 id="sacrificing-partition-tolerance">Sacrificing Partition Tolerance<a class="headerlink" href="#sacrificing-partition-tolerance" title="Permanent link">&para;</a></h3>
+<p>This isn't an option, since systems operating over a network absolutely need partition tolerance.</p>
+<h3 id="ap-or-cp">AP or CP?<a class="headerlink" href="#ap-or-cp" title="Permanent link">&para;</a></h3>
+<p>AP systems are simpler to build and scale more easily, while CP systems require more work to support distributed consistency.</p>
+<p>In our systems, we can actually have a mix of both for different services, depending on business requirements.</p>
+<h2 id="service-discovery">Service discovery<a class="headerlink" href="#service-discovery" title="Permanent link">&para;</a></h2>
+<p>Service discovery includes activities such as: knowing what is running in a given environment, knowing which APIs are available, etc.
+There are different solutions available. Our ideal solution should cope well with constantly creating and destroy services in an environment.</p>
+<h3 id="dns">DNS<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h3>
+<p>DNS lets us associate a name with the IP address of one or more machines. There are multiple approach for picking services' names:</p>
+<ul>
+<li><strong>Templates that includes environment</strong>, e.g. <em>[servicename]-[environment].mysytem.com</em>.</li>
+<li><strong>Environment-agnostic naming</strong>, e.g. <em>[servicename].mysytem.com</em>, which resolves to the different hosts in different environments. This requires more work than the previous approach.</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li>Well understood standard, has support in every technology stack.</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>Few DNS services (e.g. Amazon's Route53) are suitable for dealing with highly disposable hosts.</li>
+<li>Subject to cache poisoning because DNS entries have a <em>time to live</em> (TTL).</li>
+</ul>
+<p>Registering a DNS entry only for a load balancer, which keeps track of a cluster of services of the same type, partially helps against the disadvantages.</p>
+<h3 id="dynamic-service-registries">Dynamic Service Registries<a class="headerlink" href="#dynamic-service-registries" title="Permanent link">&para;</a></h3>
+<p>The limitations of DNS in a dynamic environment have led to alternative systems:</p>
+<ul>
+<li><a href="http://zookeeper.apache.org/">Zookeeper</a>, a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.</li>
+<li><a href="https://www.consul.io/">Consul</a>, a distributed service mesh to connect, secure, and configure services across any runtime platform and public or private cloud.</li>
+<li><a href="https://github.com/Netflix/eureka">Eureka</a>, a REST based service that is primarily used in the AWS cloud for locating services for the purpose of load balancing and failover of middle-tier servers.</li>
+</ul>
+<p>It's also important to have visualizations helpful to humans trying to understand the state of the system.</p>
+<h2 id="documenting-services">Documenting Services<a class="headerlink" href="#documenting-services" title="Permanent link">&para;</a></h2>
+<p>So we know where our APIs are, but we should also know what's their format and what they do. Some helpful tools for documentation:</p>
+<ul>
+<li><a href="https://swagger.io/">Swagger</a> lets you describe your API in order to generate a web UI that allows you to view the documentation and interact with the API via a web browser.</li>
+<li><a href="http://stateless.co/hal_specification.html">HAL</a> is a standard that describes standards for hypermedia controls that we expose. The HAL Browser is similar to Swagger's UI.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../conway/" title="Conway's Law and System Desing" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Conway's Law and System Desing
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../conclusion/" title="Bringing It All Together" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Bringing It All Together
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/labarilem" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://www.linkedin.com/in/marcolabarile/" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
