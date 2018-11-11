@@ -98,3 +98,5 @@ pages:
     - Monitoring: building-microservices/monitoring.md
     - Security: building-microservices/security.md
     - Conway's Law and System Desing: building-microservices/conway.md
+    - Microservices at Scale: building-microservices/microservices-at-scale.md
+    - Bringing It All Together: building-microservices/conclusion.md

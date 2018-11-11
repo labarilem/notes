@@ -20,3 +20,5 @@ Chapters:
 8. [Monitoring](./monitoring.md)
 9. [Security](./security.md)
 10. [Conway’s Law and System Design](./conway.md)
+11. [Microservices at Scale](./microservices-at-scale.md)
+12. [Bringing it all together](./conclusion.md)
