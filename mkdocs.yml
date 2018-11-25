@@ -11,6 +11,11 @@ repo_name: labarilem/notes
 repo_url: https://github.com/labarilem/notes
 edit_uri: ""
 
+# Google analytics
+google_analytics:
+  - 'UA-117745201-1'
+  - 'auto'
+
 # Copyright
 # copyright: ''
 
