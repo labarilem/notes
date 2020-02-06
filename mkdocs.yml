@@ -1,37 +1,20 @@
 docs_dir: notes
-
-# Project information
 site_name: Marco Labarile - Notes
 site_description: Notes about various topics, courses, books, etc.
 site_author: Marco Labarile
 site_url: https://marcolabarile.me/notes/
-
-# Repository
 repo_name: labarilem/notes
 repo_url: https://github.com/labarilem/notes
 edit_uri: ""
-
-# Google analytics
 google_analytics:
-  - 'UA-117745201-1'
-  - 'auto'
-
-# Copyright
-# copyright: ''
-
-# Configuration
+  - UA-117745201-1
+  - auto
 theme:
-  name: 'material'
-
-  # 404 page
+  name: material
   static_templates:
     - 404.html
-
-  # Don't include MkDocs' JavaScript
   include_search_page: false
   search_index_only: true
-
-  # Default values, taken from mkdocs_theme.yml
   language: en
   feature:
     tabs: false
@@ -43,17 +26,13 @@ theme:
     code: Roboto Mono
   favicon: assets/images/favicon-16x16.png
   logo:
-    icon: "\uE80C"
-
-# Customization
+    icon: 
 extra:
   social:
     - type: github-alt
       link: https://github.com/labarilem
     - type: linkedin
       link: https://www.linkedin.com/in/marcolabarile/
-
-# Extensions
 markdown_extensions:
   - markdown.extensions.admonition
   - markdown.extensions.codehilite:
@@ -70,7 +49,7 @@ markdown_extensions:
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+      emoji_generator: ""
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.magiclink
@@ -80,28 +59,29 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-
-# Page tree
 pages:
   - Home: index.md
-  - Bitcoin and cryptocurrency technologies:
-    - Home: bitcoin-and-cryptocurrency-technologies/index.md
-    - Cryptographic hash functions: bitcoin-and-cryptocurrency-technologies/crypto-hash-functions.md
-    - Digital signature: bitcoin-and-cryptocurrency-technologies/digital-signature.md
-    - Hash pointers: bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures.md
-    - Centralization and decentralization: bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization.md
-    - Distributed consensus: bitcoin-and-cryptocurrency-technologies/distributed-consensus.md
+  - OAuth2 and OpendID Connect:
+      - Home: oauth2-and-openid-connect/index.md
+      - JWT (JSON Web Token): oauth2-and-openid-connect/jwt.md
   - Building microservices:
-    - Home: building-microservices/index.md
-    - Microservices: building-microservices/microservices.md
-    - Evolutionary architects: building-microservices/evolutionary-architects.md
-    - How to model services: building-microservices/how-to-model-services.md
-    - Integration: building-microservices/integration.md
-    - Splitting the monolith: building-microservices/splitting-the-monolith.md
-    - Deployment: building-microservices/deployment.md
-    - Testing: building-microservices/testing.md
-    - Monitoring: building-microservices/monitoring.md
-    - Security: building-microservices/security.md
-    - Conway's Law and System Desing: building-microservices/conway.md
-    - Microservices at Scale: building-microservices/microservices-at-scale.md
-    - Bringing It All Together: building-microservices/conclusion.md
+      - Home: building-microservices/index.md
+      - Microservices: building-microservices/microservices.md
+      - Evolutionary architects: building-microservices/evolutionary-architects.md
+      - How to model services: building-microservices/how-to-model-services.md
+      - Integration: building-microservices/integration.md
+      - Splitting the monolith: building-microservices/splitting-the-monolith.md
+      - Deployment: building-microservices/deployment.md
+      - Testing: building-microservices/testing.md
+      - Monitoring: building-microservices/monitoring.md
+      - Security: building-microservices/security.md
+      - Conway's Law and System Desing: building-microservices/conway.md
+      - Microservices at Scale: building-microservices/microservices-at-scale.md
+      - Bringing It All Together: building-microservices/conclusion.md
+  - Bitcoin and cryptocurrency technologies:
+      - Home: bitcoin-and-cryptocurrency-technologies/index.md
+      - Cryptographic hash functions: bitcoin-and-cryptocurrency-technologies/crypto-hash-functions.md
+      - Digital signature: bitcoin-and-cryptocurrency-technologies/digital-signature.md
+      - Hash pointers: bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures.md
+      - Centralization and decentralization: bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization.md
+      - Distributed consensus: bitcoin-and-cryptocurrency-technologies/distributed-consensus.md

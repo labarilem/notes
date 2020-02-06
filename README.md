@@ -1,14 +1,14 @@
 # Notes
 
-Notes about various topics, courses, books, etc. Go [here](https://marcolabarile.me/notes/) to browse them.
+Notes about various topics, courses, books, etc.
 
-Courses:
+You can visit [my website](https://marcolabarile.me/notes/) to browse these notes in a nice format.
 
-- [Bitcoin and cryptocurrency technologies](./bitcoin-and-cryptocurrency-technologies/index.md)
+## Contents
 
-Books:
-
-- [Building microservices](./building-microservices/index.md)
+- [OAuth2 and OpenID Connect](./notes/oauth2-and-openid-connect/index.md)
+- [Building microservices](./notes/building-microservices/index.md)
+- [Bitcoin and cryptocurrency technologies](./notes/bitcoin-and-cryptocurrency-technologies/index.md)
 
 ## Contributors
 
@@ -24,7 +24,7 @@ Run:
 mkdocs serve
 ```
 
-### How to deploy
+### How to deploy to GitHub
 
 Run:
 

@@ -1,2 +1,5 @@
 # mkdocs generated site
 site
+
+# NPM
+node_modules

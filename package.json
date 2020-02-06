@@ -1,0 +1,10 @@
+{
+  "name": "notes-scripts",
+  "description": "Contains scripts that automate some tasks related to notes management.",
+  "author": "labarilem",
+  "dependencies": {
+    "kebab-case": "^1.0.0",
+    "readline-sync": "^1.4.10",
+    "yaml": "^1.7.2"
+  }
+}
