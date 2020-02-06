@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon-16x16.png">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -46,22 +46,56 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#4caf50">
       
     
     
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-117745201-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -74,30 +108,13 @@
       <defs>
         
         
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
       <a href="#deployment" tabindex="1" class="md-skip">
         Skip to content
@@ -115,33 +132,32 @@
         </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Marco Labarile - Notes
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              Marco Labarile - Notes
+            </span>
+            <span class="md-header-nav__topic">
+              
                 Deployment
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
+  <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="search"></label>
+      <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
       </button>
@@ -158,7 +174,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -169,20 +184,18 @@
 
   
 
-
-  <a href="https://github.com/labarilem/notes" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      labarilem/notes
+<a href="https://github.com/labarilem/notes" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    labarilem/notes
+  </div>
+</a>
           </div>
         </div>
       
@@ -195,7 +208,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -203,12 +216,12 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    <span class="md-nav__button md-logo">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://marcolabarile.me/notes/" title="Marco Labarile - Notes" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
-    </span>
+    </a>
     Marco Labarile - Notes
   </label>
   
@@ -218,20 +231,18 @@
 
   
 
-
-  <a href="https://github.com/labarilem/notes" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      labarilem/notes
+<a href="https://github.com/labarilem/notes" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    labarilem/notes
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -258,11 +269,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
-      Bitcoin and cryptocurrency technologies
+      OAuth2 and OpendID Connect
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
-        Bitcoin and cryptocurrency technologies
+        OAuth2 and OpendID Connect
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -273,7 +284,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../bitcoin-and-cryptocurrency-technologies/" title="Home" class="md-nav__link">
+    <a href="../../oauth2-and-openid-connect/" title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -285,56 +296,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/" title="Cryptographic hash functions" class="md-nav__link">
-      Cryptographic hash functions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../bitcoin-and-cryptocurrency-technologies/digital-signature/" title="Digital signature" class="md-nav__link">
-      Digital signature
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/" title="Hash pointers" class="md-nav__link">
-      Hash pointers
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization/" title="Centralization and decentralization" class="md-nav__link">
-      Centralization and decentralization
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../bitcoin-and-cryptocurrency-technologies/distributed-consensus/" title="Distributed consensus" class="md-nav__link">
-      Distributed consensus
+    <a href="../../oauth2-and-openid-connect/jwt/" title="JWT (JSON Web Token)" class="md-nav__link">
+      JWT (JSON Web Token)
     </a>
   </li>
 
@@ -446,12 +409,12 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
+      <label class="md-nav__link md-nav__link--active" for="__toc">
         Deployment
       </label>
     
@@ -466,11 +429,11 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mapping-continuous-integration-to-microservices" title="Mapping Continuous Integration to Microservices" class="md-nav__link">
+  <a href="#mapping-continuous-integration-to-microservices" class="md-nav__link">
     Mapping Continuous Integration to Microservices
   </a>
   
@@ -478,21 +441,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#single-repository-and-single-build" title="Single repository and single build" class="md-nav__link">
+  <a href="#single-repository-and-single-build" class="md-nav__link">
     Single repository and single build
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#single-repository-and-multiple-builds" title="Single repository and multiple builds" class="md-nav__link">
+  <a href="#single-repository-and-multiple-builds" class="md-nav__link">
     Single repository and multiple builds
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#multiple-repositories-and-multiple-builds" title="Multiple repositories and multiple builds" class="md-nav__link">
+  <a href="#multiple-repositories-and-multiple-builds" class="md-nav__link">
     Multiple repositories and multiple builds
   </a>
   
@@ -504,35 +467,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-pipelines-and-continuous-delivery" title="Build Pipelines and Continuous Delivery" class="md-nav__link">
+  <a href="#build-pipelines-and-continuous-delivery" class="md-nav__link">
     Build Pipelines and Continuous Delivery
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exceptions-to-continuous-delivery" title="Exceptions to Continuous Delivery" class="md-nav__link">
+  <a href="#exceptions-to-continuous-delivery" class="md-nav__link">
     Exceptions to Continuous Delivery
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#platform-specific-artifacts" title="Platform-Specific Artifacts" class="md-nav__link">
+  <a href="#platform-specific-artifacts" class="md-nav__link">
     Platform-Specific Artifacts
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#operating-system-artifacts" title="Operating System Artifacts" class="md-nav__link">
+  <a href="#operating-system-artifacts" class="md-nav__link">
     Operating System Artifacts
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-images" title="Custom images" class="md-nav__link">
+  <a href="#custom-images" class="md-nav__link">
     Custom images
   </a>
   
@@ -540,14 +503,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#images-as-artifacts" title="Images as Artifacts" class="md-nav__link">
+  <a href="#images-as-artifacts" class="md-nav__link">
     Images as Artifacts
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#immutable-servers" title="Immutable Servers" class="md-nav__link">
+  <a href="#immutable-servers" class="md-nav__link">
     Immutable Servers
   </a>
   
@@ -559,21 +522,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#environments" title="Environments" class="md-nav__link">
+  <a href="#environments" class="md-nav__link">
     Environments
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#service-configuration" title="Service configuration" class="md-nav__link">
+  <a href="#service-configuration" class="md-nav__link">
     Service configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#service-to-host-mapping" title="Service-to-Host Mapping" class="md-nav__link">
+  <a href="#service-to-host-mapping" class="md-nav__link">
     Service-to-Host Mapping
   </a>
   
@@ -581,21 +544,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#multiple-services-per-host" title="Multiple Services Per Host" class="md-nav__link">
+  <a href="#multiple-services-per-host" class="md-nav__link">
     Multiple Services Per Host
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#application-containers" title="Application Containers" class="md-nav__link">
+  <a href="#application-containers" class="md-nav__link">
     Application Containers
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#single-service-per-host" title="Single Service per Host" class="md-nav__link">
+  <a href="#single-service-per-host" class="md-nav__link">
     Single Service per Host
   </a>
   
@@ -607,14 +570,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#automation" title="Automation" class="md-nav__link">
+  <a href="#automation" class="md-nav__link">
     Automation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#from-physical-to-virtual" title="From Physical to Virtual" class="md-nav__link">
+  <a href="#from-physical-to-virtual" class="md-nav__link">
     From Physical to Virtual
   </a>
   
@@ -622,7 +585,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#traditional-virtualization" title="Traditional Virtualization" class="md-nav__link">
+  <a href="#traditional-virtualization" class="md-nav__link">
     Traditional Virtualization
   </a>
   
@@ -630,7 +593,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#vagrant" title="Vagrant" class="md-nav__link">
+  <a href="#vagrant" class="md-nav__link">
     Vagrant
   </a>
   
@@ -642,14 +605,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#linux-containers" title="Linux containers" class="md-nav__link">
+  <a href="#linux-containers" class="md-nav__link">
     Linux containers
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#docker" title="Docker" class="md-nav__link">
+  <a href="#docker" class="md-nav__link">
     Docker
   </a>
   
@@ -661,14 +624,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-deployment-interface" title="A Deployment Interface" class="md-nav__link">
+  <a href="#a-deployment-interface" class="md-nav__link">
     A Deployment Interface
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" title="Summary" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     Summary
   </a>
   
@@ -762,6 +725,102 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Bitcoin and cryptocurrency technologies
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Bitcoin and cryptocurrency technologies
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/" title="Cryptographic hash functions" class="md-nav__link">
+      Cryptographic hash functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/digital-signature/" title="Digital signature" class="md-nav__link">
+      Digital signature
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/" title="Hash pointers" class="md-nav__link">
+      Hash pointers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization/" title="Centralization and decentralization" class="md-nav__link">
+      Centralization and decentralization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bitcoin-and-cryptocurrency-technologies/distributed-consensus/" title="Distributed consensus" class="md-nav__link">
+      Distributed consensus
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -779,11 +838,11 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mapping-continuous-integration-to-microservices" title="Mapping Continuous Integration to Microservices" class="md-nav__link">
+  <a href="#mapping-continuous-integration-to-microservices" class="md-nav__link">
     Mapping Continuous Integration to Microservices
   </a>
   
@@ -791,21 +850,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#single-repository-and-single-build" title="Single repository and single build" class="md-nav__link">
+  <a href="#single-repository-and-single-build" class="md-nav__link">
     Single repository and single build
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#single-repository-and-multiple-builds" title="Single repository and multiple builds" class="md-nav__link">
+  <a href="#single-repository-and-multiple-builds" class="md-nav__link">
     Single repository and multiple builds
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#multiple-repositories-and-multiple-builds" title="Multiple repositories and multiple builds" class="md-nav__link">
+  <a href="#multiple-repositories-and-multiple-builds" class="md-nav__link">
     Multiple repositories and multiple builds
   </a>
   
@@ -817,35 +876,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-pipelines-and-continuous-delivery" title="Build Pipelines and Continuous Delivery" class="md-nav__link">
+  <a href="#build-pipelines-and-continuous-delivery" class="md-nav__link">
     Build Pipelines and Continuous Delivery
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exceptions-to-continuous-delivery" title="Exceptions to Continuous Delivery" class="md-nav__link">
+  <a href="#exceptions-to-continuous-delivery" class="md-nav__link">
     Exceptions to Continuous Delivery
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#platform-specific-artifacts" title="Platform-Specific Artifacts" class="md-nav__link">
+  <a href="#platform-specific-artifacts" class="md-nav__link">
     Platform-Specific Artifacts
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#operating-system-artifacts" title="Operating System Artifacts" class="md-nav__link">
+  <a href="#operating-system-artifacts" class="md-nav__link">
     Operating System Artifacts
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-images" title="Custom images" class="md-nav__link">
+  <a href="#custom-images" class="md-nav__link">
     Custom images
   </a>
   
@@ -853,14 +912,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#images-as-artifacts" title="Images as Artifacts" class="md-nav__link">
+  <a href="#images-as-artifacts" class="md-nav__link">
     Images as Artifacts
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#immutable-servers" title="Immutable Servers" class="md-nav__link">
+  <a href="#immutable-servers" class="md-nav__link">
     Immutable Servers
   </a>
   
@@ -872,21 +931,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#environments" title="Environments" class="md-nav__link">
+  <a href="#environments" class="md-nav__link">
     Environments
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#service-configuration" title="Service configuration" class="md-nav__link">
+  <a href="#service-configuration" class="md-nav__link">
     Service configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#service-to-host-mapping" title="Service-to-Host Mapping" class="md-nav__link">
+  <a href="#service-to-host-mapping" class="md-nav__link">
     Service-to-Host Mapping
   </a>
   
@@ -894,21 +953,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#multiple-services-per-host" title="Multiple Services Per Host" class="md-nav__link">
+  <a href="#multiple-services-per-host" class="md-nav__link">
     Multiple Services Per Host
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#application-containers" title="Application Containers" class="md-nav__link">
+  <a href="#application-containers" class="md-nav__link">
     Application Containers
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#single-service-per-host" title="Single Service per Host" class="md-nav__link">
+  <a href="#single-service-per-host" class="md-nav__link">
     Single Service per Host
   </a>
   
@@ -920,14 +979,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#automation" title="Automation" class="md-nav__link">
+  <a href="#automation" class="md-nav__link">
     Automation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#from-physical-to-virtual" title="From Physical to Virtual" class="md-nav__link">
+  <a href="#from-physical-to-virtual" class="md-nav__link">
     From Physical to Virtual
   </a>
   
@@ -935,7 +994,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#traditional-virtualization" title="Traditional Virtualization" class="md-nav__link">
+  <a href="#traditional-virtualization" class="md-nav__link">
     Traditional Virtualization
   </a>
   
@@ -943,7 +1002,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#vagrant" title="Vagrant" class="md-nav__link">
+  <a href="#vagrant" class="md-nav__link">
     Vagrant
   </a>
   
@@ -955,14 +1014,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#linux-containers" title="Linux containers" class="md-nav__link">
+  <a href="#linux-containers" class="md-nav__link">
     Linux containers
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#docker" title="Docker" class="md-nav__link">
+  <a href="#docker" class="md-nav__link">
     Docker
   </a>
   
@@ -974,14 +1033,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-deployment-interface" title="A Deployment Interface" class="md-nav__link">
+  <a href="#a-deployment-interface" class="md-nav__link">
     A Deployment Interface
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" title="Summary" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     Summary
   </a>
   
@@ -1212,6 +1271,7 @@ But how to handle this kind of configuration?</p>
                 
                   
                 
+                
               
               
                 
@@ -1266,16 +1326,14 @@ But how to handle this kind of configuration?</p>
       <div class="md-footer-copyright">
         
         powered by
-        <a href="http://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
       
-        
   <div class="md-footer-social">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
       <a href="https://github.com/labarilem" class="md-footer-social__link fa fa-github-alt"></a>
     
@@ -1283,21 +1341,15 @@ But how to handle this kind of configuration?</p>
     
   </div>
 
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
-      
-    
-    
-      
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-117745201-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
   </body>
