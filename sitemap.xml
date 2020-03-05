@@ -2,112 +2,117 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://marcolabarile.me/notes/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/oauth2-and-openid-connect/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/oauth2-and-openid-connect/jwt/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://marcolabarile.me/notes/oauth2-and-openid-connect/oauth2/</loc>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/building-microservices/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/building-microservices/microservices/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/building-microservices/evolutionary-architects/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/building-microservices/how-to-model-services/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/building-microservices/integration/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/building-microservices/splitting-the-monolith/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/building-microservices/deployment/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/building-microservices/testing/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/building-microservices/monitoring/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/building-microservices/security/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/building-microservices/conway/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/building-microservices/microservices-at-scale/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/building-microservices/conclusion/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/bitcoin-and-cryptocurrency-technologies/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/bitcoin-and-cryptocurrency-technologies/crypto-hash-functions/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/bitcoin-and-cryptocurrency-technologies/digital-signature/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/bitcoin-and-cryptocurrency-technologies/hash-pointers-and-data-structures/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/bitcoin-and-cryptocurrency-technologies/centralization-vs-decentralization/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://marcolabarile.me/notes/bitcoin-and-cryptocurrency-technologies/distributed-consensus/</loc>
-     <lastmod>2020-02-07</lastmod>
+     <lastmod>2020-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
