@@ -1,6 +1,6 @@
 # JWT (JSON Web Token)
 
-A standard for creating JSON access tokens that can assert a number of claims.
+JSON Web Token is a standard for creating JSON access tokens that can assert a number of claims.
 
 JWTs are *stateless* because servers do not need to store any session data in order to validate these tokens.
 

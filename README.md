@@ -6,7 +6,7 @@ You can visit [my website](https://marcolabarile.me/notes/) to browse these note
 
 ## Contents
 
-- [OAuth2 and OpenID Connect](./notes/oauth2-and-openid-connect/index.md)
+- [OAuth 2.0 and OpenID Connect](./notes/oauth2-and-openid-connect/index.md)
 - [Building microservices](./notes/building-microservices/index.md)
 - [Bitcoin and cryptocurrency technologies](./notes/bitcoin-and-cryptocurrency-technologies/index.md)
 
@@ -30,4 +30,20 @@ Run:
 
 ```bash
 mkdocs gh-deploy
+```
+
+### How to add a Topic
+
+Run:
+
+```
+node add-topic.js
+```
+
+### How to add a Page
+
+Run:
+
+```
+node add-page.js
 ```
