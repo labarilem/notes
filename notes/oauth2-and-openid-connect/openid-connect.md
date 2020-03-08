@@ -1,6 +1,6 @@
 # OpenID Connect
 
-OpenID Connect (*OIDC*) is an authentication protocol. It builds upon [OAuth 2.0](./oauth2.md) and [JSON Web Tokens](./openid-connect.md) to provide you one login for multiple sites.
+OpenID Connect (*OIDC*) is an authentication protocol. It builds upon [OAuth 2.0](./oauth2.md) and [JSON Web Tokens](./openid-connect.md) to provide users one login for multiple sites.
 
 For example, Trello lets you create a new account using an existing Google account. In this case, Trello only needs to access some basic information of your Google account (e.g. email and username). The main advantage is that *you don't need to share your Google password with Trello*. This is possible because Trello can use OpenID Connect tokens to validate your Google account identity.
 
