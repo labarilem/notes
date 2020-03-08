@@ -69,6 +69,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../assets/styles/extra.css">
+    
     
       
         
@@ -427,15 +429,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#which-grant-should-you-use" class="md-nav__link">
     Which grant should you use?
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -488,6 +490,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../openid-connect/" title="OpenID Connect" class="md-nav__link">
+      OpenID Connect
+    </a>
   </li>
 
         
@@ -883,15 +897,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#which-grant-should-you-use" class="md-nav__link">
     Which grant should you use?
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -970,7 +984,7 @@
 <li><strong>Resource Server</strong>: the server that consumes the user's information.</li>
 </ul>
 <p>This is how OAuth 2.0 roles would be translated in our example:</p>
-<p><img alt="OAuth 2.0 roles example" src="../images/oauth2-roles.svg" /></p>
+<p><img alt="OAuth 2.0 roles example" class="center" src="../images/oauth2-roles.svg" /></p>
 <h2 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">&para;</a></h2>
 <p>Endpoints are URIs that define the location of authorization services. In OAuth 2.0, there are 3 endpoints:</p>
 <ul>
@@ -979,8 +993,8 @@
 <li>The <strong>Token endpoint</strong> is on the authorization server. This is where the client application exchanges some secret information for an access token.</li>
 </ul>
 <p>Note that some OAuth 2.0 grants don't involve all these endpoints but just some of them.</p>
-<p>This is how the OAuth 2.0 endpoints would be translated in our example:</p>
-<p><img alt="OAuth 2.0 endpoints example" src="../images/oauth2-endpoints.svg" /></p>
+<p>This is how the OAuth 2.0 endpoints would be translated in our Trello example:</p>
+<p><img alt="OAuth 2.0 endpoints example" class="center" src="../images/oauth2-endpoints.svg" /></p>
 <h2 id="scopes">Scopes<a class="headerlink" href="#scopes" title="Permanent link">&para;</a></h2>
 <p>Scopes can be used to limit a client's access to the user's resources. Basically:</p>
 <ol>
@@ -989,7 +1003,7 @@
 <li>If the user gives his consent, the access token issued to the application will be limited to those scopes.</li>
 </ol>
 <p>The OAuth 2.0 specification does not define any specific values for scopes, since they are highly dependent on the service provider. For example, these are the scopes for the Google Calendar's API:</p>
-<p><img alt="OAuth 2.0 Google Calendar scopes" src="../images/oauth2-gcalendar-scopes.png" /></p>
+<p><img alt="OAuth 2.0 Google Calendar scopes" class="center" src="../images/oauth2-gcalendar-scopes.png" /></p>
 <h2 id="grants">Grants<a class="headerlink" href="#grants" title="Permanent link">&para;</a></h2>
 <p>Authorization grants are methods for a client to get an <strong>access token</strong>. The access token proves that a client has the permission to access the user's data.</p>
 <p>Authorization grants are also known as <em>flows</em>.</p>
@@ -1009,7 +1023,7 @@
 <h3 id="authorization-code-grant">Authorization code grant<a class="headerlink" href="#authorization-code-grant" title="Permanent link">&para;</a></h3>
 <p>The <a href="https://tools.ietf.org/html/rfc6749#section-1.3.1">Authorization code grant</a> has been designed for clients which can securely store a client secret. This grant is typically used when the client is a web server.</p>
 <p>Here's how the Authorization code grant would work in our Trello example:</p>
-<p><img alt="OAuth 2.0 Authentication code grant" src="../images/oauth2-code-grant.svg" /></p>
+<p><img alt="OAuth 2.0 Authentication code grant" class="center" src="../images/oauth2-code-grant.svg" /></p>
 <ol>
 <li>The user clicks on a button in the Trello's web app in order to connect his Google account to Trello.</li>
 <li>The Trello web app requests an authorization code. This operation can be done in several ways (e.g. redirection, link on HTML button). The code can be retrieved by making a HTTP GET request to the Google account's <em>authorization</em> endpoint with these parameters:<ul>
@@ -1041,7 +1055,7 @@
 <h4 id="proof-key-for-code-exchange-pkce">Proof Key for Code Exchange (PKCE)<a class="headerlink" href="#proof-key-for-code-exchange-pkce" title="Permanent link">&para;</a></h4>
 <p><a href="https://tools.ietf.org/html/rfc7636">PKCE</a> extends the Authorization code grant to securely perform the code exchange with clients that cannot privately store the <em>authorization code</em>. This technique can be applied to any client, although it's typically used when the client is a mobile or a web browser application.</p>
 <p>Here's how the Authorization code grant with PKCE would work in our Trello example:</p>
-<p><img alt="OAuth 2.0 Authentication code PKCE" src="../images/oauth2-code-grant-pkce.svg" /></p>
+<p><img alt="OAuth 2.0 Authentication code PKCE" class="center" src="../images/oauth2-code-grant-pkce.svg" /></p>
 <ol>
 <li>The user clicks on a button in the Trello's web app in order to connect his Google account to Trello.</li>
 <li>The Trello web app generates a <strong>code verifier</strong> (i.e. a cryptographically secure random string) and the respective <strong>code challenge</strong>, which can be an hash of the code verifier or the code verifier itself. This code must be saved in the web app for later use.</li>
@@ -1074,10 +1088,10 @@
 </ol>
 <p>You can try the Authorization code grant with PKCE in the <a href="https://www.oauth.com/playground/authorization-code-with-pkce.html">OAuth.net playground</a>.</p>
 <h3 id="client-credentials-grant">Client credentials grant<a class="headerlink" href="#client-credentials-grant" title="Permanent link">&para;</a></h3>
-<p>The client credentials grant is used when clients need to be authorized to act on behalf of a <em>service account</em> rather than a human user.</p>
+<p>The <a href="https://tools.ietf.org/html/rfc6749#section-4.4">Client credentials grant</a> is used when clients need to be authorized to act on behalf of a <em>service account</em> rather than a human user.</p>
 <p>For example, let's suppose that Trello has a system-internal service that computes statistics about users to create some reports. In order to do so, the Report service needs to be authorized to read the Trello users' data.
 Here's how the client credentials grant would work in this example:</p>
-<p><img alt="OAuth 2.0 Client credentials grant" src="../images/oauth2-client-credentials-grant.svg" /></p>
+<p><img alt="OAuth 2.0 Client credentials grant" class="center" src="../images/oauth2-client-credentials-grant.svg" /></p>
 <ol>
 <li>The Report service requests the access token that represents its service account by making a HTTP POST request:<ul>
 <li><strong>grant_type</strong>: specifies the grant type. By setting this parameter to <em>client_credentials</em>, the client indicates that it wants to complete a client credentials grant.</li>
@@ -1088,10 +1102,10 @@ Here's how the client credentials grant would work in this example:</p>
 <li>The Report service uses the access token to read the Trello users' data.</li>
 </ol>
 <h3 id="device-authorization-grant">Device authorization grant<a class="headerlink" href="#device-authorization-grant" title="Permanent link">&para;</a></h3>
-<p>The Device authorization grant has been designed for devices with limited input capabilities.</p>
+<p>The <a href="https://tools.ietf.org/html/rfc8628">Device authorization grant</a> has been designed for devices with limited input capabilities.</p>
 <p>For example, let's suppose we are using a Trello app for Apple TV and you want to authorize the app to access your Google Calendar's data.
 Here's how the device authorization grant would work in this case:</p>
-<p><img alt="OAuth 2.0 Device authorization grant" src="../images/oauth2-device-authorization-grant.svg" /></p>
+<p><img alt="OAuth 2.0 Device authorization grant" class="center" src="../images/oauth2-device-authorization-grant.svg" /></p>
 <ol>
 <li>The user clicks on a button in the Trello's web app in order to connect his Google account to Trello.</li>
 <li>The Trello app requests a device code with a HTTP POST request to the <em>device</em> endpoint on the authorization server:<ul>
@@ -1119,9 +1133,9 @@ Here's how the device authorization grant would work in this case:</p>
 </ol>
 <p>You can try the Device authorization grant in the <a href="https://www.oauth.com/playground/device-code.html">OAuth.net playground</a>.</p>
 <h3 id="refresh-token-grant">Refresh token grant<a class="headerlink" href="#refresh-token-grant" title="Permanent link">&para;</a></h3>
-<p>The Refresh token grant has been designed to exchange a <em>refresh token</em> for an expired access token.</p>
+<p>The <a href="https://tools.ietf.org/html/rfc6749#section-1.5">Refresh token grant</a> has been designed to exchange a <em>refresh token</em> for an expired access token.</p>
 <p>Here's how this grant would work in our Trello example:</p>
-<p><img alt="OAuth 2.0 Refresh token grant" src="../images/oauth2-refresh-token-grant.svg" /></p>
+<p><img alt="OAuth 2.0 Refresh token grant" class="center" src="../images/oauth2-refresh-token-grant.svg" /></p>
 <ol>
 <li>Trello requests the authorization server to refresh an expired token with a HTTP POST request:<ul>
 <li><strong>grant_type</strong>: set this parameter to <em>refresh_token</em> to request a token refresh.</li>
@@ -1134,10 +1148,10 @@ Here's how the device authorization grant would work in this case:</p>
 <li>The Trello app uses the new access token to create an event in the user's Google Calendar.</li>
 </ol>
 <h3 id="implicit-grant">Implicit grant<a class="headerlink" href="#implicit-grant" title="Permanent link">&para;</a></h3>
-<p>The Implicit grant has been designed to immediately return an access token to the client, without first performing a code exchange.</p>
+<p>The <a href="https://tools.ietf.org/html/rfc6749#section-1.3.2">Implicit grant</a> has been designed to immediately return an access token to the client, without first performing a code exchange.</p>
 <p>This grant was the recommended choice for native and JavaScript applications. But now <strong>its usage is discouraged</strong> because returning access tokens in a HTTP redirect brings several <a href="#implicit-grant-security-risks">security risks</a> to your application. These kinds of applications should instead use the Authorization code flow with PKCE.</p>
 <p>Here's how the Implicit grant would work in our Trello example:</p>
-<p><img alt="OAuth 2.0 Implicit grant" src="../images/oauth2-implicit-grant.svg" /></p>
+<p><img alt="OAuth 2.0 Implicit grant" class="center" src="../images/oauth2-implicit-grant.svg" /></p>
 <ol>
 <li>The user clicks on a button in the Trello's web app in order to connect his Google account to the Trello web app.</li>
 <li>The Trello web app requests the token by making a HTTP GET request to the Google account's <em>authorization</em> endpoint with these parameters:<ul>
@@ -1161,14 +1175,15 @@ Here's how the device authorization grant would work in this case:</p>
 <li>The Trello web app uses the access token to create an event in the user's Google Calendar.</li>
 </ol>
 <h3 id="password-grant">Password grant<a class="headerlink" href="#password-grant" title="Permanent link">&para;</a></h3>
-<p>The Password grant has been designed to exchange the user's credentials for an access token. Since the client needs to read the password in cleartext, this grant should not be used at all. This is also stated in the latest <a href="https://tools.ietf.org/html/draft-ietf-oauth-security-topics-13#section-3.4">OAuth 2.0 Security Best Current Practice</a>.</p>
-<h2 id="which-grant-should-you-use">Which grant should you use?<a class="headerlink" href="#which-grant-should-you-use" title="Permanent link">&para;</a></h2>
-<p>Now we understand which are the the grant types in the OAuth 2.0 specification.<br/>So, <em>which grant should you use for your application</em>?<br/>The following flow chart answer this question:</p>
-<p><img alt="OAuth 2.0 Which grant to use" src="../images/oauth2-which-grant-to-use.svg" /></p>
+<p>The <a href="https://tools.ietf.org/html/rfc6749#section-1.3.3">Password grant</a> has been designed to exchange the user's credentials for an access token. Since the client needs to read the password in cleartext, this grant should not be used at all. This is also stated in the latest <a href="https://tools.ietf.org/html/draft-ietf-oauth-security-topics-13#section-3.4">OAuth 2.0 Security Best Current Practice</a>.</p>
+<h3 id="which-grant-should-you-use">Which grant should you use?<a class="headerlink" href="#which-grant-should-you-use" title="Permanent link">&para;</a></h3>
+<p>Now we understand which are the the grant types in the OAuth 2.0 specification.</p>
+<p>So, <em>which grant should you use for your application</em>?<br/>The following flow chart answer this question:</p>
+<p><img alt="OAuth 2.0 Which grant to use" class="center" src="../images/oauth2-which-grant-to-use.svg" /></p>
 <h2 id="vulnerabilities-and-attacks">Vulnerabilities and Attacks<a class="headerlink" href="#vulnerabilities-and-attacks" title="Permanent link">&para;</a></h2>
 <p>There are some known attacks that can exploit vulnerable implementations of OAuth 2.0. In this section we will go through some of the most known OAuth 2.0 attacks.</p>
 <h3 id="phishing-with-fake-consent-screens">Phishing with fake consent screens<a class="headerlink" href="#phishing-with-fake-consent-screens" title="Permanent link">&para;</a></h3>
-<p>In some OAuth 2.0 the users is redirected to a consent screen (e.g. the Google consent screen). How can the user be sure that he's actually dealing with a legitimate consent screen?
+<p>In some OAuth 2.0 grants, the user is redirected to a consent screen (e.g. the Google consent screen). How can the user be sure that he's actually dealing with a legitimate consent screen?
 Some malicious apps may exploit this mechanism to make the user input his credentials in a fake, carefully crafted consent screen.</p>
 <h3 id="authorization-code-csrf">Authorization Code CSRF<a class="headerlink" href="#authorization-code-csrf" title="Permanent link">&para;</a></h3>
 <p>If applications don't use and validate <em>state</em> parameters they can be vulnerable to different types of attacks.</p>
@@ -1233,13 +1248,13 @@ Some malicious apps may exploit this mechanism to make the user input his creden
           </a>
         
         
-          <a href="../../building-microservices/" title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../openid-connect/" title="OpenID Connect" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Home
+                OpenID Connect
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

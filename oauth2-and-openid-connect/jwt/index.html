@@ -69,6 +69,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../assets/styles/extra.css">
+    
     
       
         
@@ -391,6 +393,18 @@
   <li class="md-nav__item">
     <a href="../oauth2/" title="OAuth 2.0" class="md-nav__link">
       OAuth 2.0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../openid-connect/" title="OpenID Connect" class="md-nav__link">
+      OpenID Connect
     </a>
   </li>
 
@@ -765,6 +779,7 @@
 <p>JSON Web Token is a standard for creating JSON access tokens that can assert a number of claims.</p>
 <p>JWTs are <em>stateless</em> because servers do not need to store any session data in order to validate these tokens.</p>
 <h2 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h2>
+<p>This is the structure of JWTs:</p>
 <table>
 <thead>
 <tr>
@@ -877,15 +892,17 @@
 </tbody>
 </table>
 <h2 id="how-jwts-are-commonly-used">How JWTs are commonly used<a class="headerlink" href="#how-jwts-are-commonly-used" title="Permanent link">&para;</a></h2>
+<p>This is how JWTs are commonly used:</p>
 <ol>
 <li>The <strong>client</strong> requests a token by providing credentials to the issuer.</li>
 <li>The <strong>issuer</strong> validates the client's request and responds with the token.</li>
 <li>The client can use the token to access some protected <strong>resources</strong>. For such requests, the client typically sends the token in the <code>Authorization</code> header, using the <code>Bearer</code> schema. Example: <code>Authorization: Bearer abc123...321cba</code>.</li>
 </ol>
 <h2 id="how-to-validate-a-jwt">How to validate a JWT<a class="headerlink" href="#how-to-validate-a-jwt" title="Permanent link">&para;</a></h2>
+<p>Here's how the JWT validation algorithm works:</p>
 <ol>
 <li>Deserialize the token.</li>
-<li>Validate the standard claims: <code>iss</code>, <code>aud</code>, <code>exp</code>, <code>nbf</code>. If you want to allow manual token expiration before the expiration date, you also need to check the token against a <em>data store</em>. By doing so, your tokens will not be stateless anymore.</li>
+<li>Validate the <a href="#payload">standard claims</a>: <code>iss</code>, <code>aud</code>, <code>exp</code>, <code>nbf</code>. If you want to allow manual token expiration before the expiration date, you also need to check the token against a <em>data store</em>. By doing so, your tokens will not be stateless anymore.</li>
 <li>Validate the signature using the algorithm specified in the token's header.</li>
 </ol>
                 
