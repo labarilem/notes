@@ -6,3 +6,4 @@ Topics:
 
 1. [JWT (JSON Web Token)](./jwt.md)
 2. [OAuth 2.0](./oauth2.md)
+3. [OpenID Connect](./openid-connect.md)

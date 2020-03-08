@@ -6,6 +6,8 @@ JWTs are *stateless* because servers do not need to store any session data in or
 
 ## Structure
 
+This is the structure of JWTs:
+
 |Component|Example|Description|
 |-|-|-|
 |**Header**|`{ "alg" : "HS256", "typ" : "JWT" }`| Contains token metadata, such as the algorithm used to generate the signature. |
@@ -47,12 +49,16 @@ This table enumerates the standard *claims* that can be used inside a JWT payloa
 
 ## How JWTs are commonly used
 
+This is how JWTs are commonly used:
+
 1. The **client** requests a token by providing credentials to the issuer.
 2. The **issuer** validates the client's request and responds with the token.
 3. The client can use the token to access some protected **resources**. For such requests, the client typically sends the token in the `Authorization` header, using the `Bearer` schema. Example: `Authorization: Bearer abc123...321cba`.
 
 ## How to validate a JWT
 
+Here's how the JWT validation algorithm works:
+
 1. Deserialize the token.
-2. Validate the standard claims: `iss`, `aud`, `exp`, `nbf`. If you want to allow manual token expiration before the expiration date, you also need to check the token against a *data store*. By doing so, your tokens will not be stateless anymore.
+2. Validate the [standard claims](#payload): `iss`, `aud`, `exp`, `nbf`. If you want to allow manual token expiration before the expiration date, you also need to check the token against a *data store*. By doing so, your tokens will not be stateless anymore.
 3. Validate the signature using the algorithm specified in the token's header.

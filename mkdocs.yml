@@ -34,6 +34,7 @@ extra:
     - type: linkedin
       link: https://www.linkedin.com/in/marcolabarile/
 markdown_extensions:
+  - markdown.extensions.attr_list
   - markdown.extensions.admonition
   - markdown.extensions.codehilite:
       guess_lang: false
@@ -59,12 +60,15 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+extra_css:
+  - 'assets/styles/extra.css'
 pages:
   - Home: index.md
   - OAuth 2.0 and OpendID Connect:
       - Home: oauth2-and-openid-connect/index.md
       - JWT (JSON Web Token): oauth2-and-openid-connect/jwt.md
       - OAuth 2.0: oauth2-and-openid-connect/oauth2.md
+      - OpenID Connect: oauth2-and-openid-connect/openid-connect.md
   - Building microservices:
       - Home: building-microservices/index.md
       - Microservices: building-microservices/microservices.md

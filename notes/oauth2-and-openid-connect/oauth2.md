@@ -25,7 +25,7 @@ Roles identify the _actors_ that can participate in OAuth 2.0 flows. There are 4
 
 This is how OAuth 2.0 roles would be translated in our example:
 
-![OAuth 2.0 roles example](./images/oauth2-roles.svg)
+![OAuth 2.0 roles example](./images/oauth2-roles.svg){: class="center"}
 
 ## Endpoints
 
@@ -37,9 +37,9 @@ Endpoints are URIs that define the location of authorization services. In OAuth 
 
 Note that some OAuth 2.0 grants don't involve all these endpoints but just some of them.
 
-This is how the OAuth 2.0 endpoints would be translated in our example:
+This is how the OAuth 2.0 endpoints would be translated in our Trello example:
 
-![OAuth 2.0 endpoints example](./images/oauth2-endpoints.svg)
+![OAuth 2.0 endpoints example](./images/oauth2-endpoints.svg){: class="center"}
 
 ## Scopes
 
@@ -51,7 +51,7 @@ Scopes can be used to limit a client's access to the user's resources. Basically
 
 The OAuth 2.0 specification does not define any specific values for scopes, since they are highly dependent on the service provider. For example, these are the scopes for the Google Calendar's API:
 
-![OAuth 2.0 Google Calendar scopes](./images/oauth2-gcalendar-scopes.png)
+![OAuth 2.0 Google Calendar scopes](./images/oauth2-gcalendar-scopes.png){: class="center"}
 
 ## Grants
 
@@ -78,7 +78,7 @@ The [Authorization code grant](https://tools.ietf.org/html/rfc6749#section-1.3.1
 
 Here's how the Authorization code grant would work in our Trello example:
 
-![OAuth 2.0 Authentication code grant](./images/oauth2-code-grant.svg)
+![OAuth 2.0 Authentication code grant](./images/oauth2-code-grant.svg){: class="center"}
 
 1. The user clicks on a button in the Trello's web app in order to connect his Google account to Trello.
 2. The Trello web app requests an authorization code. This operation can be done in several ways (e.g. redirection, link on HTML button). The code can be retrieved by making a HTTP GET request to the Google account's _authorization_ endpoint with these parameters:
@@ -108,7 +108,7 @@ You can try the Authorization code grant in the [OAuth.net playground](https://w
 
 Here's how the Authorization code grant with PKCE would work in our Trello example:
 
-![OAuth 2.0 Authentication code PKCE](./images/oauth2-code-grant-pkce.svg)
+![OAuth 2.0 Authentication code PKCE](./images/oauth2-code-grant-pkce.svg){: class="center"}
 
 1. The user clicks on a button in the Trello's web app in order to connect his Google account to Trello.
 2. The Trello web app generates a **code verifier** (i.e. a cryptographically secure random string) and the respective **code challenge**, which can be an hash of the code verifier or the code verifier itself. This code must be saved in the web app for later use.
@@ -137,12 +137,12 @@ You can try the Authorization code grant with PKCE in the [OAuth.net playground]
 
 ### Client credentials grant
 
-The client credentials grant is used when clients need to be authorized to act on behalf of a *service account* rather than a human user.
+The [Client credentials grant](https://tools.ietf.org/html/rfc6749#section-4.4) is used when clients need to be authorized to act on behalf of a *service account* rather than a human user.
 
 For example, let's suppose that Trello has a system-internal service that computes statistics about users to create some reports. In order to do so, the Report service needs to be authorized to read the Trello users' data.
 Here's how the client credentials grant would work in this example:
 
-![OAuth 2.0 Client credentials grant](./images/oauth2-client-credentials-grant.svg)
+![OAuth 2.0 Client credentials grant](./images/oauth2-client-credentials-grant.svg){: class="center"}
 
 1. The Report service requests the access token that represents its service account by making a HTTP POST request:
     - **grant_type**: specifies the grant type. By setting this parameter to *client_credentials*, the client indicates that it wants to complete a client credentials grant.
@@ -152,12 +152,12 @@ Here's how the client credentials grant would work in this example:
 
 ### Device authorization grant
 
-The Device authorization grant has been designed for devices with limited input capabilities.
+The [Device authorization grant](https://tools.ietf.org/html/rfc8628) has been designed for devices with limited input capabilities.
 
 For example, let's suppose we are using a Trello app for Apple TV and you want to authorize the app to access your Google Calendar's data.
 Here's how the device authorization grant would work in this case:
 
-![OAuth 2.0 Device authorization grant](./images/oauth2-device-authorization-grant.svg)
+![OAuth 2.0 Device authorization grant](./images/oauth2-device-authorization-grant.svg){: class="center"}
 
 1. The user clicks on a button in the Trello's web app in order to connect his Google account to Trello.
 2. The Trello app requests a device code with a HTTP POST request to the _device_ endpoint on the authorization server:
@@ -181,11 +181,11 @@ You can try the Device authorization grant in the [OAuth.net playground](https:/
 
 ### Refresh token grant
 
-The Refresh token grant has been designed to exchange a _refresh token_ for an expired access token.
+The [Refresh token grant](https://tools.ietf.org/html/rfc6749#section-1.5) has been designed to exchange a _refresh token_ for an expired access token.
 
 Here's how this grant would work in our Trello example:
 
-![OAuth 2.0 Refresh token grant](./images/oauth2-refresh-token-grant.svg)
+![OAuth 2.0 Refresh token grant](./images/oauth2-refresh-token-grant.svg){: class="center"}
 
 1. Trello requests the authorization server to refresh an expired token with a HTTP POST request:
     - **grant_type**: set this parameter to *refresh_token* to request a token refresh.
@@ -197,13 +197,13 @@ Here's how this grant would work in our Trello example:
 
 ### Implicit grant
 
-The Implicit grant has been designed to immediately return an access token to the client, without first performing a code exchange.
+The [Implicit grant](https://tools.ietf.org/html/rfc6749#section-1.3.2) has been designed to immediately return an access token to the client, without first performing a code exchange.
 
 This grant was the recommended choice for native and JavaScript applications. But now **its usage is discouraged** because returning access tokens in a HTTP redirect brings several [security risks](#implicit-grant-security-risks) to your application. These kinds of applications should instead use the Authorization code flow with PKCE.
 
 Here's how the Implicit grant would work in our Trello example:
 
-![OAuth 2.0 Implicit grant](./images/oauth2-implicit-grant.svg)
+![OAuth 2.0 Implicit grant](./images/oauth2-implicit-grant.svg){: class="center"}
 
 1. The user clicks on a button in the Trello's web app in order to connect his Google account to the Trello web app.
 2. The Trello web app requests the token by making a HTTP GET request to the Google account's _authorization_ endpoint with these parameters:
@@ -224,13 +224,15 @@ Here's how the Implicit grant would work in our Trello example:
 
 ### Password grant
 
-The Password grant has been designed to exchange the user's credentials for an access token. Since the client needs to read the password in cleartext, this grant should not be used at all. This is also stated in the latest [OAuth 2.0 Security Best Current Practice](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-13#section-3.4).
+The [Password grant](https://tools.ietf.org/html/rfc6749#section-1.3.3) has been designed to exchange the user's credentials for an access token. Since the client needs to read the password in cleartext, this grant should not be used at all. This is also stated in the latest [OAuth 2.0 Security Best Current Practice](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-13#section-3.4).
 
-## Which grant should you use?
+### Which grant should you use?
 
-Now we understand which are the the grant types in the OAuth 2.0 specification.<br/>So, _which grant should you use for your application_?<br/>The following flow chart answer this question:
+Now we understand which are the the grant types in the OAuth 2.0 specification.
 
-![OAuth 2.0 Which grant to use](./images/oauth2-which-grant-to-use.svg)
+So, _which grant should you use for your application_?<br/>The following flow chart answer this question:
+
+![OAuth 2.0 Which grant to use](./images/oauth2-which-grant-to-use.svg){: class="center"}
 
 ## Vulnerabilities and Attacks
 
@@ -238,7 +240,7 @@ There are some known attacks that can exploit vulnerable implementations of OAut
 
 ### Phishing with fake consent screens
 
-In some OAuth 2.0 the users is redirected to a consent screen (e.g. the Google consent screen). How can the user be sure that he's actually dealing with a legitimate consent screen?
+In some OAuth 2.0 grants, the user is redirected to a consent screen (e.g. the Google consent screen). How can the user be sure that he's actually dealing with a legitimate consent screen?
 Some malicious apps may exploit this mechanism to make the user input his credentials in a fake, carefully crafted consent screen.
 
 ### Authorization Code CSRF
